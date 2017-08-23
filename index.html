@@ -1,662 +1,1076 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Website Title -->
-    <title>John Doe - Professional web designer and photographer</title>
-    <!-- Bootstrap -->
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<!-- Font-Awesome -->
-    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<!-- Lightbox -->
-	<link href="assets/lightbox/css/lightbox.css" rel="stylesheet">
-    <!-- Text Rotator-->
-	<link href="assets/textrotator/simpletextrotator.css" rel="stylesheet">
-	<!-- FlexSlider -->
-    <link href="assets/flexslider/flexslider.css" rel="stylesheet">
-	<!-- Theme Style -->
-    <link href="css/style.css" rel="stylesheet">
-	<!-- Animations -->
-    <link href="css/animate.css" rel="stylesheet">
-	<!-- Custom Favicon -->
-	<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" /> 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>International Management Services | IMS</title>
+	<!-- core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.transitions.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="assets/html5shiv/html5shiv.js"></script>
-    <script src="assets/respond/respond.min.js"></script>
-    <![endif]-->
-  </head>
-    <body id="top">
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ims-logo-solo.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ims-logo-solo.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ims-logo-solo.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ims-logo-solo.png">
+</head><!--/head-->
 
-      <!-- ****************************** Preloader ************************** -->
-      <div id="preloader"></div>
+<body id="home" class="homepage">
 
-
-	  	<!-- ==========================
-        HEADER SECTION 
-        =========================== -->
-        <header id="home">
-		    <!-- creative menu -->
-            <div class="container-fluid">
-              <div class="row">
-                <div class="menu-wrap">
-				<nav class="menu">
-				    <!-- Menu Links -->
-					<div class="icon-list">
-						<a href="index.html#home"><i class="fa fa-fw fa-home"></i><span>Home</span></a>
-						<a href="index.html#about"><i class="fa fa-fw fa-quote-left"></i><span>About</span></a>
-						<a href="index.html#service"><i class="fa fa-fw fa-globe"></i><span>Service</span></a>
-						<a href="index.html#portfolio"><i class="fa fa-fw fa-picture-o"></i><span>Portfolio</span></a>
-						<a href="index.html#blog"><i class="fa fa-fw fa-rss"></i><span>Blog</span></a>
-						<a href="index.html#contact"><i class="fa fa-fw fa-envelope-o"></i><span>Contact</span></a>
-					</div>
-				</nav>
-			    </div>
-			    <button class="menu-button" id="open-button"></button><!-- menu button -->
-              </div><!--/row-->
-            </div><!--/container-->
-		  <!-- Header Image -->
-          <section class="hero" id="hero">
+    <header id="header">
+        <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
             <div class="container">
-			  <!-- Slider Button (don't edit!)-->
-              <div class="row">
-                <div class="col-md-12 text-right navicon">
-                  <a id="nav-toggle" class="nav_slide_button" href="index.html#"><span></span></a>
-                </div>
-              </div>
-			  <!-- HEADER HEADLINE -->
-              <div class="row">
-                <div class="col-md-8 col-md-offset-1 inner">
-                  <h1 class="animated fadeInDown">
-                    J<span style="color:#E04343;">o</span>hn<br/>
-                    <span>D<span style="color:#FFE800">o</span>e</span>
-                  </h1><!-- Title -->
-                  <h3 class="animated fadeInUp delay-05s"><span class="rotate">Web Designer,Photographer,3d Artist</span></h3><!-- Text Rotator -->
-                </div>
-              </div>
-			  <!-- Learn More Button -->
-              <div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center">
-                  <a href="index.html#about" class="scrollto wow fadeInUp delay-5s ">
-			            <p>SEE MORE</p>
-			            <p class="scrollto--arrow"><img src="img/scroll-down.png" alt="scroll down arrow"></p>
-			        </a>
-                </div>
-              </div>
-            </div>
-          </section>
-		  <!-- Header Image End -->
-        </header>
-		<!-- ==========================
-        HEADER SECTION END  
-        =========================== -->
-		
-		
-		
-		
-		<!-- ==========================
-        ABOUT SECTION  
-        =========================== -->
-        <section class="intro text-center section-padding color-bg" id="about">
-          <div class="container">
-		    <!-- WELCOME TEXT -->
-            <div class="row">
-              <div class="col-md-8 col-md-offset-2 wp1">
-                <h1 class="arrow">A little <span>about</span> me</h1><!-- Headline -->
-				<!-- about / welcome text -->
-                <p>I am enough of an artist to draw freely upon my imagination. The point is that when I see a sunset or a <a href="#">waterfall</a> or something, for a split second it's so great, because for a little bit I'm out of my brain, and it's got nothing to do with me. I'm not trying to figure it out, you know what I mean? And I wonder if I can somehow find a way to maintain that mind stillness.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-
-
-<!-- ==========================
-        SERVICE SECTION 
-        =========================== -->
-        <section class="features text-center section-padding" id="service">
-          <div class="container">
-        <!-- Headline -->
-            <div class="row">
-              <div class="col-md-12">
-                <h1 class="arrow">I do amazing things for clients</h1>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-          <div class="services">
-          <!-- Service Box 1 -->
-                  <div class="col-md-4 wp2 item">
-                    <div class="icon">
-                      <i class="fa fa-camera"></i><!-- Icon -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand web" href="index.html"><img src="images/logo-ims-solo.png" alt="logo"></a>
+                    <div class="company-name">
+                        <span>INTERNATIONAL</span>
+                        <span>MANAGEMENT SERVICES</span>    
                     </div>
-                    <h2>Photographer</h2><!-- Title -->
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum
-                    primis in faucibus.</p><!-- Description -->
-                  </div>
-          <!-- Service Box 2 -->
-                  <div class="col-md-4 wp2 item delay-05s">
-                    <div class="icon">
-                      <i class="fa fa-desktop"></i><!-- Icon -->
+                    <a class="navbar-brand mobile" href="index.html"><img src="images/logo-ims.png" alt="logo"></a>
+                    <div class="tag-line">
+                        <span class="item-1">Great Results.</span>
+                        <span class="item-2">Expert.</span>
+                        <span class="item-3">High Integrity.</span>
                     </div>
-                    <h2>Web Designer</h2><!-- Title -->
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum
-                    primis in faucibus.</p><!-- Description -->
-                  </div>
-          <!-- Service Box 3 -->
-                  <div class="col-md-4 wp2 item delay-1s">
-                    <div class="icon">
-                      <i class="fa fa-cubes"></i><!-- Icon -->
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="scroll active"><a href="#home">Home</a></li>
+                        <!-- <li class="scroll"><a href="#features">Features</a></li> -->
+                        <li class="scroll"><a href="#about">About</a></li>
+                        <li class="scroll"><a href="#services">Services</a></li>
+                        <li class="scroll"><a href="#portfolio">Practice Areas</a></li>
+                        <!-- <li class="scroll"><a href="#meet-team">Team</a></li> -->
+                        <!-- <li class="scroll"><a href="#pricing">Pricing</a></li> -->
+                        <!-- <li class="scroll"><a href="#blog">Blog</a></li>  -->
+                        <li class="scroll"><a href="#get-in-touch">Contact</a></li>                        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+    </header><!--/header-->
+
+    <section id="main-slider">
+        <div class="owl-carousel">
+            <div class="item" style="background-image: url(images/slider/1.jpg);">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h2>Welcome to IMS - <span> International Management Services</span></h2>
+                                    <!-- <p>A Recruitment and Consultancy firm providing quality and efficient manpower solution to multi-national clients.</p> -->
+                                    <p>Provides quality and efficient manpower solutions to multi-national clients.</p>
+                                    <a class="btn btn-success btn-lg" href="#about">Read More</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h2>3D Artist</h2><!-- Title -->
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum
-                    primis in faucibus.</p><!-- Description -->
-                  </div>
-          </div>
-                  <div class="clearfix"></div>
-              </div>
-            </div>
-          </div>
-        </section>
+                </div>
+            </div><!--/.item-->
+             <div class="item" style="background-image: url(images/slider/3.jpg);">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h2>We have Over<span> 3 Decades </span>of expertise</h2>
+                                    <!-- <p>Providing quality and efficient manpower solutions. </p> -->
+                                    <p>IMS shows professionalism in providing manpower requirements of different Class A Clients abroad.</p>
+                                    <a class="btn btn-success btn-lg" href="#">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+             <div class="item" style="background-image: url(images/slider/2.jpg);">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h2><span>Sincerity</span> in Service</h2>
+                                    <p>IMS' edge in attracting workforce is its ability to provide manpower sourcing services to its clients <em>without charging placement, processing fee and one-month salary</em> from its candidates. </p>
+                                    <a class="btn btn-success btn-lg" href="#">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+            <div class="item" style="background-image: url(images/slider/4.jpg);">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h2>We Offer<span> Quality Service </span>with a <span>Personal Touch</span> </h2>
+                                    <p>The invitation of POEA to provide manpower sourcing is a milestone that IMS considered a reward, thereby giving jobs to Filipinos to improve the quality of their life. </p>
+                                    <a class="btn btn-success btn-lg" href="#">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+        </div><!--/.owl-carousel-->
+    </section><!--/#main-slider-->
 
-
-
-
-
-		<div class="container-fluid">
-		    <!-- About 1 -->
-			<div class="row color-bg">
-				<div class="col-md-6 nopadding features-intro-img">
-					<div class="about-image" style="background-image:url(img/about1.png)"></div><!-- about image 1 -->
-				</div>
-				<div class="col-md-6 about-text">
-					<h6>High quality webdesign</h6><!-- headline-->
-					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p><br><!-- About Text 1 -->
-					<a href="index.html#team" class="weight-outline-btn">Read more</a><!-- read more button  -->			
-				</div>
-			</div>
-			<!-- About 2 -->
-			<div class="row">
-				<div class="col-md-6 about-text">
-					<h6>Professional Photography</h6><!-- Headline -->
-					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p><br><!-- About Text 2 -->
-					<a href="index.html#team" class="weight-outline-btn">Read more</a>	<!-- read more button  -->				
-				</div>
-				<div class="col-md-6 nopadding features-intro-img">
-					<div class="about-image" style="background-image:url(img/about2.png)"></div><!-- about image 2 -->
-				</div>
-			</div>
-			<!-- About 3 -->
-			<div class="row color-bg">
-				<div class="col-md-6 nopadding features-intro-img">
-					<div class="about-image" style="background-image:url(img/about3.png)"></div><!-- about image 3 -->
-				</div>
-				<div class="col-md-6 about-text">
-					<h6>3d modeling and animations</h6><!-- Headline-->
-					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p><br><!-- About Text 3 -->
-					<a href="index.html#team" class="weight-outline-btn">Read more</a><!-- read more button  -->					
-				</div>
-			</div>
-		</div>
-		<!-- ==========================
-        ABOUT SECTION END
-        =========================== -->	
-
-		
-		
-		
-		<!-- ==========================
-        PORTFOLIO SECTION
-    =========================== -->
-        <section class="swag text-center" id="portfolio">
-          <div class="container">
-		    <!-- Headline -->
-            <div class="row">
-              <h1 class="arrow">
-                Recent <span>Porojects</span>
-              </h1>
-            </div>
-          </div>
-        </section>
-
+    <section id="cta" class="wow fadeIn">
         <div class="container">
-          <div class="row row-offset-0">
-  				 
-          <!-- PORTFOLIO ITEM 1 -->
-          <div class="col-md-3 col-sm-6">
-              <div class="overlay-effect effects clearfix">
-                  <div class="img">
-                      <a href="img/portfolio/portfolio-01-large.jpg" data-lightbox="roadtrip" title="Project One - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-01-thumbnail.jpg" alt="Portfolio Item"></a>
-                  </div>
-              </div>
-          </div>
-  	    <!-- PORTFOLIO ITEM END -->
-  	
-  	    <!-- PORTFOLIO ITEM 2 -->
-          <div class="col-md-3 col-sm-6">
-              <div class="overlay-effect effects clearfix">
-                  <div class="img">
-                      <a href="img/portfolio/portfolio-02-large.jpg" data-lightbox="roadtrip" title="Project Two - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-02-thumbnail.jpg" alt="Portfolio Item"></a>
-                  </div>
-              </div>
-          </div>
-  	    <!-- PORTFOLIO ITEM END -->
-  					
-  		<!-- PORTFOLIO ITEM 3 -->
-          <div class="col-md-3 col-sm-6">
-              <div class="overlay-effect effects clearfix">
-                  <div class="img">
-                      <a href="img/portfolio/portfolio-03-large.jpg" data-lightbox="roadtrip" title="Project Three - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-03-thumbnail.jpg" alt="Portfolio Item"></a>
-                  </div>
-              </div>
-          </div>
-  	    <!-- PORTFOLIO ITEM END -->
-  					
-  		<!-- PORTFOLIO ITEM 4 -->
-          <div class="col-md-3 col-sm-6 ">
-              <div class="overlay-effect effects clearfix">
-                  <div class="img">
-                      <a href="img/portfolio/portfolio-04-large.jpg" data-lightbox="roadtrip" title="Project Four - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-04-thumbnail.jpg" alt="Portfolio Item"></a>
-                  </div>
-              </div>
-          </div>
-  	    <!-- PORTFOLIO ITEM END -->
-  	             
-          <!-- PORTFOLIO ITEM 5 -->
-          <div class="col-md-3 col-sm-6 ">
-              <div class="overlay-effect effects clearfix">
-                  <div class="img">
-                      <a href="img/portfolio/portfolio-05-large.jpg" data-lightbox="roadtrip" title="Project Five - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-05-thumbnail.jpg" alt="Portfolio Item"></a>
-                  </div>
-              </div>
-          </div>
-  	    <!-- PORTFOLIO ITEM END -->
-  	
-  	    <!-- PORTFOLIO ITEM 6 -->
-          <div class="col-md-3 col-sm-6">
-              <div class="overlay-effect effects clearfix">
-                  <div class="img">
-                      <a href="img/portfolio/portfolio-06-large.jpg" data-lightbox="roadtrip" title="Project Six - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-06-thumbnail.jpg" alt="Portfolio Item"></a>
-                  </div>
-              </div>
-          </div>
-  	    <!-- PORTFOLIO ITEM END -->
-  					
-  		<!-- PORTFOLIO ITEM 7 -->
-          <div class="col-md-3 col-sm-6">
-              <div class="overlay-effect effects clearfix">
-                  <div class="img">
-                      <a href="img/portfolio/portfolio-07-large.jpg" data-lightbox="roadtrip" title="Project Seven - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-07-thumbnail.jpg" alt="Portfolio Item"></a>
-                  </div>
-              </div>
-          </div>
-  	    <!-- PORTFOLIO ITEM END -->
-  					
-  		<!-- PORTFOLIO ITEM 8 -->
-          <div class="col-md-3 col-sm-6">
-              <div class="overlay-effect effects clearfix">
-                  <div class="img">
-                      <a href="img/portfolio/portfolio-08-large.jpg" data-lightbox="roadtrip" title="Project Eight - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-08-thumbnail.jpg" alt="Portfolio Item"></a>
-                  </div>
-              </div>
-          </div>
-  	    <!-- PORTFOLIO ITEM END -->
-        </div><!--/row-->
-      </div><!--/.container-->
-		<!-- ==========================
-        PORTFOLIO SECTION END
-        =========================== -->
-			
-
-
-			
-		<!-- ==========================
-        CUSTOM SPACER
-        =========================== -->
-		<div class="spacer-cta text-center">
-          <div class="container">
             <div class="row">
-              <div class="col-md-12">
-                <a href="index.html#contact" class="outline-btn">hire john doe</a>
-              </div>
+                <div class="col-sm-12">
+                    <h2>Do we have your record with us?</h2>
+                </div>
             </div>
-          </div>
+            <div class="row" style="padding-top: 5px;">
+                <div class="col-sm-5">
+                    <div class="col-sm-12">
+                        <h3 class="column-title ">Yes!</h3>
+                        <p>Please update your resume and send us an email or you can also update your records online. Check it <a href="form.html">here</a>.
+                        </p>
+                    </div>
+                    <div class="col-sm-12">
+                         <h3 class="column-title ">No</h3>
+                        <p>Good news! You can now apply online. Please check the <span class="highlight">Application Procedure</span> to know how.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="col-sm-11">
+                        <h3 class="column-title ">Application Procedure</h3>
+                        <ol>
+                            <li>Click the apply now button seen on your screen.</li>
+                            <li>Submit or Upload your resume with detailed job description.</li>
+                            <li>Fill up the information sheet.</li>
+                            <li>Once done, you will be evaluated by IMS and will undergo Pre-screening procedures.</li>
+                            <li>Those who will qualify will be asked to report personally or communicate via email/skype interview for further assessment.</li>
+                        </ol>
+                    </div>
+                    <div class="col-sm-1 ">
+                    <a class="btn btn-success btn-lg" href="form.html">Apply Now!</a>
+                </div>
+                </div>
+            </div>
         </div>
-		<!-- ==========================
-        CUSTOM SPACER END
-        =========================== -->
-		
-		
+    </section><!--/#cta-->
 
-    <!-- ==========================
-        BLOG SECTION 
-        =========================== -->
-    <section class="text-center section-padding" id="blog">
-          <div class="container">
-        <!-- Headline -->
-        <div class="row">
-              <div class="col-md-12">
-                <h1 class="arrow">My <span>little</span> blog</h1>
-              </div>
-            </div><br><br>
-      
-      <!-- Blog Slider -->
-            <div class="row">
-              <div id="blogSlider">
-                <ul class="slides">
-                  <li>
-            <!-- Blog Entry 1 -->
-                    <div class="col-md-4 wp4">
-                      <div class="overlay-effect effects clearfix">
-                        <div class="img">
-                          <img src="img/blog1.jpg" class="grayscale" alt="Blog Item"><!-- Blog Image -->
-                        </div>
-                      </div>
-            <br>
-                      <h2>Creative Minds</h2><!-- Headline -->
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p><!-- Description-->
-                    </div>
-          <!-- Blog Entry 2 -->
-                    <div class="col-md-4 wp4 delay-05s">
-                      <div class="overlay-effect effects clearfix">
-                        <div class="img">
-                          <img src="img/blog2.jpg" class="grayscale" alt="Blog Item"><!-- Blog Image -->
-                        </div>
-                      </div>
-            <br>
-                      <h2>Creative Hearts</h2><!-- Headline -->
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p><!-- Description -->
-                    </div>
-          <!-- Blog Entry 3 -->
-                    <div class="col-md-4 wp4 delay-1s">
-                      <div class="overlay-effect effects clearfix">
-                        <div class="img">
-                          <img src="img/blog3.jpg"  class="grayscale" alt="Blog Item"><!-- Blog Image -->
-                        </div>
-                      </div>
-            <br>
-                      <h2>Creative Ideas</h2><!-- Headline -->
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p><!-- Description-->
-                    </div>
-                  </li>
-                  <li>
-            <!-- Blog Entry 4 -->
-                    <div class="col-md-4 wp4">
-                      <div class="overlay-effect effects clearfix">
-                        <div class="img">
-                          <img src="img/blog1.jpg" class="grayscale" alt="Blog Item"><!-- Blog Image -->
-                        </div>
-                      </div>
-            <br>
-                      <h2>Creative Minds</h2><!-- Headline -->
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p><!-- Description -->
-                    </div>
-          <!-- Blog Entry 5 -->
-                    <div class="col-md-4 wp4 delay-05s">
-                      <div class="overlay-effect effects clearfix">
-                        <div class="img">
-                          <img src="img/blog2.jpg" class="grayscale" alt="Blog Item"><!-- Blog Image -->
-                        </div>
-                      </div>
-            <br>
-                      <h2>Creative Hearts</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
-                    </div>
-          <!-- Blog Entry 6 -->
-                    <div class="col-md-4 wp4 delay-1s">
-                      <div class="overlay-effect effects clearfix">
-                        <div class="img">
-                          <img src="img/blog3.jpg" class="grayscale" alt="Blog Item"><!-- Blog Image -->
-                        </div>
-                      </div>
-            <br>
-                      <h2>Creative Ideas</h2><!-- Headline -->
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p><!-- Description -->
-                    </div>
-                  </li>
-                </ul>
-              </div>
+ <!--    <section id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Awesome Features</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
             </div>
-          </div>
-        </section>
-    <!-- ==========================
-        BLOG SECTION END
-        =========================== -->
-    
-        
-		
-		<!-- ==========================
-        CLIENT SECTION 
-        =========================== -->
-		<div class="container-fluid">
-			<div class="row color-bg">
-				<!-- Left Image -->
-				<div class="col-md-6 nopadding features-intro-img wow fadeInLeft">
-					<div class="about-image" style="background-image:url(img/clients.png)"></div>
-				</div>
-				<!-- Clients / Testimonials -->
-				<div class="col-md-6 nopadding about-text">
-				<h6>What our clients said</h6>
-					<div id="clientSlider">
-					   <ul class="slides">
-					       <li><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <br>	<small>- Pete Rock, A New Tomorrow</small></p></li>
-						   <li><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <br>	<small>- Michael Snowden, Creativeland CEO</small></p></li>
-						  <li><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <br>	<small>- Tom Davis, GreenWonder</small></p>	</li>
-					   </ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- ==========================
-        CLIENTS SECTION END
-        =========================== -->
-		
-		
-		
-		
-		
-		<!-- ==========================
-        NEWSLETTER SECTION 
-        =========================== -->
-        <section>
-		<div class="container-fluid">
-				<div class="row color-bg">
-				    <div class="col-md-6 nopadding subscribe text-center">
-					 <h1><i class="fa fa-paper-plane"></i><span>Subscribe our Newsletter</span></h1><!-- Heading -->
-                     <form action="index.html#">
-                       <input type="text" name="" value="" placeholder="" required><!-- E-Mail -->
-                       <input type="submit" name="" value="Send"><!-- Submit Button -->
-                    </form>   
-					</div>
-					<div class="col-md-6 nopadding features-intro-img">
-						 <div class="about-image" style="background-image:url(img/newsletter.png)"></div><!-- Right Image -->
-					</div>
-				</div>
-			</div>
-        </section>
-		<!-- ==========================
-        NEWSLETTER SECTION END
-        =========================== -->
+            <div class="row">
+                <div class="col-sm-6 wow fadeInLeft">
+                    <img class="img-responsive" src="images/main-feature.png" alt="">
+                </div>
+                <div class="col-sm-6">
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-line-chart"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">UX design</h4>
+                            <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                        </div>
+                    </div>
 
-		
-		
-		<!-- ==========================
-        CONTACT SECTION
-        =========================== -->
-        <section class="text-center section-padding contact-wrap" id="contact">
-		  <!-- To Top Button -->
-          <a href="index.html#top" class="up-btn"><i class="fa fa-chevron-up"></i></a>
-          <div class="container">
-		    <!-- Headline -->
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-cubes"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">UI design</h4>
+                            <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                        </div>
+                    </div>
+
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-pie-chart"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">SEO Services</h4>
+                            <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                        </div>
+                    </div>
+
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-pie-chart"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">SEO Services</h4>
+                            <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ -->
+
+    <section id="about">
+        <div class="container">
+
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Why Choose IMS?</h2>
+                <p class="text-center wow fadeInDown">It is duly licensed by the Philippine Overseas Employment Administration (POEA)</p>
+
+            </div>
+
             <div class="row">
-              <div class="col-md-12">
-                <h1 class="arrow">Drop <span>me</span> a line</h1>
-              </div>
+                <div class="col-sm-6 wow fadeInLeft">
+                    <h3 class="column-title">Corporate Vision</h3>
+                    <p>Today, IMS is known for its ability to deliver professional services to clients involving in oil/gas, petrochemical, power, utilities, infrastructure, telecommunications, information technology, manufacturing etc.</p>
+
+                    <h3 class="column-title">Areas of Specialization</h3>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="nostyle">
+                                <li><i class="fa fa-check-square"></i> Engineering &amp; Design</li>
+                                <!-- 1: Architect, Electrical, Mechanical, Civil, Structural, Telecommunication -->
+                                <!-- Office works -->
+                                <li><i class="fa fa-check-square"></i> Construction</li>
+                                <!-- 2: Site Engineers, Inspectors, Construction Workers (Supervision), Quality Control, Quality Assurance -->
+                                <li><i class="fa fa-check-square"></i> Operations &amp; Maintenance</li>
+                                <!-- 3: Technicians, Factory workers, Aircon Installations, Janitorial Services -->
+                                <li><i class="fa fa-check-square"></i> Education</li>
+                                <!-- 4: Teachers, School staffs  -->
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <ul class="nostyle">
+                                <li><i class="fa fa-check-square"></i> Logistics &amp; Office Operations</li>
+                                <!-- 5: Drivers, Delivery man, Receptionists, Office Staffs -->
+                                <li><i class="fa fa-check-square"></i> Financial</li>
+                                <!-- 6: Accountant, Book keeper, Accounting Manager, Staffs -->
+                                <li><i class="fa fa-check-square"></i> Healthcare</li>
+                                <!-- 7: Nurses, Doctor, Dentist, Caregivers -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 wow fadeInRight">
+                    <h3 class="column-title">At the Helm</h3>
+                    <!-- 16:9 aspect ratio -->
+                    <p>Marilyn  Pascual, a psychology consultant backed with 30 years of experience in local and overseas recruitment, heads IMS. Her direct involvement with people and businesses enables IMS to deliver quality service to clients in the Middle East, Asian countries.</p>
+
+                    <h3 class="column-title">Right People for the Right Job</h3>
+
+                    <p>IMS has always believed in matching the right people for the job. Candidates are chosen not only for their technical competence but also for their attitude and respect for the work culture.</p>
+
+                    <!-- <a class="btn btn-primary" href="#">Learn More</a> -->
+
+                </div>
             </div>
-            <div class="row contact-details">
-			  <!-- Adress Box -->
-              <div class="col-md-4">
-                <div class="dark-box box-hover">
-                  <h2><i class="fa fa-map-marker"></i><span>Address</span></h2>
-                  <p>23 Ipsum street, New York</p>
-                </div>
-              </div>
-			  <!-- Phone Number Box -->
-              <div class="col-md-4">
-                <div class="dark-box box-hover">
-                  <h2><i class="fa fa-mobile"></i><span>Phone</span></h2>
-                  <p>+12 345 6789</p>
-                </div>
-              </div>
-			  <!-- E-Mail Box -->
-              <div class="col-md-4">
-                <div class="dark-box box-hover">
-                  <h2><i class="fa fa-paper-plane"></i><span>Email</span></h2>
-                  <p><a href="index.html#">info@themewagon.com</a></p>
-                </div>
-              </div>
+        </div>
+    </section><!--/#about-->
+
+      <section id="cta2">
+        <div class="container">
+            <div class="text-center">
+               <!--  <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms"><span>IMS</span> IS DULY LICENSED BY THE PHILIPPINE OVERSEAS EMPLOYMENT ADMINISTRATION (POEA)</h2> -->
+                <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">Great Results. <span>Expert. </span>High Integrity.</h2>
+                <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">Our core sectors of expertise are in <br/>professional services, financial services,  IT / technology, oil and gas, infrastructure, manufacturing, medical outsourcing.</p>
+                <!-- <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms"><a class="btn btn-primary btn-lg" href="#">Free Download</a></p> -->
+                <!-- <img class="img-responsive wow fadeIn" src="images/cta2/cta2-img.png" alt="" data-wow-duration="300ms" data-wow-delay="300ms"> -->
             </div>
-			<div class="row">
-			  <!-- Google Maps (Change your Settings below) -->
-			  <div class="col-md-6">
-			    <div id="googlemaps"></div>
-			  </div>
-			  <!-- Contact Form -->
-			  <div class="col-md-6 contact">
-			     <form role="form">
-				            <!-- Name -->
-                            <div class="row">
-                                <div class="col-md-6">
-								    <!-- E-Mail -->
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your name">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-								    <!-- Phone Number -->
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email address">
-                                    </div>
-                                </div>
+        </div>
+    </section>
+
+    <section id="services" >
+        <div class="container">
+
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Services We Offer</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+
+            <div class="row">
+                <div class="features">
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
                             </div>
-							<!-- Message Area -->
-                            <div class="form-group">
-                                <textarea class="form-control" placeholder="Write you message here..." style="height:232px;"></textarea>
+                            <div class="media-body">
+                                <h4 class="media-heading">Sourcing of prospective applicants</h4>
+                                <p>IMS attracts both workforce and clients is through word of mouth recommendation from employees and clients.</p>
                             </div>
-							<!-- Subtmit Button -->
-                            <button type="submit" class="btn btn-send">
-                                Send message
-                            </button>
-                        </form>
-			  </div>
-			</div>
-			<br>
-			<!-- Social Buttons - use font-awesome, past in what you want -->
-            <div class="row">
-              <div class="col-md-12">
-                <ul class="social-buttons">
-                  <li><a href="index.html#" class="social-btn"><i class="fa fa-dribbble"></i></a></li><!-- dribble -->
-                  <li><a href="index.html#" class="social-btn"><i class="fa fa-twitter"></i></a></li><!-- twitter -->
-                  <li><a href="index.html#" class="social-btn"><i class="fa fa-facebook"></i></a></li><!-- facebook -->
-				  <li><a href="index.html#" class="social-btn"><i class="fa fa-deviantart"></i></a></li><!-- deviantart -->
-				  <li><a href="index.html#" class="social-btn"><i class="fa fa-youtube"></i></a></li><!-- youtube -->
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-		<!-- ==========================
-        CONTACT SECTION END
-        =========================== -->
-		
-		
-		
-		<!-- ==========================
-        FOOTER SECTION
-        =========================== -->
-        <footer>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12 text-center">
-                <p>All Rights Reserved. &copy; 2015 <a href="http://www.themewagon.com">ThemeWagon</a>
-              </div>
-            </div>
-          </div>
-        </footer>
-		<!-- ==========================
-        FOOTER SECTION END
-        =========================== -->		
-		
-		
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- SmoothScroll -->           
-    <script type="text/javascript" src="assets/smoothscroll/smoothscroll.js"></script>
-    <!-- Bootstrap -->
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/waypoints.min.js"></script>
-    <!-- classie.js -->
-	<script src="js/classie.js"></script>
-    <!-- FlexSlider -->
-    <script src="assets/flexslider/jquery.flexslider.js"></script>
-	<!-- Modernizr -->
-    <script src="js/modernizr.js"></script>
-	<!-- Text Rotator -->
-	<script src="assets/textrotator/jquery.simple-text-rotator.js"></script>
-	<!-- Lightbox.js -->
-    <script src="assets/lightbox/js/lightbox.min.js"></script>
-    <!-- Google Maps --> 
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeKBBPJTG3v5w3cNPAgM6ZsJiPyL1mP_o&amp;sensor=false"></script>
-	<!-- Theme JavaScript Core -->
-	<script src="js/main.js"></script>
-	<script src="js/script.js"></script>
+                        </div>
+                    </div><!--/.col-md-4-->
 
-	<!-- GOOGLE MAPS DATA -->
-    <script type="text/javascript">
-    // When the window has finished loading create our google map below
-        google.maps.event.addDomListener(window, 'load', init);
-    
-        function init() {
-            // Basic options for a simple Google Map
-            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-            var mapOptions = {
-                // How zoomed in you want the map to start at (always required)
-                zoom: 15,
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-file-text"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Interview and evaluation of potential candidates</h4>
+                                <p>An interview is undertaken and evaluation is conducted before a resume is sent to the client for consideration.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-comments"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Arrangements for clients’ interview</h4>
+                                <p>Clients are satisfied with how systematic and effective IMS handles sourcing and selection of its candidates for employment.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
                 
-                scrollwheel: false,
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="300ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-user-md"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Referral to POEA accredited Clinics</h4>
+                                <p>Medical requirement is rigidly implemented based on the guidelines set by the POEA. Medically unfit are advised accordingly.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
 
-                // The latitude and longitude to center the map (always required)
-                center: new google.maps.LatLng(40.68961985411178, -74.01618003845215), // New York 
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-book"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Visa processing and travel</h4>
+                                <p>Visa processing and travel documentation are arranged by IMS to facilitate immediate deployment of the candidate.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
 
-                // How you would like to style the map. 
-                // This is where you would paste any style found on Snazzy Maps.
-                styles: [	{		featureType:'water',		stylers:[{color:'#F2F2F2'},{visibility:'on'}]	},{		featureType:'landscape',		stylers:[{color:'#FFFFFF'}]	},{		featureType:'road',		stylers:[{saturation:-100},{lightness:45}]	},{		featureType:'road.highway',		stylers:[{visibility:'simplified'}]	},{		featureType:'road.arterial',		elementType:'labels.icon',		stylers:[{visibility:'off'}]	},{		featureType:'administrative',		elementType:'labels.text.fill',		stylers:[{color:'#ADADAD'}]	},{		featureType:'transit',		stylers:[{visibility:'off'}]	},{		featureType:'poi',		stylers:[{visibility:'off'}]	}]
-            };
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="500ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-line-chart"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Pre-departure Orientation</h4>
+                                <p>Pre-Departure Orientation Seminar (PDOS) a requirement by POEA to all departing contract workers is being conducted in-house by IMS.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+                </div>
+            </div><!--/.row-->    
+        </div><!--/.container-->
+    </section><!--/#services-->
 
-            // Get the HTML DOM element that will contain your map 
-            // We are using a div with id="map" seen below in the <body>
-            var mapElement = document.getElementById('googlemaps');
+    <section id="work-process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Our Process</h2>
+                <p class="text-center wow fadeInDown">Here's the proper sequence of the whole recruitment process.</p>
+            </div>
 
-            // Create the Google Map using out element and options defined above
-            var map = new google.maps.Map(mapElement, mapOptions);
-        }
-	
-    </script>
-	
-	<!-- TEXT ROTATOR SETTINGS -->
-    <script type="text/javascript">
-    $(".rotate").textrotator({
-      animation: "fade", // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
-      separator: ",", // If you don't want commas to be the separator, you can define a new separator (|, &, * etc.) by yourself using this field.
-      speed: 2000 // How many milliseconds until the next word show.
-    });
-    </script>
-	
-    </body>
+            <div class="row text-center">
+                <div class="col-md-2 col-md-4 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
+                        <div class="icon-circle">
+                            <span>1</span>
+                            <i class="fa fa-bullhorn fa-2x"></i>
+                        </div>
+                        <h3>Sourcing of Applicants</h3>
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-4 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
+                        <div class="icon-circle">
+                            <span>2</span>
+                            <!-- <i class="fa fa-bullhorn fa-2x"></i> -->
+                            <i class="fa fa-file-text fa-2x"></i>
+                        </div>
+                        <h3>Evaluation of Candidates</h3>
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-4 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
+                        <div class="icon-circle">
+                            <span>3</span>
+                            <i class="fa fa-comments fa-2x"></i>
+                        </div>
+                        <h3>Interview Arrangements</h3>
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-4 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
+                        <div class="icon-circle">
+                            <span>4</span>
+                            <i class="fa fa-user-md fa-2x"></i>
+                        </div>
+                        <h3>Medical Process</h3>
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-4 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="400ms">
+                        <div class="icon-circle">
+                            <span>5</span>
+                            <i class="fa fa-book fa-2x"></i>
+                        </div>
+                        <h3>Visa Processing</h3>
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-4 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms">
+                        <div class="icon-circle">
+                            <span>6</span>
+                            <i class="fa fa-line-chart fa-2x"></i>
+                        </div>
+                        <h3>Pre-departure Orientation</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#work-process-->
+
+      <section id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Practice Areas</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+
+            <div class="text-center">
+                <ul class="portfolio-filter">
+                    <li><a class="active" data-filter="*">All Areas</a></li>
+                    <li><a data-filter=".Engineering">Engineering &amp; Design</a></li>
+                    <li><a data-filter=".Construction">Construction</a></li>
+                    <li><a data-filter=".Operations">Operations &amp; Maintenance</a></li>
+                    <li><a data-filter=".Education">Education</a></li>
+                    <li><a data-filter=".Logistics">Logistics &amp; Office Operations</a></li>
+                    <li><a data-filter=".Financial">Financial</a></li>
+                    <li><a data-filter=".Healthcare">Healthcare</a></li>
+                </ul><!--/#portfolio-filter-->
+            </div>
+            <div class="portfolio-items">
+                <!-- Start: Engineering -->
+                <div class="portfolio-item Engineering">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Engineering/1.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Engineering 1</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Engineering/1.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <div class="portfolio-item Engineering">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Engineering/2.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Engineering 2</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Engineering/2.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <div class="portfolio-item Engineering">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Engineering/3.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Engineering 3</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Engineering/3.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <div class="portfolio-item Engineering">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Engineering/4.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Engineering 4</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Engineering/4.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <!-- End: Engineering -->
+
+                <!-- Start: Construction -->
+                <div class="portfolio-item Construction">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Construction/1.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Construction 1</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Construction/1.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <div class="portfolio-item Construction">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Construction/2.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Construction 2</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Construction/2.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <div class="portfolio-item Construction">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Construction/3.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Construction 3</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Construction/3.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <div class="portfolio-item Construction">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Construction/4.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Construction 4</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Construction/4.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <!-- End: Construction -->
+
+                <!-- Start: Operations -->
+                <div class="portfolio-item Operations">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Operations/1.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Operations 1</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Operations/1.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <div class="portfolio-item Operations">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Operations/2.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Operations 2</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Operations/2.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <div class="portfolio-item Operations">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Operations/3.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Operations 3</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Operations/3.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+               <!--  <div class="portfolio-item Operations">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Operations/4.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Operations 4</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Operations/4.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div> --><!--/.portfolio-item-->
+                <!-- End: Operations -->
+
+                <!-- Start: Education -->
+                <div class="portfolio-item Education">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Education/1.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Education 1</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Education/1.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <div class="portfolio-item Education">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Education/2.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Education 2</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Education/2.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <div class="portfolio-item Education">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Education/3.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Education 3</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Education/3.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <div class="portfolio-item Education">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Education/4.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Education 4</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Education/4.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <!-- End: Education -->
+
+                <!-- Start: Logistics -->
+                <div class="portfolio-item Logistics">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Logistics/1.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Logistics 1</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Logistics/1.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <div class="portfolio-item Logistics">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Logistics/2.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Logistics 2</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Logistics/2.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <!-- <div class="portfolio-item Logistics">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Logistics/3.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Logistics 3</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Logistics/3.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div> --><!--/.portfolio-item-->
+                <!-- <div class="portfolio-item Logistics">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Logistics/4.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Logistics 4</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Logistics/4.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div> --><!--/.portfolio-item-->
+                <!-- End: Logistics -->
+
+                <!-- Start: Financial -->
+                <div class="portfolio-item Financial">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Financial/1.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Financial 1</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Financial/1.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <div class="portfolio-item Financial">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Financial/2.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Financial 2</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Financial/2.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <!-- <div class="portfolio-item Financial">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Financial/3.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Financial 3</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Financial/3.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div> --><!--/.portfolio-item-->
+                <!-- <div class="portfolio-item Financial">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Financial/4.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Financial 4</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Financial/4.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div> --><!--/.portfolio-item-->
+                <!-- End: Financial -->
+
+                <!-- Start: Healthcare -->
+                <div class="portfolio-item Healthcare">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Healthcare/1.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Healthcare 1</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Healthcare/1.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <div class="portfolio-item Healthcare">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Healthcare/2.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Healthcare 2</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Healthcare/2.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <div class="portfolio-item Healthcare">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Healthcare/3.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Healthcare 3</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Healthcare/3.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <div class="portfolio-item Healthcare">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/work/Healthcare/4.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Healthcare 4</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/work/Healthcare/4.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+                <!-- End: Healthcare -->
+
+        </div><!--/.container-->
+    </section><!--/#portfolio-->
+ <!--    <section id="meet-team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Meet The Team</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
+                        <div class="team-img">
+                            <img class="img-responsive" src="images/team/01.jpg" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>Bin Burhan</h3>
+                            <span>Co-Founder</span>
+                        </div>
+                        <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
+                        <div class="team-img">
+                            <img class="img-responsive" src="images/team/02.jpg" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>Jane Man</h3>
+                            <span>Project Manager</span>
+                        </div>
+                        <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
+                        <div class="team-img">
+                            <img class="img-responsive" src="images/team/03.jpg" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>Pahlwan</h3>
+                            <span>Designer</span>
+                        </div>
+                        <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
+                        <div class="team-img">
+                            <img class="img-responsive" src="images/team/04.jpg" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>Nasir uddin</h3>
+                            <span>UI/UX</span>
+                        </div>
+                        <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3 class="column-title">Our Skills</h3>
+                    <strong>GRAPHIC DESIGN</strong>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary" role="progressbar" data-width="85">85%</div>
+                    </div>
+                    <strong>WEB DESIGN</strong>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary" role="progressbar" data-width="70">70%</div>
+                    </div>
+                    <strong>WORDPRESS DEVELOPMENT</strong>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary" role="progressbar" data-width="90">90%</div>
+                    </div>
+                    <strong>JOOMLA DEVELOPMENT</strong>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary" role="progressbar" data-width="65">65%</div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <h3 class="column-title">Our History</h3>
+                    <div role="tabpanel">
+                        <ul class="nav main-tab nav-justified" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#tab1" role="tab" data-toggle="tab" aria-controls="tab1" aria-expanded="true">2010</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tab2" role="tab" data-toggle="tab" aria-controls="tab2" aria-expanded="false">2011</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tab3" role="tab" data-toggle="tab" aria-controls="tab3" aria-expanded="false">2013</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tab4" role="tab" data-toggle="tab" aria-controls="tab4" aria-expanded="false">2014</a>
+                            </li>
+                        </ul>
+                        <div id="tab-content" class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade active in" id="tab1" aria-labelledby="tab1">
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters readable English.</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="tab2" aria-labelledby="tab2">
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters readable English.</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="tab3" aria-labelledby="tab3">
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters readable English.</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="tab4" aria-labelledby="tab3">
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters readable English.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <h3 class="column-title">Faqs</h3>
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Enim eiusmod high life accusamus
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Nihil anim keffiyeh helvetica
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Vegan excepteur butcher vice lomo
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section> --><!--/#meet-team-->
+
+    <section id="get-in-touch">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Get in Touch</h2>
+                <p class="text-center wow fadeInDown">If you have questions, inquiries, or concerns, feel free to contact us.</p>
+            </div>
+        </div>
+    </section><!--/#get-in-touch-->
+
+
+    <section id="contact">
+        <div id="google-map" style="height:650px" data-latitude="14.557500" data-longitude="121.015228"></div>
+        <div class="container-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-8">
+                        <div class="contact-form">
+                            <h3>Contact Info</h3>
+
+                            <address>
+                              <strong>International Management Services</strong><br>
+                              3F Zeta Bldg., 191 Salcedo Street,<br>Legaspi Village, Makati, Philippines<br>
+                              <abbr title="Phone">P:</abbr> +63 2 8164176
+                            </address>
+
+                            <form id="main-contact-form" name="contact-form" method="post" action="#">
+                                <div class="form-group">
+                                    <!-- <select id="usertype" class="form-control">
+                                        <option>Applicant</option>
+                                        <option>Client</option>
+                                    </select> -->
+                                    <span class="btn btn-success user-type" data-value="Applicant" style="width:48%;">Applicant</span>
+                                    <span class="btn btn-primary user-type active" data-value="Client" style="width:48%;">Employer</span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="location" name="location" class="form-control" placeholder="Current Location" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="country" name="country" class="form-control" placeholder="Country/Region" required>
+                                </div> <!-- For Employer only -->
+                                <div class="form-group">
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" id="phone" name="phone" class="form-control" placeholder="Contact Number" required>
+                                </div>
+                                <!-- <div class="form-group">
+                                    <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required>
+                                </div> -->
+                                <div class="form-group">
+                                    <textarea name="message" id="message" class="form-control" rows="8" placeholder="Message" required></textarea>
+                                </div>
+                                <button id="send-inquiry" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Sending" class="btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#bottom-->
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2017 International Management Services.
+                </div>
+                <div class="col-sm-6">
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <!-- <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        <li><a href="#"><i class="fa fa-flickr"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li> -->
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <!-- <li><a href="#"><i class="fa fa-github"></i></a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/maps.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/mousescroll.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/jquery.inview.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/index.js"></script>
+    <!-- <script src="js/form.js"></script> -->
+</body>
 </html>

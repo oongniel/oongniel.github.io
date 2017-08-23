@@ -1,0 +1,8 @@
+.add-skill, .add-experience {
+    margin-right: 10px;
+}
+
+.required {
+    color: red;
+    margin: 2px;
+}
