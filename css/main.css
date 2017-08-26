@@ -161,7 +161,10 @@ ul.nostyle i {
   margin-bottom: 0;
 }
 .navbar.navbar-default .navbar-toggle {
-  margin-top: 32px;
+      /* margin-top: 32px; */
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 .navbar.navbar-default .navbar-brand {
   height: auto;
@@ -169,6 +172,7 @@ ul.nostyle i {
 }
 .navbar.navbar-default .navbar-brand.mobile {
   display: block;
+  padding: 10px;
 }
 .navbar.navbar-default .navbar-brand.web {
   display: none;
@@ -924,6 +928,7 @@ ul.nostyle i {
 #contact {
   position: relative;
   overflow: hidden;
+  padding-bottom: 105px;
 }
 #contact .container-wrapper {
   position: absolute;
@@ -1044,5 +1049,11 @@ ul.nostyle i {
 @media only screen and (max-width: 768px) {
   .company-name {
     display: none;
+  }
+  #portfolio .portfolio-filter > li {
+    width: 100%;
+  }
+  #portfolio .portfolio-item {
+    width: 100%;
   }
 }
