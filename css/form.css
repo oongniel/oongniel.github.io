@@ -6,3 +6,7 @@
     color: red;
     margin: 2px;
 }
+
+#cta2 h2 > span {
+    color: #fff;
+}
