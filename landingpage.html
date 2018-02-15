@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://file.myfontastic.com/vUTSywLjFEjag8QFonyQkf/icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0px;
+    }
+
+    .container {
+      max-width: 1130px;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .header .mlogo {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .header .mlogo img {
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .banner {
+      padding: 100px 0px;
+      color: white;
+      background: rgb(237, 82, 76);
+      /* Old browsers */
+      background: -moz-linear-gradient(left, rgba(237, 82, 76, 1) 0%, rgba(255, 159, 12, 1) 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(left, rgba(237, 82, 76, 1) 0%, rgba(255, 159, 12, 1) 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right, rgba(237, 82, 76, 1) 0%, rgba(255, 159, 12, 1) 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed524c', endColorstr='#ff9f0c', GradientType=1);
+      /* IE6-9 */
+    }
+
+    .banner .container {
+      text-align: center;
+    }
+
+    .banner .container a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 50px;
+      border: 3px solid #fff;
+      border-radius: 50px;
+      display: inline-block;
+      font-size: 25px;
+    }
+
+    .banner h1 {
+      font-size: 60px;
+      font-weight: 400;
+      margin-bottom: 0px;
+    }
+
+    .banner p {
+      font-size: 20px;
+      margin: 0px;
+    }
+
+    .banner .icon-stm,
+    .banner .icon-awc {
+      vertical-align: middle;
+      margin-left: 20px;
+    }
+
+    .banner .icon-stm {
+      font-size: 70px;
+      height: 90px;
+      display: inline-block;
+    }
+
+    .banner .icon-awc {
+      font-size: 50px;
+      height: 70px;
+      display: inline-block;
+    }
+
+    .trusted-section {
+      background: #3E3D3D;
+      padding-bottom: 30px;
+      padding-top: 30px;
+    }
+
+    .trusted-section .container {
+      display: flex;
+      justify-content: space-between;
+
+    }
+
+    @media (max-width: 1120px) {
+      .trusted-section .container {
+        flex-direction: column;
+      }
+      .trusted-section .container p {
+        max-width: 100%;
+        text-align: center;
+        border-right: 0px;
+      }
+      .trusted-section .trusted-logo {
+        flex-wrap: wrap;
+        justify-content: center;
+        display: flex;
+      }
+    }
+
+
+
+    .trusted-section p {
+      max-width: 220px;
+      width: 100%;
+      color: #fff;
+      font-size: 25px;
+      border-right: 1px solid #fff;
+      height: 25px;
+      line-height: 1;
+    }
+
+    .trusted-section .trusted-logo {}
+
+    .trusted-section .trusted-logo span {
+      height: 50px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      float: left;
+      margin: 10px 15px;
+      color: #B4B4B4;
+    }
+
+    .trusted-logo .icon-facebook-1::before {
+      font-size: 170px;
+    }
+
+    .trusted-logo .icon-amazon::before {
+      font-size: 120px;
+    }
+
+    .trusted-logo .icon-clickdealer::before {
+      font-size: 180px;
+    }
+
+    .trusted-logo .icon-affiliaxe::before {
+      font-size: 150px;
+    }
+
+    .trusted-logo .icon-avazu::before {
+      font-size: 100px;
+    }
+
+    .why {
+      display: flex;
+    }
+
+    .why>div {
+      text-align: center;
+      width: 33%;
+    }
+
+    .why>div>div {
+      padding-left: 90px;
+      padding-right: 90px;
+    }
+
+    @media (max-width: 1070px) {
+      .why>div>div {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .why>div {
+        width: 100%;
+      }
+      .why>div>div {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      .why {
+        flex-direction: column;
+      }
+    }
+
+    .why-affjobs-section {
+      padding-top: 100px;
+      padding-bottom: 250px;
+    }
+
+    .why-affjobs-section h1 {
+      color: #494949;
+      font-size: 50px;
+      text-align: center;
+    }
+
+    .why-affjobs-section p {
+      color: #b4b4b4;
+    }
+
+    .video-section {
+      background: #EEEFF5;
+      height: 400px;
+    }
+
+    .video-section .container {
+      text-align: center;
+    }
+
+    .video-section .container .vid-cont video {
+      margin-top: -10%;
+      max-width: 700px;
+      width: 100%;
+    }
+
+
+    .features-section {
+      padding-top: 100px;
+      padding-bottom: 250px;
+      background: #F9F9FB;
+    }
+
+    .features-section h1 {
+      color: #494949;
+      font-size: 50px;
+      text-align: center;
+      margin-top: 0px;
+    }
+
+    .features-section h2 {
+      color: #494949;
+      font-size: 25px;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .features-section .box {
+      width: 25%;
+      text-align: center;
+      background: #fff;
+      margin: 10px;
+      padding: 50px 40px;
+      border-bottom: 10px solid #ED524C;
+      -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+    }
+
+    .features-section .box p {
+      color: #b4b4b4;
+    }
+
+    .features-section .feature-cont {
+      display: flex;
+      margin-bottom: 100px;
+    }
+
+    @media (max-width:991px) {
+      .features-section .feature-cont {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+      .features-section .box {
+        width: 50%;
+      }
+    }
+
+    @media (max-width:500px) {
+
+      .features-section .box {
+        width: 100%;
+      }
+    }
+
+    .features-section a {
+      color: #fff;
+      background: #ED524C;
+      text-decoration: none;
+      padding: 10px 50px;
+      border-radius: 50px;
+      display: inline-block;
+      font-size: 25px;
+    }
+
+    .features-section .container {
+      text-align: center;
+    }
+
+    .graph-section {
+      text-align: center;
+      background-image: url("img/graph-bg.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .graph-section h1 {
+      color: #FFF;
+      font-size: 50px;
+      text-align: center;
+      margin-top: 0px;
+      max-width: 600px;
+      width: 100%;
+      margin: auto;
+      line-height: 1;
+    }
+
+    .graph-section .graph-cont {
+      position: relative;
+      top: -150px;
+    }
+
+    .graph-section img {
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    @media (max-width: 767px) {
+      .graph-section .graph-cont {
+        top: -50px;
+      }
+    }
+
+    .testimonials-section {
+      background: #EEEFF5;
+      padding-top: 100px;
+      padding-bottom: 300px;
+    }
+
+    .testimonials-section>h1 {
+      color: #494949;
+      font-size: 50px;
+      margin-top: 0px;
+      text-align: center;
+    }
+
+    .testimonials-section .img-people img {
+      width: 150px;
+    }
+
+    .testimonials-section .carousel-item {
+      display: flex;
+      padding: 50px 30px;
+      background: #FFF;
+    }
+
+    .testimonials-section .carousel-item .info {
+      width: 400px;
+      padding-left: 30px;
+
+    }
+
+    @media (max-width: 767px) {
+      .testimonials-section .carousel-item .info {
+        width: 300px;
+        padding-left: 0px;
+      }
+      .testimonials-section .img-people img {
+        margin: 20px auto;
+      }
+      .testimonials-section .carousel-item {
+        display: block;
+        min-height: 400px!important;
+        height: auto;
+      }
+      .testimonials-section {
+        padding-bottom: 400px;
+      }
+      .owl-nav {
+        top: -340px!important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .testimonials-section .carousel-item .info {
+        width: 200px;
+      }
+      .owl-nav .owl-prev::after,
+      .owl-nav .owl-next::after {
+        width: 10px!important;
+      }
+      .owl-nav .owl-prev::after {
+        left: 30px!important;
+      }
+      .owl-nav .owl-next::after {
+        right: 50px!important;
+      }
+      .testimonials-section .carousel-item {
+        display: block;
+        min-height: 450px!important;
+        height: auto;
+      }
+    }
+
+    .testimonials-section .carousel-item .info h2 {
+      color: #494949;
+      font-size: 25px;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .testimonials-section .carousel-item .info h2 span {
+      color: #A9A7A7;
+      font-size: 18px;
+    }
+
+    .testimonials-section .carousel-item .info p {
+      color: #b4b4b4;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    .owl-nav {
+      position: relative;
+      top: -160px;
+    }
+
+    .owl-nav .owl-prev {
+      white-space: nowrap;
+      visibility: hidden;
+      display: inline-block;
+      position: absolute;
+      right: 40px;
+    }
+
+    .owl-nav .owl-prev::after {
+      content: url("img/slider-left-right.png");
+      visibility: visible;
+      display: inline-block;
+      position: absolute;
+      left: -20px;
+      width: 40px;
+      height: 30px;
+      padding: 20px;
+      background: #ED524C;
+      text-align: right;
+    }
+
+    .owl-nav .owl-next {
+      white-space: nowrap;
+      visibility: hidden;
+      display: inline-block;
+      position: absolute;
+      left: 60px;
+    }
+
+    .owl-nav .owl-next::after {
+      content: url("img/slider-left-right.png");
+      transform: rotate(180deg);
+      visibility: visible;
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      width: 40px;
+      height: 30px;
+      padding: 20px;
+      background: #ED524C;
+      text-align: right;
+    }
+
+    .floating-listnow {
+      background: #464646;
+      text-align: center;
+      padding-top: 30px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    .floating-listnow p {
+      color: #fff;
+      font-size: 20px;
+      margin: 0;
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    .floating-listnow p strong {
+      font-size: 25px;
+    }
+
+    .floating-listnow a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 50px;
+      border: 3px solid #fff;
+      border-radius: 50px;
+      display: inline-block;
+      font-size: 25px;
+      margin-bottom: 30px;
+    }
+
+    .floating-listnow .container .listn {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .floating-listnow .copyr {
+      background: #3E3D3D;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .floating-listnow .copyr p {
+      color: #b4b4b4;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 767px) {
+      .floating-listnow .container .listn {
+        display: block;
+        text-align: center;
+      }
+      .floating-listnow .container .listn p {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div class="mlogo">
+      <img src="https://aff.mysmartjobboard.com/templates/BootstrapDND/assets/images/affjobs%20%281%29.png" alt="">
+    </div>
+    <div class="banner">
+      <div class="container">
+        <h1>Hire the
+          <strong>industry elite</strong>
+        </h1>
+        <p>Brought to you by
+          <span class="icon-stm"></span>
+          <span class="icon-awc"></span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="trusted-section">
+    <div class="container">
+      <p>
+        <strong>Trusted By</strong>
+      </p>
+      <div class="trusted-logo">
+        <span class="icon-facebook-1"></span>
+        <span class="icon-amazon"></span>
+        <span class="icon-clickdealer"></span>
+        <span class="icon-affiliaxe"></span>
+        <span class="icon-avazu"></span>
+      </div>
+    </div>
+  </div>
+  <div class="why-affjobs-section">
+    <div class="container">
+      <h1>WHY AFFJOBS</h1>
+      <div class="why">
+        <div class="why1">
+          <div>
+            <img src="img/icon1.png" alt="">
+            <p>The only way to reach
+              <strong>STM's Super Affiliates.</strong> Tap into the forum's
+              <strong>global audience.</strong>
+            </p>
+          </div>
+        </div>
+        <div class="why2">
+          <div>
+            <img src="img/icon2.png" alt="">
+            <p>
+              <strong>Hire Experienced</strong> and
+              <strong></strong>talented marketers</strong> who have spent over
+              <strong>$200+ million on campaigns</strong>
+            </p>
+          </div>
+        </div>
+        <div class="why3">
+          <div>
+            <img src="img/icon3.png" alt="">
+            <p>
+              <strong>Reduce hiring time</strong> by
+              <strong>43%</strong> with the built-in
+              <strong>Affjobs Candidate Organizer</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-section">
+    <div class="container">
+      <div class="vid-cont">
+        <video autoplay>
+          <source src="img/mov_bbb.mp4" type="video/mp4">
+          <source src="img/mov_bbb.ogg" type="video/ogg"> Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <div class="features-section">
+    <div class="container">
+      <h1>FEATURES</h1>
+      <div class="feature-cont">
+        <div class="box box1">
+          <img src="img/f_01.png" alt="">
+          <h2>Speedy Listing</h2>
+          <p>Upload a job Listing in just a
+            <strong>few minutes</strong>
+          </p>
+        </div>
+        <div class="box box2">
+          <img src="img/f_02.png" alt="">
+          <h2>Premium Talent</h2>
+          <p>Access to the
+            <strong>best candidates</strong> in the industry</p>
+        </div>
+        <div class="box box3">
+          <img src="img/f_03.png" alt="">
+          <h2>Streamlined Workflow</h2>
+          <p>View, Manage and sort candidates resume
+            <strong>effortlessly</strong>
+          </p>
+        </div>
+        <div class="box box4">
+          <img src="img/f_04.png" alt="">
+          <h2>No hidden Fees</h2>
+          <p>
+            <strong>Avoid recruitment costs,</strong> deal directly with candidates</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="graph-section">
+    <div class="container">
+      <div class="graph-cont">
+        <img src="img/browser.png" alt="">
+        <h1>SLASH YOUR LISTING PRICES BY 60%</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="testimonials-section">
+    <h1>TESTIMONIALS</h1>
+    <div class="owl-carousel">
+      <div class="carousel-item">
+        <div class="img-people">
+          <img src="img/lorenzo.jpg" alt="">
+        </div>
+        <div class="info">
+          <h2>Lorenzo
+            <br>
+            <span>Super Affiliate & CEO</span>
+          </h2>
+          <p>Affjobs is the only platform we use to hire talent. You don't get this much exposure to quality candidates anywhere
+            else.
+          </p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="img-people">
+          <img src="img/james.jpg" alt="">
+        </div>
+        <div class="info">
+          <h2>Peter
+            <br>
+            <span>Affiliate Marketer</span>
+          </h2>
+          <p>I was struggling to find a world class media buyer for my team. With Affjobs, I soon had 20+ talented applicants!</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="img-people">
+          <img src="img/Tom.jpg" alt="">
+        </div>
+        <div class="info">
+          <h2>Tom
+            <br>
+            <span>Super Affiliate & Entrepreneur</span>
+          </h2>
+          <p>All the industry job boards are painful and suck. This is the solution!</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="img-people">
+          <img src="img/no-image.jpg" alt="">
+        </div>
+        <div class="info">
+          <h2>James
+            <br>
+            <span>Affiliate Network</span>
+          </h2>
+          <p>$299 to find my new Affiliate Manager? One of the best investments my business has made.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="img-people">
+          <img src="img/Mirella.jpg" alt="">
+        </div>
+        <div class="info">
+          <h2>Mirella
+            <br>
+            <span>Founder & Performance Marketer</span>
+          </h2>
+          <p>If you’re serious about your business. You should be hiring here. My team doubled in size with the help of Affjobs.
+            Too easy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="floating-listnow">
+    <div class="container">
+      <div class="listn">
+        <p>
+          <strong>Use the code: FREELISTING</strong>
+          <br/> to get your first job listing free.
+        </p>
+        <a href="https://aff.mysmartjobboard.com/registration/" target="_self">
+          <strong>List Now</strong>
+        </a>
+      </div>
+
+    </div>
+    <div class="copyr">
+      <p>© Copyright 2018 Affjobs</p>
+    </div>
+  </div>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $(".owl-carousel").owlCarousel({
+        center: true,
+        autoWidth: true,
+        nav: true,
+        loop: true,
+        margin: 20,
+
+      });
+    });
+
+  </script>
+</body>
+
+
+</html>
