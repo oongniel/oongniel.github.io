@@ -10,7 +10,10 @@
     "departure": "2018-06-01T10:59:00.000Z",
     "arrival": "2018-01-01T13:32:00.000Z",
     "duration": "2h 33m",
-    "operationalDays": [0, 2],
+    "operationalDays": [
+      0,
+      2
+    ],
     "type": "oneWay"
   },
   {
@@ -24,7 +27,9 @@
     "departure": "2018-01-01T08:17:00.000Z",
     "arrival": "2018-01-01T10:54:00.000Z",
     "duration": "2h 37m",
-    "operationalDays": [7],
+    "operationalDays": [
+      7
+    ],
     "type": "oneWay"
   },
   {
@@ -35,10 +40,12 @@
     "availableSeats": 87,
     "destination": "DEL",
     "price": 5996,
-    "departure": "2018-01-01T03:09:00.000Z",
+    "departure": "2018-06-01T10:59:00.000Z",
     "arrival": "2018-01-01T05:25:00.000Z",
     "duration": "2h 16m",
-    "operationalDays": [7],
+    "operationalDays": [
+      7
+    ],
     "type": "oneWay"
   },
   {
@@ -52,8 +59,10 @@
     "departure": "2018-01-01T09:30:00.000Z",
     "arrival": "2018-01-01T11:31:00.000Z",
     "duration": "2h 1m",
-    "operationalDays": [7],
-    "type": "return"
+    "operationalDays": [
+      7
+    ],
+    "type": "oneWay"
   },
   {
     "airline": "Spice Jet",
@@ -66,8 +75,10 @@
     "departure": "2018-01-01T13:55:00.000Z",
     "arrival": "2018-01-01T15:43:00.000Z",
     "duration": "1h 48m",
-    "operationalDays": [7],
-    "type": "return"
+    "operationalDays": [
+      7
+    ],
+    "type": "oneWay"
   },
   {
     "airline": "Indigo",
@@ -80,7 +91,9 @@
     "departure": "2018-01-01T05:47:00.000Z",
     "arrival": "2018-01-01T07:35:00.000Z",
     "duration": "1h 48m",
-    "operationalDays": [7],
+    "operationalDays": [
+      7
+    ],
     "type": "oneWay"
   },
   {
@@ -94,8 +107,11 @@
     "departure": "2018-01-01T12:10:00.000Z",
     "arrival": "2018-01-01T14:00:00.000Z",
     "duration": "1h 50m",
-    "operationalDays": [1, 2],
-    "type": "return"
+    "operationalDays": [
+      1,
+      2
+    ],
+    "type": "oneWay"
   },
   {
     "airline": "Spice Jet",
@@ -108,7 +124,9 @@
     "departure": "2018-01-01T10:01:00.000Z",
     "arrival": "2018-01-01T12:35:00.000Z",
     "duration": "2h 34m",
-    "operationalDays": [7],
+    "operationalDays": [
+      7
+    ],
     "type": "oneWay"
   },
   {
@@ -122,7 +140,10 @@
     "departure": "2018-01-01T06:09:00.000Z",
     "arrival": "2018-01-01T09:06:00.000Z",
     "duration": "2h 57m",
-    "operationalDays": [3, 4],
+    "operationalDays": [
+      3,
+      4
+    ],
     "type": "oneWay"
   },
   {
@@ -136,7 +157,51 @@
     "departure": "2018-01-01T11:03:00.000Z",
     "arrival": "2018-01-01T12:57:00.000Z",
     "duration": "1h 54m",
-    "operationalDays": [6, 5],
+    "operationalDays": [
+      6,
+      5
+    ],
+    "type": "oneWay"
+  },
+  {
+    "airline": "Jet Airways",
+    "airlineCode": "9W",
+    "returnAirlineCode": "9W",
+    "flightNumber": 186,
+    "returnFlightNumber": 187,
+    "origin": "PNQ",
+    "availableSeats": 116,
+    "destination": "DEL",
+    "price": 6733,
+    "departure": "2018-06-01T10:59:00.000Z",
+    "returnDeparture": "2018-06-30T10:59:00.000Z",
+    "arrival": "2018-01-01T13:32:00.000Z",
+    "returnArrival": "2018-01-01T13:32:00.000Z",
+    "duration": "2h 33m",
+    "operationalDays": [
+      0,
+      2
+    ],
+    "type": "return"
+  },
+  {
+    "airline": "Jet Airways",
+    "airlineCode": "9W",
+    "returnAirlineCode": "9W",
+    "flightNumber": 251,
+    "returnFlightNumber": 257,
+    "origin": "PNQ",
+    "availableSeats": 53,
+    "destination": "DEL",
+    "price": 8713,
+    "departure": "2018-06-01T10:59:00.000Z",
+    "returnDeparture": "2018-06-30T10:59:00.000Z",
+    "arrival": "2018-01-01T13:32:00.000Z",
+    "returnArrival": "2018-01-01T13:32:00.000Z",
+    "duration": "2h 37m",
+    "operationalDays": [
+      7
+    ],
     "type": "return"
   }
 ]
