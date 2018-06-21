@@ -21403,7 +21403,10 @@ li.ant-tree-treenode-disabled > .ant-tree-node-content-wrapper:hover {
   @media (max-width: 767px) {
     .app-search {
       width: 100%;
-      height: auto; } }
+      height: auto;
+      transform: translateX(0); }
+      .app-search.clean-state {
+        height: calc(100% - 80px); } }
   .app-search .app-search-content {
     padding: 40px 0;
     max-width: calc(1200px * 0.4);
@@ -21433,7 +21436,12 @@ li.ant-tree-treenode-disabled > .ant-tree-node-content-wrapper:hover {
   @media (max-width: 767px) {
     .app-results {
       width: 100%;
-      height: auto; } }
+      height: auto;
+      position: relative;
+      left: auto;
+      top: auto; }
+      .app-results.clean-state {
+        display: none; } }
   .app-results .app-results-header {
     margin: 0 0 20px;
     padding: 0 0 10px;
