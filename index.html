@@ -1,17 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 
 <head>
-    <title>Flight Search Engine</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="/dist/bundle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/grid.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+  <script src="js/modernizr.js"></script>
+  <!-- Modernizr -->
 </head>
 
 <body>
-    <div id="root"></div>
-    <script src="/dist/bundle.js"></script>
+  <div class="loader">
+    <img class="" src="images/logo.png" alt="">
+  </div>
+  <main id="barba-wrapper">
+    <div class="barba-container">
+      <div class="row">
+        <div class="col-lg-4 title">
+          <h1 class="strip">A new
+            <br>Avenue
+            <br>to DIFC</h1>
+            
+          <div class="has-animation animation-rtl logo" data-delay="1000">
+            <img class="" src="images/logo.png" alt="">
+          </div>
+        </div>
+        <div class="col-lg-8 content">
+            <div class="row">
+                <div class="info-count col-lg-4" data-aos="fade-down"  data-aos-duration="1000" data-aos-delay="1000">
+                  <span  class="count">23000</span>
+                  <p>million residents. Set to double by 2030</p>
+                </div>
+                <div class="info-count col-lg-4" data-aos="fade-down"  data-aos-duration="1000" data-aos-delay="1200">
+                  <span  class="count">50000</span>
+                  <p>trillion residents. Set to double by 2030</p>
+                </div>
+                <div class="info-count col-lg-4" data-aos="fade-down"  data-aos-duration="1000" data-aos-delay="1400">
+                  <span  class="count">210000</span>
+                  <p>million residents. Set to double by 2030</p>
+                </div>
+                <!-- <div class="info-count col-lg-3" data-aos="fade-up" data-aos-delay="2600">
+                  <span  class="count">7200</span>
+                  <p>million residents. Set to double by 2030</p>
+                </div> -->
+                <!-- <div class="info-count col-lg-3" data-aos="fade-up" data-aos-delay="2800">
+                  <span  class="count">1300</span>
+                  <p>million residents. Set to double by 2030</p>
+                </div> -->
+              </div>
+          <div class="has-animation animation-ltr">
+            <img src="images/bg-1.jpg" width="100%" />
+          </div>
+        </div>
+      </div>
+      <a class="nav next" href="2.html" style="background-image: url(images/2.jpg);"></a>
+      <a class="nav prev" href="4.html" style="background-image: url(images/4.jpg);"></a>
+    </div>
+  </main>
+
+  <script src="js/jquery-2.1.4.js"></script>
+  <script src="dist/barba.js"></script>
+  <script src="js/custom.js"></script>
+  <!-- <script src="nextprev.js"></script> -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.1/TweenMax.min.js"></script>
 </body>
 
 </html>
