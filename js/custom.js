@@ -68,12 +68,36 @@ $(function() {
       //   toggleHeaderAnimation();
       // }, 1000);
     });
+    $(document).on('keydown', function(event){
+				
+      if( (event.which=='40' || event.which=='39')  ) {
+        // event.preventDefault();
+        // nextSection();
+        // $('body').trigger('page-change');
+        location.href = '2.html';
+      } else if( (event.which=='38' || event.which=='37')) {
+        location.href = '/barb';
+        // event.preventDefault();
+        // prevSection();
+        // $('body').trigger('page-change');
+      } else {
+        // TODO: Uncomment if not on dev
+        // return false;
+      }
+    });
   };
 
   var removeLoader = function() {
     $('.loader').fadeOut(500);
   }
   var init = function() {
+    var timeout = 0;
+    // if(localStorage.getItem('loaded')) {
+    //   timeout = 0;
+    // } else {
+    //   timeout = 1000;
+    // }
+    // localStorage.setItem('loaded', true);
     setTimeout(function(){
       removeLoader();
       watchPageChange();
@@ -97,7 +121,8 @@ $(function() {
           });
       });
       }, 100);
-    }, 1000);
+      localStorage.setItem('loaded', true);
+    }, timeout);
     
   };
 

@@ -69,6 +69,17 @@ body {
         width: 235px;
       }
     }
+    &.light {
+        h1, p {
+            color:#fff;
+        }
+        p {
+            font-size: 1.5em;
+            line-height: 1.5;
+            // bottom: 50px;
+            // position: absolute;
+        }
+    }
   }
   .content {
       padding: 0;
@@ -116,5 +127,25 @@ body {
         font-size: 5em;
     }
     p {
+    }
+}
+
+.nav {
+    position: fixed;
+    right: 5%;
+    width: auto;
+    top: 40px;
+    text-align: center;
+    .row > div {
+        &:not(:last-child) {
+            border-right: 2px solid white;
+        }
+    }
+    a {
+        color: white;
+        font-weight: 500;
+        font-size: 1.3em;
+        text-decoration: none;
+        padding: 0 20px;
     }
 }
