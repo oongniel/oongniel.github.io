@@ -12,6 +12,10 @@ body {
   height: 100vh;
   // padding: 20px;
   overflow: hidden;
+  .renderer {
+    height: 100%;
+    background: blue;
+  }
   .row {
     width: 100%;
     margin: auto;

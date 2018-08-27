@@ -179,3 +179,10 @@ $color-main-2: #161b4e;
   opacity: 0.01;
   transition: opacity 500ms ease-in;
 }
+// Active animation
+.active-animation {
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
