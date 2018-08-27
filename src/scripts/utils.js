@@ -7,7 +7,7 @@ export const animateHeader = () => {
       str = String($t.html());
     const rows = str.split(delimiter);
     // rows = str.split('\n');
-
+    $t.addClass("active");
     // console.log(str);
     $t.html("");
 

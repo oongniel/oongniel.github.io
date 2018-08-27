@@ -10,6 +10,8 @@ import PageDetailsTypeD from "./pages/PageDetails/TypeD";
 import Renderer from "./components/Renderer";
 import history from "./history";
 import config from "./config";
+import { animateHeader, animateCount } from "./scripts/utils";
+
 class AppRouter extends Component {
   getTemplate = (template, params) => {
     let temp = null;
@@ -36,14 +38,31 @@ class AppRouter extends Component {
   };
 
   handleComplete = target => {
-    TweenLite.set(target, {
-      clearProps: "position, width, transform"
-    });
-    console.log("Page enter Complete");
+    TweenLite.set(target, { clearProps: "position, width" });
+
+    animateHeader();
+    animateCount();
+    window.AOS.init();
   };
 
   onExiting = node => {
     if (!node) return;
+    // TweenMax.killTweensOf(node);
+    // const parent = node.parentNode;
+    // const targetWidth =
+    //   parent.clientWidth -
+    //   parseFloat(getComputedStyle(node.parentNode).paddingLeft) * 2;
+    // // set the position of the element
+    // TweenLite.set(node, {
+    //   position: "fixed",
+    //   width: targetWidth
+    // });
+    // // animate out the element
+    // TweenLite.to(node, 0.5, {
+    //   position: "fixed",
+    //   opacity: 0,
+    //   x: -100
+    // });
     // Cancel existing animations
     TweenMax.killTweensOf(node);
     const { parentNode } = node;
@@ -71,6 +90,25 @@ class AppRouter extends Component {
 
   onEntering = (node, isAppearing) => {
     if (!node) return;
+    // TweenMax.killTweensOf(node);
+    // const parent = node.parentNode;
+    // const targetWidth =
+    //   parent.clientWidth -
+    //   parseFloat(getComputedStyle(node.parentNode).paddingLeft) * 2;
+    // // set the position and properties of the entering element
+    // TweenLite.set(node, {
+    //   position: "fixed",
+    //   x: 100,
+    //   autoAlpha: 0,
+    //   width: targetWidth
+    // });
+    // // animate in the element
+    // TweenLite.to(node, 0.5, {
+    //   autoAlpha: 1,
+    //   x: 0,
+    //   onComplete: this.handleComplete,
+    //   onCompleteParams: [node]
+    // });
     // Cancel existing animations
     TweenMax.killTweensOf(node);
     const { parentNode } = node;
@@ -107,7 +145,9 @@ class AppRouter extends Component {
             return (
               <TransitionGroup>
                 <CSSTransition
-                  timeout={1000}
+                  timeout={500}
+                  mountOnEnter={true}
+                  unmountOnExit={true}
                   classNames="transition-"
                   key={location.location.key}
                   onExit={node => this.onExiting(node)}

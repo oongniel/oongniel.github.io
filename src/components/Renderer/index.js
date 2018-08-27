@@ -9,15 +9,15 @@ class Renderer extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({ render: true });
-    }, 1000);
+    // setTimeout(() => {
+    //   this.setState({ render: true });
+    // }, 500);
   }
 
   render() {
     const { children } = this.props;
     const { render } = this.state;
-    return <div className="renderer">{render ? children : null}</div>;
+    return <div className="renderer">{true ? children : null}</div>;
   }
 }
 

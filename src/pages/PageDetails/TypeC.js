@@ -6,13 +6,9 @@ import {
 } from "../../scripts/utils";
 import { DefaultView, VerticalView, HalfView } from "./views";
 class Home extends Component {
-  componentDidMount() {
-    // this.dom.root = ReactDOM.findDOMNode(this);
-    animateHeader();
-    animateCount();
-    animateOnScroll();
-    window.AOS.init();
-  }
+  // componentDidMount() {
+  //   animateHeader();
+  // }
 
   renderContent = content => {
     const isImage = content.match(/(svg|png|jpg|jpeg)/g);

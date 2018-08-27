@@ -103,6 +103,7 @@ $color-main-2: #161b4e;
   display: block;
   user-select: none;
   animation-name: reveal-text;
+  animation-duration: 1.5s;
   color: #fff;
   cursor: default;
 
@@ -119,6 +120,7 @@ $color-main-2: #161b4e;
     transform-origin: 0 50%;
     pointer-events: none;
     animation-name: revealer-text;
+    animation-duration: 1.5s;
   }
   &.dark {
     color: #000;
@@ -165,20 +167,34 @@ $color-main-2: #161b4e;
 //     transition: opacity 250ms ease-in;
 //   }
 // }
-.fade-enter {
-  opacity: 0.01;
-}
-.fade-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-.fade-exit {
-  opacity: 1;
-}
-.fade-exit-active {
-  opacity: 0.01;
-  transition: opacity 500ms ease-in;
-}
+
+// .transition--enter {
+//   clip: rect(50px, 200px, 200px, 0);
+//   transition: 300ms all ease-in-out;
+//   transform: translateX(-100%);
+// }
+// .transition--enter-done {
+//   transform: translateX(0);
+//   clip: none;
+// }
+// .transition--exit {
+//   clip: rect(50px, 200px, 200px, 0);
+//   transform: translateX(100%);
+// }
+// .fade-enter {
+//   opacity: 0.01;
+// }
+// .fade-enter-active {
+//   opacity: 1;
+//   transition: opacity 500ms ease-in;
+// }
+// .fade-exit {
+//   opacity: 1;
+// }
+// .fade-exit-active {
+//   opacity: 0.01;
+//   transition: opacity 500ms ease-in;
+// }
 // Active animation
 .active-animation {
 	position: absolute;

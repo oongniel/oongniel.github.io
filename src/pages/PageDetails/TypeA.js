@@ -1,20 +1,13 @@
 import React, { Component } from "react";
 // import { TweenLite } from "gsap";
 import Header from "../../components/Header";
-import {
-  animateHeader,
-  animateCount,
-  animateOnScroll
-} from "../../scripts/utils";
+import { animateHeader } from "../../scripts/utils";
 import Logo from "../../images/logo.png";
 
 class Home extends Component {
-  componentDidMount() {
-    animateHeader();
-    animateCount();
-    animateOnScroll();
-    window.AOS.init();
-  }
+  // componentDidMount() {
+  //   animateHeader();
+  // }
 
   render() {
     const { params } = this.props;

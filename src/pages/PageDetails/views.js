@@ -89,7 +89,7 @@ const DefaultView = props => {
 };
 
 const VerticalView = props => {
-  console.log(props);
+  // console.log(props);
   const { params } = props;
   const { title, Image1, Image2, Image3, paragraph, list, light } = params;
   return (

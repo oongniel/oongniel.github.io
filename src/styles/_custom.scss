@@ -14,7 +14,7 @@ body {
   overflow: hidden;
   .renderer {
     height: 100%;
-    background: blue;
+    // background: blue;
   }
   .row {
     width: 100%;
@@ -28,6 +28,10 @@ body {
     color: $color-black;
     font-size: 6em;
     font-weight: 200;
+    opacity: 0;
+    &.active {
+      opacity: 1;
+    }
     span {
       display: inline-block;
       transition: transform 1s cubic-bezier(0.65, 0.02, 0.23, 1);

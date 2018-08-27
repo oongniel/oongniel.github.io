@@ -7,12 +7,9 @@ import {
 import Header from "../../components/Header";
 
 class Page extends Component {
-  componentDidMount() {
-    animateHeader();
-    animateCount();
-    animateOnScroll();
-    window.AOS.init();
-  }
+  // componentDidMount() {
+  //   animateHeader();
+  // }
   render() {
     const { params } = this.props;
     const { title, paragraph, image, hasHeader, subTitle } = params;
@@ -43,6 +40,7 @@ class Page extends Component {
                     data-aos="fade-right"
                     data-aos-duration="700"
                     data-aos-delay={100 * (index + 1)}
+                    className="reveal-text"
                   >
                     {item}
                   </p>

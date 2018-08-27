@@ -7,12 +7,9 @@ import {
 } from "../../scripts/utils";
 
 class Page extends Component {
-  componentDidMount() {
-    animateHeader();
-    animateCount();
-    animateOnScroll();
-    window.AOS.init();
-  }
+  // componentDidMount() {
+  //   animateHeader();
+  // }
 
   render() {
     const { params } = this.props;
