@@ -1,3 +1,18 @@
+body {
+  background: #323232;
+  position: relative;
+  // &:before {
+  //   content: 'DIFC';
+  //   font-size: 40em;
+  //   color: #00000047;
+  //   text-align: center;
+  //   position: absolute;
+  //   width: 100%;
+  //   height: 100%;
+  //   transform: translateY(-50%);
+  //   margin-top: 50%;
+  // }
+}
 .row.page {
   height: 100%;
   // padding: 100px 70px;
@@ -68,6 +83,9 @@
     border: 1px solid gray;
     border-width: 1px 0;
     padding: 20px 0;
+    position: absolute;
+    bottom: 20px;
+    width: calc(100% - 100px);
     li {
       padding: 5px 0;
     }

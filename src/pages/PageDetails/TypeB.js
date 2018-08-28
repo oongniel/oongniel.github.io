@@ -1,21 +1,11 @@
 import React, { Component } from "react";
 import Header from "../../components/Header";
-import {
-  animateHeader,
-  animateCount,
-  animateOnScroll
-} from "../../scripts/utils";
 
 class Page extends Component {
-  // componentDidMount() {
-  //   animateHeader();
-  //   animateCount();
-  // }
-
   render() {
     const { params } = this.props;
     const { title, countData, image, className } = params;
-    // console.log(params);
+
     return (
       <div
         className={`page page-details-type-b ${className}`}

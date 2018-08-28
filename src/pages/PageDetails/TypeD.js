@@ -1,16 +1,7 @@
 import React, { Component } from "react";
 import Header from "../../components/Header";
-import {
-  animateHeader,
-  animateCount,
-  animateOnScroll
-} from "../../scripts/utils";
 
 class Page extends Component {
-  // componentDidMount() {
-  //   animateHeader();
-  // }
-
   render() {
     const { params } = this.props;
     const { title, paragraph, image } = params;
@@ -28,7 +19,7 @@ class Page extends Component {
             {title && <h1 className="strip">{title}</h1>}
           </div>
           <div className="col-lg-4 sub-title">
-            {paragraph && <p>{paragraph}</p>}
+            {paragraph && <p className="reveal-text dark">{paragraph}</p>}
           </div>
         </div>
         <div className="row bottom">

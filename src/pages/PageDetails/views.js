@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../components/Header";
 
 const DefaultView = props => {
-  console.log(props);
+  // console.log(props);
   const { params, renderContent } = props;
   const {
     title,
@@ -108,7 +108,7 @@ const VerticalView = props => {
               data-aos-delay="100"
             >
               <p className="reveal-text">{paragraph}</p>
-              <ul>
+              <ul className="reveal-text">
                 {list.map(item => {
                   return <li>{item}</li>;
                 })}
@@ -153,7 +153,7 @@ const VerticalView = props => {
 };
 
 const HalfView = props => {
-  console.log(props);
+  // console.log(props);
   const { params, renderContent } = props;
   const { title, Content1, Content2, Content3, Content4, light } = params;
   return (
@@ -162,15 +162,33 @@ const HalfView = props => {
       {title && <h1 className="strip">{title}</h1>}
       <div className="row">
         <div className="col-lg-3 top">
-          {Content1.map(item => {
-            return <p>{item}</p>;
+          {Content1.map((item, index) => {
+            return (
+              <p
+                key={index}
+                className="reveal-text dark"
+                data-aos="fade-right"
+                data-aos-delay={100 * (index + 1)}
+              >
+                {item}
+              </p>
+            );
           })}
         </div>
         <div className="col-lg-3 top">
           <div className="row">
-            <div className="col-lg-12 h50">{renderContent(Content2)}</div>
             <div
               className="col-lg-12 h50"
+              data-aos="fade-up"
+              data-aos-duration="700"
+              data-aos-delay="100"
+            >
+              {renderContent(Content2)}
+            </div>
+            <div
+              className="col-lg-12 h50"
+              data-aos="fade-up"
+              data-aos-delay="300"
               style={{
                 backgroundImage: `url(${Content3})`,
                 backgroundPosition: "bottom"
@@ -180,6 +198,8 @@ const HalfView = props => {
         </div>
         <div
           className="col-lg-6"
+          data-aos="fade-left"
+          data-aos-delay="500"
           style={{
             backgroundImage: `url(${Content4})`
           }}

@@ -1,15 +1,7 @@
 import React, { Component } from "react";
-import {
-  animateHeader,
-  animateCount,
-  animateOnScroll
-} from "../../scripts/utils";
 import Header from "../../components/Header";
 
 class Page extends Component {
-  // componentDidMount() {
-  //   animateHeader();
-  // }
   render() {
     const { params } = this.props;
     const { title, paragraph, image, hasHeader, subTitle } = params;

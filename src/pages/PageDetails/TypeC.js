@@ -1,15 +1,6 @@
 import React, { Component } from "react";
-import {
-  animateHeader,
-  animateCount,
-  animateOnScroll
-} from "../../scripts/utils";
 import { DefaultView, VerticalView, HalfView } from "./views";
 class Home extends Component {
-  // componentDidMount() {
-  //   animateHeader();
-  // }
-
   renderContent = content => {
     const isImage = content.match(/(svg|png|jpg|jpeg)/g);
     const type = isImage ? "image" : typeof content;

@@ -103,7 +103,8 @@ $color-main-2: #161b4e;
   display: block;
   user-select: none;
   animation-name: reveal-text;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
+  animation-delay: 1.4s;
   color: #fff;
   cursor: default;
 
@@ -120,7 +121,8 @@ $color-main-2: #161b4e;
     transform-origin: 0 50%;
     pointer-events: none;
     animation-name: revealer-text;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
+    animation-delay: 1.4s;
   }
   &.dark {
     color: #000;

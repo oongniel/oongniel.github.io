@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { TweenLite, TweenMax } from "gsap";
+import { TweenLite, TweenMax, Power2 } from "gsap";
 import PageTitle from "./pages/PageTitle";
 import PageDetailsTypeA from "./pages/PageDetails/TypeA";
 import PageDetailsTypeB from "./pages/PageDetails/TypeB";
@@ -13,6 +13,59 @@ import config from "./config";
 import { animateHeader, animateCount } from "./scripts/utils";
 
 class AppRouter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      routeList: [],
+      forward: true,
+      in: true,
+      node: null
+    };
+  }
+  componentDidMount() {
+    this.getRouteList();
+    // setTimeout(() => {
+    //   this.initAnimate();
+    // }, 500);
+
+    document.addEventListener("keydown", event => {
+      // const keyName = event.key;
+      const keyCode = event.which;
+      let page = history.location.pathname.substr(1);
+      page = Number(page) || page;
+      const { routeList } = this.state;
+      const pageIndex = routeList.indexOf(page);
+
+      switch (keyCode) {
+        case 37:
+        case 38:
+          if (page === 1) {
+            return false;
+          }
+          this.setState({ forward: false });
+          history.push(`/${routeList[pageIndex - 1]}`);
+          break;
+        case 39:
+        case 40:
+          if (page >= config.length) {
+            return false;
+          }
+          this.setState({ forward: true });
+          history.push(`/${routeList[pageIndex + 1]}`);
+          break;
+        default:
+          return false;
+      }
+    });
+  }
+
+  getRouteList = () => {
+    const list = config.map((item, index) => {
+      return item.route ? item.route : index + 1;
+    });
+    this.setState({ routeList: list });
+  };
+
   getTemplate = (template, params) => {
     let temp = null;
     switch (template) {
@@ -38,106 +91,85 @@ class AppRouter extends Component {
   };
 
   handleComplete = target => {
-    TweenLite.set(target, { clearProps: "position, width" });
+    TweenLite.set(target, { clearProps: "all" });
+    this.initAnimate();
+  };
 
+  initAnimate = () => {
     animateHeader();
     animateCount();
     window.AOS.init();
+    console.log("init");
   };
 
   onExiting = node => {
     if (!node) return;
+    const { forward } = this.state;
+    // Kill animation
     // TweenMax.killTweensOf(node);
-    // const parent = node.parentNode;
-    // const targetWidth =
-    //   parent.clientWidth -
-    //   parseFloat(getComputedStyle(node.parentNode).paddingLeft) * 2;
-    // // set the position of the element
-    // TweenLite.set(node, {
-    //   position: "fixed",
-    //   width: targetWidth
-    // });
-    // // animate out the element
-    // TweenLite.to(node, 0.5, {
-    //   position: "fixed",
-    //   opacity: 0,
-    //   x: -100
-    // });
-    // Cancel existing animations
-    TweenMax.killTweensOf(node);
-    const { parentNode } = node;
-    const targetWidth =
-      parentNode.clientWidth -
-      parseFloat(getComputedStyle(parentNode).paddingLeft) * 2;
-    // Set element position
-    TweenLite.set(node, {
-      position: "fixed",
-      x: 0,
-      width: targetWidth
-    });
-    // Animate element
-    TweenLite.to(node, 0.5, {
-      force3D: true,
-      scale: 0,
-      position: "fixed",
-      opacity: 0,
-      x: -100,
-      y: -100,
-      // I put this in here to force you to consider it as a hook
-      onComplete: () => console.log("Page exit complete.")
-    });
+    // TweenLite.killTweensOf(node);
+    // TweenLite.to(node, 0.6, { xPercent: this.state.forward ? -100 : 100 });
+    // TweenLite.set(node, { scale: 0.3 });
+    // TweenLite.to(node, 0.6, { xPercent: forward ? -80 : 50 });
+    TweenLite.fromTo(
+      node,
+      0.6,
+      {
+        opacity: 1,
+        scale: 1
+      },
+      {
+        opacity: 0,
+        scale: 0.8,
+        clearProps: "opacity, scale",
+        onComplete: function() {
+          // removeClass(el, ['is-onTop', 'is-current']);
+          console.log("exiting");
+        }
+      }
+    );
   };
 
   onEntering = (node, isAppearing) => {
     if (!node) return;
+    const { forward } = this.state;
+    // Kill animation
     // TweenMax.killTweensOf(node);
-    // const parent = node.parentNode;
-    // const targetWidth =
-    //   parent.clientWidth -
-    //   parseFloat(getComputedStyle(node.parentNode).paddingLeft) * 2;
-    // // set the position and properties of the entering element
+    TweenLite.killTweensOf(node);
+    TweenLite.set(node, {
+      scale: 0.5,
+      xPercent: forward ? 50 : -50,
+      opacity: 0.5
+    });
+    TweenLite.to(node, 0.5, {
+      xPercent: 0,
+      opacity: 1
+      // transformPerspective: 200
+      // onComplete: this.handleComplete,
+      // onCompleteParams: [node]
+    });
+    TweenLite.to(node, 0.9, {
+      scale: 1,
+      onComplete: this.handleComplete,
+      onCompleteParams: [node]
+    }).delay(0.5);
     // TweenLite.set(node, {
+    //   visibility: "visible",
+    //   xPercent: this.state.forward ? 100 : -100,
     //   position: "fixed",
-    //   x: 100,
-    //   autoAlpha: 0,
-    //   width: targetWidth
+    //   left: 0,
+    //   top: 0,
+    //   right: 0
     // });
-    // // animate in the element
-    // TweenLite.to(node, 0.5, {
-    //   autoAlpha: 1,
-    //   x: 0,
+    // TweenLite.to(node, 0.6, {
+    //   xPercent: 0,
     //   onComplete: this.handleComplete,
     //   onCompleteParams: [node]
     // });
-    // Cancel existing animations
-    TweenMax.killTweensOf(node);
-    const { parentNode } = node;
-    const targetWidth =
-      parentNode.clientWidth -
-      parseFloat(getComputedStyle(parentNode).paddingLeft) * 2;
-    console.log(targetWidth);
-    // Set element position
-    TweenLite.set(node, {
-      position: "fixed",
-      scale: 0,
-      x: 0,
-      autoAlpha: 0,
-      width: 0
-    });
-    // Animate element
-    TweenLite.to(node, 0.5, {
-      force3D: true,
-      scale: 1,
-      autoAlpha: 1,
-      x: 0,
-      y: 0,
-      width: targetWidth,
-      onComplete: this.handleComplete, // Fire this when animation finishes
-      onCompleteParams: [node]
-    });
   };
 
   render() {
+    const { forward } = this.state;
     return (
       <Router history={history}>
         <Route
@@ -145,10 +177,11 @@ class AppRouter extends Component {
             return (
               <TransitionGroup>
                 <CSSTransition
-                  timeout={500}
-                  mountOnEnter={true}
+                  timeout={600}
+                  classNames="transition"
                   unmountOnExit={true}
-                  classNames="transition-"
+                  mountOnEnter={true}
+                  appear={true}
                   key={location.location.key}
                   onExit={node => this.onExiting(node)}
                   onEnter={(node, isAppearing) => {
@@ -157,6 +190,7 @@ class AppRouter extends Component {
                 >
                   <Switch location={location.location}>
                     {config.map((item, index) => {
+                      item.forward = forward;
                       return (
                         <Route
                           key={index}
