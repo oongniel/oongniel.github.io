@@ -18,7 +18,7 @@ class AppRouter extends Component {
     this.state = {
       routeList: [],
       forward: true,
-      in: true,
+      mounted: false,
       node: null
     };
   }
@@ -106,7 +106,7 @@ class AppRouter extends Component {
     if (!node) return;
     const { forward } = this.state;
     // Kill animation
-    // TweenMax.killTweensOf(node);
+    TweenMax.killTweensOf(node);
     // TweenLite.killTweensOf(node);
     // TweenLite.to(node, 0.6, { xPercent: this.state.forward ? -100 : 100 });
     // TweenLite.set(node, { scale: 0.3 });
@@ -134,8 +134,7 @@ class AppRouter extends Component {
     if (!node) return;
     const { forward } = this.state;
     // Kill animation
-    // TweenMax.killTweensOf(node);
-    TweenLite.killTweensOf(node);
+    TweenMax.killTweensOf(node);
     TweenLite.set(node, {
       scale: 0.5,
       xPercent: forward ? 50 : -50,
@@ -144,9 +143,6 @@ class AppRouter extends Component {
     TweenLite.to(node, 0.5, {
       xPercent: 0,
       opacity: 1
-      // transformPerspective: 200
-      // onComplete: this.handleComplete,
-      // onCompleteParams: [node]
     });
     TweenLite.to(node, 0.9, {
       scale: 1,
@@ -174,6 +170,7 @@ class AppRouter extends Component {
       <Router history={history}>
         <Route
           render={location => {
+            console.log(location);
             return (
               <TransitionGroup>
                 <CSSTransition

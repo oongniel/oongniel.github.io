@@ -8,9 +8,7 @@ export const animateHeader = () => {
     const rows = str.split(delimiter);
     // rows = str.split('\n');
     $t.addClass("active");
-    // console.log(str);
     $t.html("");
-
     $.each(rows, function(i, val) {
       $('<span class="row-item"></span>').appendTo($t);
 
