@@ -43,7 +43,7 @@ class AppRouter extends Component {
             return false;
           }
           this.setState({ forward: false });
-          history.push(`/${routeList[pageIndex - 1]}`);
+          history.push(`/${routeList[pageIndex]}`);
           break;
         case 39:
         case 40:
@@ -51,7 +51,7 @@ class AppRouter extends Component {
             return false;
           }
           this.setState({ forward: true });
-          history.push(`/${routeList[pageIndex + 1]}`);
+          history.push(`/${routeList[pageIndex]}`);
           break;
         default:
           return false;
@@ -107,7 +107,7 @@ class AppRouter extends Component {
     const { forward } = this.state;
     // Kill animation
     TweenMax.killTweensOf(node);
-    // TweenLite.killTweensOf(node);
+    TweenLite.killTweensOf(node);
     // TweenLite.to(node, 0.6, { xPercent: this.state.forward ? -100 : 100 });
     // TweenLite.set(node, { scale: 0.3 });
     // TweenLite.to(node, 0.6, { xPercent: forward ? -80 : 50 });
@@ -135,6 +135,7 @@ class AppRouter extends Component {
     const { forward } = this.state;
     // Kill animation
     TweenMax.killTweensOf(node);
+    TweenLite.killTweensOf(node);
     TweenLite.set(node, {
       scale: 0.5,
       xPercent: forward ? 50 : -50,
@@ -143,6 +144,9 @@ class AppRouter extends Component {
     TweenLite.to(node, 0.5, {
       xPercent: 0,
       opacity: 1
+      // transformPerspective: 200
+      // onComplete: this.handleComplete,
+      // onCompleteParams: [node]
     });
     TweenLite.to(node, 0.9, {
       scale: 1,
@@ -176,8 +180,8 @@ class AppRouter extends Component {
                 <CSSTransition
                   timeout={600}
                   classNames="transition"
-                  unmountOnExit={true}
-                  mountOnEnter={true}
+                  // unmountOnExit={true}
+                  // mountOnEnter={true}
                   appear={true}
                   key={location.location.key}
                   onExit={node => this.onExiting(node)}
