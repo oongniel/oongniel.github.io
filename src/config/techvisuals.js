@@ -3,6 +3,11 @@ import TVPage2 from "../images/tv-page2.jpg";
 import TVPage3 from "../images/tv-page3.jpg";
 import TVPage4 from "../images/tv-page4.jpg";
 import IconArrow from "../images/arrow-up.svg";
+import IconTag from "../images/icons/tag.png";
+import IconCoins from "../images/icons/coins.png";
+import IconScheme from "../images/icons/scheme.png";
+import IconBadge from "../images/icons/badge.png";
+import IconPaperPencil from "../images/icons/paper_pencil.png";
 export default [
   {
     template: "page-title",
@@ -14,6 +19,7 @@ export default [
     // Title and paragraph on left, BG Image
     template: "page-details-d",
     hasHeader: true,
+    className: "full-image",
     title: "Final Concept",
     image: TVPage1
   },
@@ -21,6 +27,7 @@ export default [
     // Title and paragraph on left, BG Image
     template: "page-details-d",
     hasHeader: true,
+    className: "full-image",
     title: "Vehicle &||Pedestrian Access",
     image: TVPage2
   },
@@ -34,20 +41,20 @@ export default [
     countData: [
       {
         prefix: "Enjoy 100% No restrictions foreign ownership",
-        icon: IconArrow
+        icon: IconTag
       },
       {
         prefix: "No restrictions foreign ownership on Capital repatriation",
-        icon: IconArrow
+        icon: IconCoins
       },
       {
         prefix: "No restrictions on foreign talent",
-        icon: IconArrow
+        icon: IconScheme
       },
       {
         prefix:
           "An independent regulator - Dubai Financial Services Authority (DFSA)",
-        icon: IconArrow
+        icon: IconBadge
       },
       {
         prefix: "No tax on profits and personal income",
@@ -55,7 +62,7 @@ export default [
       },
       {
         prefix: "Independent judicial system with laws issued in English",
-        icon: IconArrow
+        icon: IconPaperPencil
       }
     ]
   },

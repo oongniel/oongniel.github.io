@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import { DefaultView, VerticalView, HalfView } from "./views";
+import { tweenHeader } from "../../scripts/utils";
+
 class Home extends Component {
+  componentDidMount() {
+    tweenHeader();
+  }
   renderContent = content => {
     const isImage = content.match(/(svg|png|jpg|jpeg)/g);
     const type = isImage ? "image" : typeof content;

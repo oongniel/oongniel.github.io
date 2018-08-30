@@ -10,7 +10,7 @@ import PageDetailsTypeD from './pages/PageDetails/TypeD';
 import Renderer from './components/Renderer';
 import history from './history';
 import config from './config';
-import { animateHeader, animateCount } from './scripts/utils';
+import { animateHeader, animateCount, reverseTweenHeader } from './scripts/utils';
 
 class AppRouter extends Component {
   constructor(props) {
@@ -26,36 +26,33 @@ class AppRouter extends Component {
     this.getRouteList();
     // setTimeout(() => {
     //   this.initAnimate();
-    // }, 500);
+	// }, 500);
 
     document.addEventListener('keydown', event => {
-      // const keyName = event.key;
       const keyCode = event.which;
       let page = history.location.pathname.substr(1);
       page = Number(page) || page;
       const { routeList } = this.state;
       const pageIndex = routeList.indexOf(page);
-
+	
       switch (keyCode) {
         case 37:
         case 38:
           if (page === 1) {
             return false;
-          }
-          this.setState({ forward: false });
-          history.push(`/${routeList[pageIndex]}`);
+		  }
+			this.setState({ forward: false });
           break;
         case 39:
         case 40:
           if (page >= config.length) {
             return false;
-          }
-          this.setState({ forward: true });
-          history.push(`/${routeList[pageIndex]}`);
+		  }
+			this.setState({ forward: true });
           break;
         default:
           return false;
-      }
+	  }
     });
   }
 
@@ -89,16 +86,13 @@ class AppRouter extends Component {
     }
     return <Renderer>{temp}</Renderer>;
   };
-
+  
   handleComplete = target => {
     TweenLite.set(target, { clearProps: 'all' });
     this.initAnimate();
   };
 
   initAnimate = () => {
-    console.log('init');
-    return;
-    animateHeader();
     animateCount();
     window.AOS.init();
   };
@@ -110,7 +104,6 @@ class AppRouter extends Component {
     // TweenMax.killTweensOf(node);
     // TweenLite.killTweensOf(node);
     // TweenLite.to(node, 0.6, { xPercent: this.state.forward ? -100 : 100 });
-    console.log('exiting', node, window);
     const tl = new TimelineMax({
       onComplete: () => {
         console.log('exit');
@@ -157,10 +150,9 @@ class AppRouter extends Component {
       opacity: 1,
     });
 
-    tl.to(node, 1.5, {
+    tl.to(node, 1, {
       scale: 1,
       onComplete: this.handleComplete,
-      ease: Power4.easeOut,
       onCompleteParams: [node],
     });
   };
@@ -172,11 +164,10 @@ class AppRouter extends Component {
         {/* <Route exact path="/" render={() => <Redirect to="/1" />} /> */}
         <Route
           render={({ location }) => {
-            console.log(location);
             return (
               <TransitionGroup>
                 <CSSTransition
-                  timeout={2000}
+                  timeout={1500}
                   classNames="transition"
                   // unmountOnExit={true}
                   // mountOnEnter={true}

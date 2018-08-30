@@ -2,12 +2,17 @@ import React, { Component } from "react";
 // import { TweenLite } from "gsap";
 import Header from "../../components/Header";
 import Logo from "../../images/logo.png";
+import { generateHeader, tweenHeader } from "../../scripts/utils";
 
 class Home extends Component {
+  componentDidMount() {
+    tweenHeader();
+  }
   render() {
     const { params } = this.props;
     const {
       title,
+      titles,
       image,
       showLogo,
       hasHeader,
@@ -17,12 +22,17 @@ class Home extends Component {
       listBottom,
       forward
     } = params;
+    
     return (
       <div className={`page page-details-type-a ${className}`}>
         {hasHeader ? <Header /> : null}
         <div className="row ">
           <div className="col-lg-4 left">
-            {title && <h1 className="strip">{title}</h1>}
+            {title ? <h1 className="page-title-text">{generateHeader(title)}</h1> : null}
+            
+            {titles ? <div>{titles.map(title => {
+              return <h1 className="multiple page-title-text">{generateHeader(title)}</h1>;
+            })}</div> : null}
             {list ? (
               <ul>
                 {list.map((item, index) => {

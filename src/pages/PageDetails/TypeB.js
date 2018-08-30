@@ -1,11 +1,15 @@
-import React, { Component } from "react";
-import Header from "../../components/Header";
+import React, { Component } from 'react';
+import Header from '../../components/Header';
+import { generateHeader, tweenHeader } from '../../scripts/utils';
 
 class Page extends Component {
+  componentDidMount() {
+    tweenHeader();
+  }
   render() {
     const { params } = this.props;
     const { title, countData, image, className } = params;
-
+    const split = className === 'split-first';
     return (
       <div
         className={`page page-details-type-b ${className}`}
@@ -14,7 +18,9 @@ class Page extends Component {
         <Header />
         <div className="row">
           <div className="col-lg-12 title">
-            {title && <h1 className="strip">{title}</h1>}
+            {title && (
+              <h1 className="page-title-text">{generateHeader(title)}</h1>
+            )}
           </div>
           {/* <div className="col-lg-12 count-data-container"> */}
           <div className="row count-data-container">
@@ -22,23 +28,44 @@ class Page extends Component {
               const delay = 500 + 200 * (index + 1);
               return (
                 <div
-                  className={`info-count col-lg-${12 / countData.length} `}
+                  className={`info-count col-lg-${
+                    index === 0 && split
+                      ? '6'
+                      : 12 / (split ? countData.length + 1 : countData.length)
+                  } `}
                   data-aos="fade-up"
                   data-aos-duration="800"
                   data-aos-delay={delay}
                   key={index}
                 >
-                  {item.icon ? <img src={item.icon} alt="" /> : null}
-                  {item.prefix ? (
-                    <span className="prefix">{item.prefix}</span>
-                  ) : null}
-                  {item.count ? (
-                    <span className="count">{item.count}</span>
-                  ) : null}
-                  {item.suffix ? (
-                    <span className="suffix">{item.suffix}</span>
-                  ) : null}
-                  {/* <p>million residents. Set to double by 2030</p> */}
+                  <div>
+                    {item.icon ? <img src={item.icon} alt="" /> : null}
+                    {item.prefix ? (
+                      <span className="prefix">{item.prefix}</span>
+                    ) : null}
+                    {item.count ? (
+                      <span className="count">{item.count}</span>
+                    ) : null}
+                    {item.suffix ? (
+                      <span className="suffix">{item.suffix}</span>
+                    ) : null}
+                    {item.counts ? (
+                      <div className={split && 'row'}>
+                        {item.counts.map(count => {
+                          return (
+                            <div className={split && 'col-lg-6'}>
+                              {count.count ? (
+                                <span className="count">{count.count}</span>
+                              ) : null}
+                              {count.suffix ? (
+                                <span className="suffix">{count.suffix}</span>
+                              ) : null}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ) : null}
+                  </div>
                 </div>
               );
             })}

@@ -25,7 +25,8 @@ export default [
     template: "page-details-a",
     className: "",
     hasHeader: true,
-    title: "A New||Avenue||To Retail",
+    // title: "A New||Avenue||To Retail",
+    titles: ["A New||Avenue||To Retail", "A New||Avenue||To Fashion", "A New||Avenue||To DIFC"],
     image: GAPage1,
     showLogo: false
   },

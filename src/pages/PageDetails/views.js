@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../components/Header";
-
+import { generateHeader } from "../../scripts/utils";
 const DefaultView = props => {
   // console.log(props);
   const { params, renderContent } = props;
@@ -12,6 +12,8 @@ const DefaultView = props => {
     Content4,
     Content5,
     Content6,
+    Content7,
+    Content8,
     light
   } = params;
   return (
@@ -21,7 +23,7 @@ const DefaultView = props => {
         <div className="col-lg-12 top">
           <div className="row">
             <div className="col-lg-6 left">
-              {title && <h1 className="strip">{title}</h1>}
+              {title && <h1 className="page-title-text">{generateHeader(title)}</h1>}
               <div className="row">
                 <div
                   className="col-lg-6"
@@ -30,6 +32,7 @@ const DefaultView = props => {
                   data-aos-delay="100"
                 >
                   {renderContent(Content1)}
+                  {!!Content8 ? renderContent(Content8) : null}
                 </div>
                 <div
                   className="col-lg-6"
@@ -52,13 +55,22 @@ const DefaultView = props => {
             />
           </div>
         </div>
-        <div className="col-lg-12 bottom">
+        <div className={`col-lg-12 bottom ${!!Content7 && 'full'}`}>
           <div className="row">
-            <div
-              className="col-lg-3 offset-lg-3"
+            {Content7 ? <div
+              className="col-lg-3"
               data-aos="fade-up"
               data-aos-duration="500"
               data-aos-delay="100"
+              style={{
+                backgroundImage: `url(${Content7})`
+              }}
+            /> : null}
+            <div
+              className={`col-lg-3 ${!!Content7 ? '' : 'offset-lg-3'}`}
+              data-aos="fade-up"
+              data-aos-duration="500"
+              data-aos-delay="200"
               style={{
                 backgroundImage: `url(${Content4})`
               }}
@@ -70,7 +82,7 @@ const DefaultView = props => {
               }}
               data-aos="fade-up"
               data-aos-duration="500"
-              data-aos-delay="200"
+              data-aos-delay="300"
             />
             <div
               className="col-lg-3"
@@ -79,7 +91,7 @@ const DefaultView = props => {
               }}
               data-aos="fade-up"
               data-aos-duration="500"
-              data-aos-delay="300"
+              data-aos-delay="400"
             />
           </div>
         </div>
@@ -97,7 +109,7 @@ const VerticalView = props => {
       <Header dark={light} />
       <div className="row">
         <div className="col-lg-12 top">
-          {title && <h1 className="strip">{title}</h1>}
+          {title && <h1 className="page-title-text">{generateHeader(title)}</h1>}
         </div>
         <div className="col-lg-12 bottom">
           <div className="row">
@@ -159,7 +171,7 @@ const HalfView = props => {
   return (
     <div className="view half-view">
       <Header dark={light} />
-      {title && <h1 className="strip">{title}</h1>}
+      {title && <h1 className="page-title-text">{generateHeader(title)}</h1>}
       <div className="row">
         <div className="col-lg-3 top">
           {Content1.map((item, index) => {

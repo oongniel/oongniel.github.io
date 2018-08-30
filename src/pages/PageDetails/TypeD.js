@@ -1,14 +1,18 @@
 import React, { Component } from "react";
 import Header from "../../components/Header";
+import { tweenHeader, generateHeader } from "../../scripts/utils";
 
 class Page extends Component {
+  componentDidMount() {
+    tweenHeader();
+  }
   render() {
     const { params } = this.props;
-    const { title, paragraph, image } = params;
+    const { title, paragraph, image, className } = params;
     const isGallery = typeof image !== "string";
     return (
       <div
-        className="page page-details-type-d"
+        className={`page page-details-type-d ${className}`}
         style={{
           backgroundImage: `url(${image})`
         }}
@@ -16,7 +20,7 @@ class Page extends Component {
         <Header dark={true} />
         <div className="row top">
           <div className="col-lg-6 ">
-            {title && <h1 className="strip">{title}</h1>}
+          {title && <h1 className="page-title-text">{generateHeader(title)}</h1>}
           </div>
           <div className="col-lg-4 sub-title">
             {paragraph && <p className="reveal-text dark">{paragraph}</p>}
