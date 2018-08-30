@@ -163,3 +163,12 @@ body {
   background-size: cover;
   background-position: center;
 }
+.transition-enter {
+  // z-index: 2;
+}
+
+.transition-exit {
+  // z-index: 1;
+  position: absolute;
+  top: 0;
+}
