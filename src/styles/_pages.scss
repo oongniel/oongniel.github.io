@@ -354,7 +354,10 @@ body {
 .page {
   height: 100%;
   background-color: $color-white;
-  background-size: cover;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: top right;
+  animation: animateBg 25s infinite alternate;
 }
 
 .page-title-text {

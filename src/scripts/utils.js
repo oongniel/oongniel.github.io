@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import { TimelineMax, TweenMax } from 'gsap';
+import config from "../config";
 
 const delimiter = '||';
 let state = {
@@ -9,6 +10,13 @@ let state = {
   slideLeftTween: null,
   slideUpTween: null,
   slideDownTween: null,
+};
+
+export const getRouteList = cb => {
+  const list = config.map((item, index) => {
+    return item.route ? item.route : index + 1;
+  });
+  cb(list);
 };
 
 export const pageEnterAnimation = (node, forward, handleComplete) => {

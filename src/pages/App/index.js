@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import $ from "jquery";
 import Router from '../../router';
 import history from '../../history';
 import config from '../../config';
-import { reverseAllTweens } from '../../scripts/utils';
+import { reverseAllTweens, getRouteList } from '../../scripts/utils';
 
 class App extends Component {
   constructor(props) {
@@ -13,7 +14,15 @@ class App extends Component {
     };
   }
   componentDidMount() {
-    this.getRouteList();
+    getRouteList(list => {
+      this.setState({ routeList: list });
+    })
+    document.addEventListener('mousemove', event => {
+      $("#mouse-pointer").css({
+        top: event.pageY + "px",
+        left: event.pageX + "px"
+      });
+    })
     document.addEventListener('keydown', event => {
       const keyCode = event.which;
       this.handleNavigate(keyCode);
@@ -58,13 +67,6 @@ class App extends Component {
 
   handleReverseAnimate = () => {
     reverseAllTweens();
-  };
-
-  getRouteList = () => {
-    const list = config.map((item, index) => {
-      return item.route ? item.route : index + 1;
-    });
-    this.setState({ routeList: list });
   };
 
   render() {

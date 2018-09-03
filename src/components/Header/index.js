@@ -1,43 +1,47 @@
 import React, { Component } from 'react';
 import history from '../../history';
-import { reverseAllTweens } from '../../scripts/utils';
+import { reverseAllTweens, getRouteList } from '../../scripts/utils';
+import routes from './constants';
 class Header extends Component {
-  handleNavigate = (link) => {
+  handleNavigate = link => {
+    if (link === history.location.pathname) {
+      return;
+    }
     reverseAllTweens();
     const delay = 800;
     setTimeout(() => {
       history.push(link);
     }, delay);
-  }
+  };
+
+  checkIfActive = () => {
+    getRouteList(list => {
+      console.log(list, history.location.pathname);
+    });
+  };
   render() {
     const { dark } = this.props;
+    console.log(history);
     return (
       <div
         className={`nav ${dark ? 'dark' : ''} slide-down`}
         data-duration="0.8"
       >
         <div className="row">
-          <div>
-            <a onClick={this.handleNavigate.bind(this, "/dubai")} >DUBAI</a>
-          </div>
-          <div>
-            <a onClick={this.handleNavigate.bind(this, "/difc")} >DIFC</a>
-          </div>
-          <div>
-            <a onClick={this.handleNavigate.bind(this, "/gatevillage")} >GATE VILLAGE</a>
-          </div>
-          <div>
-            <a onClick={this.handleNavigate.bind(this, "/masterplan")} >MASTERPLAN</a>
-          </div>
-          <div>
-            <a onClick={this.handleNavigate.bind(this, "/gateavenue")} >GATE AVENUE</a>
-          </div>
-          <div>
-            <a onClick={this.handleNavigate.bind(this, "/entertainmenthub")} >ENTERTAINMENT HUB</a>
-          </div>
-          <div>
-            <a onClick={this.handleNavigate.bind(this, "/techvisual")} >TECH VISUALS</a>
-          </div>
+          {routes.map(item => {
+            return (
+              <div
+                key={item.link}
+                className={
+                  item.link === history.location.pathname ? 'active' : ''
+                }
+              >
+                <a onClick={this.handleNavigate.bind(this, item.link)}>
+                  {item.title}
+                </a>
+              </div>
+            );
+          })}
         </div>
       </div>
     );

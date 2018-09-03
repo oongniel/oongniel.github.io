@@ -33,7 +33,7 @@ class Page extends Component {
                 {image.map((item, index) => {
                   return (
                     <div
-                      className="col-lg-3 gallery-item slide-down"
+                      className="col-lg-3 gallery-item slide-up"
                       data-duration="0.6"
                       data-delay={0.2 * (index + 1)}
                     >

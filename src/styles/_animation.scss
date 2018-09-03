@@ -160,43 +160,11 @@ $color-main-2: #161b4e;
     transform: scaleX(0);
   }
 }
+@keyframes animateBg{
+  from { background-size: 100% 100%; }
+  to { background-size: 115% 115%; }
+}
 
-// .fade-enter {
-//   opacity: 0;
-//   z-index: 1;
-//   &.fade-enter-active {
-//     opacity: 1;
-//     transition: opacity 250ms ease-in;
-//   }
-// }
-
-// .transition--enter {
-//   clip: rect(50px, 200px, 200px, 0);
-//   transition: 300ms all ease-in-out;
-//   transform: translateX(-100%);
-// }
-// .transition--enter-done {
-//   transform: translateX(0);
-//   clip: none;
-// }
-// .transition--exit {
-//   clip: rect(50px, 200px, 200px, 0);
-//   transform: translateX(100%);
-// }
-// .fade-enter {
-//   opacity: 0.01;
-// }
-// .fade-enter-active {
-//   opacity: 1;
-//   transition: opacity 500ms ease-in;
-// }
-// .fade-exit {
-//   opacity: 1;
-// }
-// .fade-exit-active {
-//   opacity: 0.01;
-//   transition: opacity 500ms ease-in;
-// }
 // Active animation
 .active-animation {
 	position: absolute;
