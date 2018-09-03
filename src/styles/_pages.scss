@@ -362,6 +362,7 @@ body {
   li {
     display: inline-block;
     min-width: 15px;
+    opacity: 0;
     &:empty {
       min-width: 25px;
     }

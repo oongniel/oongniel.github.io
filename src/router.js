@@ -10,7 +10,7 @@ import PageDetailsTypeD from './pages/PageDetails/TypeD';
 import Renderer from './components/Renderer';
 import history from './history';
 import config from './config';
-import { animateHeader, animateCount, reverseTweenHeader } from './scripts/utils';
+import { slideRight, slideLeft, slideUp, slideDown, animateCount } from './scripts/utils';
 
 class AppRouter extends Component {
   constructor(props) {
@@ -24,31 +24,31 @@ class AppRouter extends Component {
   }
   componentDidMount() {
     this.getRouteList();
-    // setTimeout(() => {
-    //   this.initAnimate();
-	// }, 500);
 
     document.addEventListener('keydown', event => {
       const keyCode = event.which;
       let page = history.location.pathname.substr(1);
       page = Number(page) || page;
-      const { routeList } = this.state;
-      const pageIndex = routeList.indexOf(page);
+      const delay = 800;
 	
       switch (keyCode) {
         case 37:
         case 38:
           if (page === 1) {
             return false;
-		  }
-			this.setState({ forward: false });
+          }
+          setTimeout(() => {
+            this.setState({ forward: false });
+          }, delay);
           break;
         case 39:
         case 40:
           if (page >= config.length) {
-            return false;
-		  }
-			this.setState({ forward: true });
+                return false;
+          }
+          setTimeout(() => {
+            this.setState({ forward: true });
+          }, delay);
           break;
         default:
           return false;
@@ -94,16 +94,15 @@ class AppRouter extends Component {
 
   initAnimate = () => {
     animateCount();
-    window.AOS.init();
+    slideRight();
+    slideLeft();
+    slideUp();
+    slideDown();
   };
 
   onExiting = node => {
     if (!node) return;
     const { forward } = this.state;
-    // Kill animation
-    // TweenMax.killTweensOf(node);
-    // TweenLite.killTweensOf(node);
-    // TweenLite.to(node, 0.6, { xPercent: this.state.forward ? -100 : 100 });
     const tl = new TimelineMax({
       onComplete: () => {
         console.log('exit');
@@ -125,7 +124,7 @@ class AppRouter extends Component {
     });
   };
 
-  onEntering = (node, isAppearing) => {
+  onEntering = (node) => {
     if (!node) return;
     const { forward } = this.state;
     // New

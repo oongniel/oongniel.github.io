@@ -23,7 +23,7 @@ class Page extends Component {
           {title && <h1 className="page-title-text">{generateHeader(title)}</h1>}
           </div>
           <div className="col-lg-4 sub-title">
-            {paragraph && <p className="reveal-text dark">{paragraph}</p>}
+            {paragraph && <p className="slide-left reveal-text dark">{paragraph}</p>}
           </div>
         </div>
         <div className="row bottom">
@@ -33,10 +33,9 @@ class Page extends Component {
                 {image.map((item, index) => {
                   return (
                     <div
-                      className="col-lg-3 gallery-item"
-                      data-aos="zoom-in"
-                      data-aos-duration="600"
-                      data-aos-delay={200 * (index + 1)}
+                      className="col-lg-3 gallery-item slide-down"
+                      data-duration="0.6"
+                      data-delay={0.2 * (index + 1)}
                     >
                       <img src={item.image} alt="" />
                       <div>

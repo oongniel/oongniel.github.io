@@ -38,9 +38,9 @@ class Home extends Component {
                 {list.map((item, index) => {
                   return (
                     <li
-                      data-aos={`fade-${forward ? "right" : "left"}`}
-                      data-aos-duration="700"
-                      data-aos-delay={100 * (index + 1)}
+                      className={`slide-${forward ? "right" : "left"}`}
+                      data-duration="0.7"
+                      data-delay={0.15 * (index + 1)}
                     >
                       {item}
                     </li>
@@ -51,20 +51,19 @@ class Home extends Component {
             {paragraph ? (
               <div>
                 {paragraph.map(item => {
-                  return <p className="reveal-text dark">{item}</p>;
+                  return <p className={`reveal-text dark slide-${forward ? "right" : "left"}`}>{item}</p>;
                 })}
               </div>
             ) : null}
             {showLogo ? (
-              <div className="reveal-text dark logo" data-delay="1000">
+              <div className="reveal-text dark logo " data-delay="1">
                 <img src={Logo} width="100%" alt="" />
               </div>
             ) : null}
             {listBottom ? (
               <ul
-                className="row list-bottom"
-                data-aos="fade-up"
-                data-aos-duration="1000"
+                className="slide-up row list-bottom"
+                data-duration="1"
               >
                 {listBottom.map(item => {
                   return <li className="col-lg-6">{item}</li>;
@@ -73,10 +72,8 @@ class Home extends Component {
             ) : null}
           </div>
           <div
-            className="col-lg-8 image-full"
-            // data-aos="fade-left"
-            data-aos={`fade-${forward ? "right" : "left"}`}
-            data-aos-duration="1500"
+            className={`col-lg-8 image-full slide-${forward ? "right" : "left"}`}
+            data-duration="1.5"
             style={{
               backgroundImage: `url(${image})`
             }}

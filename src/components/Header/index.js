@@ -5,10 +5,8 @@ class Header extends Component {
     const { dark } = this.props;
     return (
       <div
-        className={`nav ${dark ? 'dark' : ''}`}
-        data-aos="fade-down"
-        data-aos-duration="1000"
-        data-aos-delay="0"
+        className={`nav ${dark ? 'dark' : ''} slide-down`}
+        data-duration="0.8"
       >
         <div className="row">
           <div>

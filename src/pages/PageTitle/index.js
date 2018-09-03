@@ -22,22 +22,21 @@ class Page extends Component {
           <div className="col-lg-12 title">
           {title && <h1 className="page-title-text">{generateHeader(title)}</h1>}
             {subTitle && (
-              <h3 data-aos="fade-right" data-aos-duration="800">
+              <h3 className="slide-right" data-duration="0.8">
                 {subTitle}
               </h3>
             )}
           </div>
           {paragraph ? (
             <div className="col-lg-4 description">
-              <div className="" data-delay="1000">
+              <div>
                 {paragraph.map((item, index) => {
                   return (
                     <p
                       key={index}
-                      data-aos="fade-right"
-                      data-aos-duration="700"
-                      data-aos-delay={100 * (index + 1)}
-                      className="reveal-text"
+                      data-duration="0.7"
+                      data-delay={0.2 * (index + 1)}
+                      className="slide-right"
                     >
                       {item}
                     </p>

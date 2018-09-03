@@ -26,29 +26,26 @@ const DefaultView = props => {
               {title && <h1 className="page-title-text">{generateHeader(title)}</h1>}
               <div className="row">
                 <div
-                  className="col-lg-6"
-                  data-aos="fade-down"
-                  data-aos-duration="500"
-                  data-aos-delay="100"
+                  className="col-lg-6 slide-down"
+                  data-duration="0.6"
+                  data-delay="0.1"
                 >
                   {renderContent(Content1)}
                   {!!Content8 ? renderContent(Content8) : null}
                 </div>
                 <div
-                  className="col-lg-6"
-                  data-aos="fade-down"
-                  data-aos-duration="500"
-                  data-aos-delay="100"
+                  className="col-lg-6 slide-down"
+                  data-duration="0.6"
+                  data-delay="0.1"
                 >
                   {renderContent(Content2)}
                 </div>
               </div>
             </div>
             <div
-              className="col-lg-6 right"
-              data-aos="fade-left"
-              data-aos-duration="500"
-              data-aos-delay="100"
+              className="col-lg-6 right slide-left"
+              data-duration="0.6"
+              data-delay="0.1"
               style={{
                 backgroundImage: `url(${Content3})`
               }}
@@ -58,40 +55,36 @@ const DefaultView = props => {
         <div className={`col-lg-12 bottom ${!!Content7 && 'full'}`}>
           <div className="row">
             {Content7 ? <div
-              className="col-lg-3"
-              data-aos="fade-up"
-              data-aos-duration="500"
-              data-aos-delay="100"
+              className="col-lg-3 slide-up"
+              data-duration="0.6"
+              data-delay="0.1"
               style={{
                 backgroundImage: `url(${Content7})`
               }}
             /> : null}
             <div
-              className={`col-lg-3 ${!!Content7 ? '' : 'offset-lg-3'}`}
-              data-aos="fade-up"
-              data-aos-duration="500"
-              data-aos-delay="200"
+              className={`col-lg-3 slide-up ${!!Content7 ? '' : 'offset-lg-3'}`}
+              data-duration="0.6"
+              data-delay="0.2"
               style={{
                 backgroundImage: `url(${Content4})`
               }}
             />
             <div
-              className="col-lg-3"
+              className="col-lg-3 slide-up"
               style={{
                 backgroundImage: `url(${Content5})`
               }}
-              data-aos="fade-up"
-              data-aos-duration="500"
-              data-aos-delay="300"
+              data-duration="0.6"
+              data-delay="0.3"
             />
             <div
-              className="col-lg-3"
+              className="col-lg-3 slide-up"
               style={{
                 backgroundImage: `url(${Content6})`
               }}
-              data-aos="fade-up"
-              data-aos-duration="500"
-              data-aos-delay="400"
+              data-duration="0.6"
+              data-delay="0.4"
             />
           </div>
         </div>
@@ -114,10 +107,9 @@ const VerticalView = props => {
         <div className="col-lg-12 bottom">
           <div className="row">
             <div
-              className="col-lg-3"
-              data-aos="fade-up"
-              data-aos-duration="500"
-              data-aos-delay="100"
+              className="col-lg-3 slide-up"
+              data-duration="0.6"
+              data-delay="0.1"
             >
               <p className="reveal-text">{paragraph}</p>
               <ul className="reveal-text">
@@ -129,19 +121,17 @@ const VerticalView = props => {
             <div className="col-lg-3">
               <div className="row">
                 <div
-                  className="col-lg-12 row-2-item"
-                  data-aos="fade-up"
-                  data-aos-duration="500"
-                  data-aos-delay="200"
+                  className="col-lg-12 row-2-item slide-up"
+                  data-duration="0.6"
+                  data-delay="0.2"
                   style={{
                     backgroundImage: `url(${Image1})`
                   }}
                 />
                 <div
-                  className="col-lg-12 row-2-item"
-                  data-aos="fade-up"
-                  data-aos-duration="500"
-                  data-aos-delay="300"
+                  className="col-lg-12 row-2-item slide-up"
+                  data-duration="0.6"
+                  data-delay="0.3"
                   style={{
                     backgroundImage: `url(${Image2})`
                   }}
@@ -149,13 +139,12 @@ const VerticalView = props => {
               </div>
             </div>
             <div
-              className="col-lg-6"
+              className="col-lg-6 slide-up"
               style={{
                 backgroundImage: `url(${Image3})`
               }}
-              data-aos="fade-up"
-              data-aos-duration="500"
-              data-aos-delay="400"
+              data-duration="0.6"
+              data-delay="0.4"
             />
           </div>
         </div>
@@ -178,9 +167,8 @@ const HalfView = props => {
             return (
               <p
                 key={index}
-                className="reveal-text dark"
-                data-aos="fade-right"
-                data-aos-delay={100 * (index + 1)}
+                className="reveal-text dark slide-right"
+                data-delay={0.1 * (index + 1)}
               >
                 {item}
               </p>
@@ -190,17 +178,15 @@ const HalfView = props => {
         <div className="col-lg-3 top">
           <div className="row">
             <div
-              className="col-lg-12 h50"
-              data-aos="fade-up"
-              data-aos-duration="700"
-              data-aos-delay="100"
+              className="col-lg-12 h50 slide-up"
+              data-duration="0.7"
+              data-delay="0.1"
             >
               {renderContent(Content2)}
             </div>
             <div
-              className="col-lg-12 h50"
-              data-aos="fade-up"
-              data-aos-delay="300"
+              className="col-lg-12 h50 slide-up"
+              data-delay="0.3"
               style={{
                 backgroundImage: `url(${Content3})`,
                 backgroundPosition: "bottom"
@@ -209,9 +195,8 @@ const HalfView = props => {
           </div>
         </div>
         <div
-          className="col-lg-6"
-          data-aos="fade-left"
-          data-aos-delay="500"
+          className="col-lg-6 slide-left"
+          data-delay="0.5"
           style={{
             backgroundImage: `url(${Content4})`
           }}

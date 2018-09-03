@@ -1,44 +1,14 @@
 import React from 'react';
 import $ from 'jquery';
-import { TimelineMax } from 'gsap';
+import { TimelineMax, TweenMax, Power3 } from 'gsap';
 
 const delimiter = '||';
 let state = {
   titleTween: null,
-};
-
-export const animateHeader = () => {
-  $('.strip').each(function() {
-    const $t = $(this),
-      str = String($t.html());
-    const rows = str.split(delimiter);
-    // rows = str.split('\n');
-    $t.addClass('active');
-    $t.html('');
-    $.each(rows, function(i, val) {
-      $('<span class="row-item"></span>').appendTo($t);
-
-      const letters = $.trim(val).split('');
-
-      $.each(letters, function(j, v) {
-        v = v === ' ' ? '&nbsp;' : v;
-        $('<span>' + $.trim(v) + '</span>').appendTo($('.row-item:last', $t));
-      });
-    });
-  });
-  triggerHeaderAnimate();
-};
-
-export const triggerHeaderAnimate = () => {
-  for (let i = 0; i < $('.strip span').length; i++) {
-    (function(ind) {
-      setTimeout(function() {
-        $('.strip span:not(".row-item")')
-          .eq(ind)
-          .toggleClass('animate');
-      }, ind * 15);
-    })(i);
-  }
+  slideRightTween: null,
+  slideLeftTween: null,
+  slideUpTween: null,
+  slideDownTween: null,
 };
 
 export const animateCount = delay => {
@@ -66,21 +36,6 @@ export const animateCount = delay => {
   });
 };
 
-export const animateOnScroll = function() {
-  $('.has-animation').each(function(index) {
-    if (
-      $(window).scrollTop() + $(window).height() >
-      $(this).offset().top + $(this).outerHeight()
-    ) {
-      $(this)
-        .delay($(this).data('delay'))
-        .queue(function() {
-          $(this).addClass('animate-in');
-        });
-    }
-  });
-};
-
 export const generateHeader = title => {
   const arr = String(title).split(delimiter);
   console.log(arr);
@@ -102,7 +57,6 @@ export const tweenHeader = (reverse) => {
       console.log('Hi');
     },
   });
-  state.titleTween = tl;
   tl.set(letter, {
     autoAlpha: 1
   });
@@ -112,12 +66,113 @@ export const tweenHeader = (reverse) => {
     },
     autoAlpha: 0
   }).delay(2);
+  state.titleTween = tl;
 };
 
-export const reverseTweenHeader = () => {
-  if(!state.titleTween) {
+export const slideRight = () => {
+  var slideRights = document.querySelectorAll('.slide-right');
+  let tweens = [];
+  for (let i = 0; i < slideRights.length; ++i) {
+    const delay = slideRights[i].dataset.delay || 0;
+    const duration = slideRights[i].dataset.duration || 0.8;
+    const anim1 = TweenMax.set(slideRights[i], {
+      autoAlpha: 0,
+      scale: 1,
+      x: -50
+    });
+    const anim2 = TweenMax.to(slideRights[i], duration, {
+      autoAlpha: 1,
+      x: 0,
+      delay: delay
+    });
+    tweens = [...tweens, anim1, anim2];
+  }
+  state.slideRightTween = tweens;
+}
+
+export const slideLeft = () => {
+  var slideLefts = document.querySelectorAll('.slide-left');
+  let tweens = [];
+  for (let i = 0; i < slideLefts.length; ++i) {
+    const delay = slideLefts[i].dataset.delay || 0;
+    const duration = slideLefts[i].dataset.duration || 0.8;
+    const anim1 = TweenMax.set(slideLefts[i], {
+      autoAlpha: 0,
+      scale: 1,
+      x: 50
+    });
+    const anim2 = TweenMax.to(slideLefts[i], duration, {
+      autoAlpha: 1,
+      x: 0,
+      delay: delay
+    });
+    tweens = [...tweens, anim1, anim2];
+  }
+  state.slideLeftTween = tweens;
+}
+
+export const slideUp = () => {
+  var slideUps = document.querySelectorAll('.slide-up');
+  let tweens = [];
+  for (let i = 0; i < slideUps.length; ++i) {
+    const delay = slideUps[i].dataset.delay || 0;
+    const duration = slideUps[i].dataset.duration || 0.8;
+    const anim1 = TweenMax.set(slideUps[i], {
+      autoAlpha: 0,
+      scale: 1,
+      y: 50
+    });
+    const anim2 = TweenMax.to(slideUps[i], duration, {
+      autoAlpha: 1,
+      y: 0,
+      delay: delay
+    });
+    tweens = [...tweens, anim1, anim2];
+  }
+  state.slideUpTween = tweens;
+}
+
+export const slideDown = () => {
+  var slideDowns = document.querySelectorAll('.slide-down');
+  let tweens = [];
+  for (let i = 0; i < slideDowns.length; ++i) {
+    const delay = slideDowns[i].dataset.delay || 0;
+    const duration = slideDowns[i].dataset.duration || 0.8;
+    const anim1 = TweenMax.set(slideDowns[i], {
+      autoAlpha: 0,
+      scale: 1,
+      y: -50
+    });
+    const anim2 = TweenMax.to(slideDowns[i], duration, {
+      autoAlpha: 1,
+      y: 0,
+      delay: delay
+    });
+    tweens = [...tweens, anim1, anim2];
+  }
+  state.slideDownTween = tweens;
+}
+
+export const reverseTweens = (name) => {
+  const tweenObj = state[name];
+  if(!tweenObj && name !== 'all') {
     return;
   }
-  state.titleTween.reverse();
-  state.titleTween = null;
+  switch (name) {
+    case 'slideLeftTween':
+    case 'slideRightTween':
+    case 'slideUpTween':
+    case 'slideDownTween':
+    console.log(tweenObj)
+      tweenObj.map(tween => {
+        tween.reverse();
+      });
+      break;
+    case 'titleTween':
+      state.titleTween.reverse();
+      state.titleTween = null;
+      break;
+    default:
+      break;
+  }
 }

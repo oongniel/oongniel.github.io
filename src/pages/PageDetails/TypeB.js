@@ -25,17 +25,16 @@ class Page extends Component {
           {/* <div className="col-lg-12 count-data-container"> */}
           <div className="row count-data-container">
             {countData.map((item, index) => {
-              const delay = 500 + 200 * (index + 1);
+              const delay = 0.5 + 0.25 * (index + 1);
               return (
                 <div
-                  className={`info-count col-lg-${
+                  className={`slide-up info-count col-lg-${
                     index === 0 && split
                       ? '6'
                       : 12 / (split ? countData.length + 1 : countData.length)
                   } `}
-                  data-aos="fade-up"
-                  data-aos-duration="800"
-                  data-aos-delay={delay}
+                  data-duration="0.8"
+                  data-delay={delay}
                   key={index}
                 >
                   <div>
