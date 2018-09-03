@@ -13,6 +13,11 @@ body {
   //   margin-top: 50%;
   // }
 }
+.app-wrapper {
+  > div {
+    height: 100%;
+  }
+}
 .row.page {
   height: 100%;
   // padding: 100px 70px;

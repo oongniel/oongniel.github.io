@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import { TimelineMax, TweenMax, Power3 } from 'gsap';
+import { TimelineMax, TweenMax } from 'gsap';
 
 const delimiter = '||';
 let state = {
@@ -11,10 +11,58 @@ let state = {
   slideDownTween: null,
 };
 
+export const pageEnterAnimation = (node, forward, handleComplete) => {
+  // New
+  const tl = new TimelineMax();
+
+  tl.set(node, {
+    scale: 0.5,
+    xPercent: forward ? 100 : -100,
+    opacity: 0.5,
+  });
+
+  tl.to(node, 0.3, {
+    xPercent: forward ? 50 : -50,
+  });
+
+  tl.to(node, 0.8, {
+    xPercent: 0,
+    opacity: 1,
+  });
+
+  tl.to(node, 1, {
+    scale: 1,
+    onComplete: handleComplete,
+    onCompleteParams: [node],
+  });
+};
+
+export const pageExitAnimation = (node, forward) => {
+  const tl = new TimelineMax();
+
+  tl.set(node, {
+    xPercent: 0,
+    scale: 1,
+    transformOrigin: '50% 50%',
+  });
+
+  tl.to(node, 0.3, {
+    scale: 0.5,
+  });
+
+  tl.to(node, 1.5, {
+    xPercent: forward ? -100 : 100,
+  });
+};
+
 export const animateCount = delay => {
   delay = delay || 300;
   $('.count').each(function(i) {
-    const num = Number($(this).text().replace(/,/g, ''));
+    const num = Number(
+      $(this)
+        .text()
+        .replace(/,/g, ''),
+    );
     $(this)
       .prop('Counter', 0)
       .animate(
@@ -26,9 +74,13 @@ export const animateCount = delay => {
           easing: 'swing',
           step: function(now) {
             if (num % 1 === 0) {
-              $(this).text(String(Math.ceil(now)).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+              $(this).text(
+                String(Math.ceil(now)).replace(/\B(?=(\d{3})+(?!\d))/g, ','),
+              );
             } else {
-              $(this).text(now.toFixed(1).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+              $(this).text(
+                now.toFixed(1).replace(/\B(?=(\d{3})+(?!\d))/g, ','),
+              );
             }
           },
         },
@@ -38,33 +90,32 @@ export const animateCount = delay => {
 
 export const generateHeader = title => {
   const arr = String(title).split(delimiter);
-  console.log(arr);
   return arr.map(item => {
     return (
       <ul className="row-item">
         {item.split('').map(letters => {
-          console.log(letters.length)
+          // console.log(letters.length);
           return <li>{letters}</li>;
         })}
       </ul>
     );
   });
 };
-export const tweenHeader = (reverse) => {
+export const tweenHeader = reverse => {
   var letter = document.querySelectorAll('.row-item li');
   var tl = new TimelineMax({
     onComplete: () => {
-      console.log('Hi');
+      // console.log('Hi');
     },
   });
   tl.set(letter, {
-    autoAlpha: 1
+    autoAlpha: 1,
   });
   tl.from(letter, 0.8, {
     y: function(index) {
       return (index + 1) * 5;
     },
-    autoAlpha: 0
+    autoAlpha: 0,
   }).delay(2);
   state.titleTween = tl;
 };
@@ -78,17 +129,17 @@ export const slideRight = () => {
     const anim1 = TweenMax.set(slideRights[i], {
       autoAlpha: 0,
       scale: 1,
-      x: -50
+      x: -50,
     });
     const anim2 = TweenMax.to(slideRights[i], duration, {
       autoAlpha: 1,
       x: 0,
-      delay: delay
+      delay: delay,
     });
     tweens = [...tweens, anim1, anim2];
   }
   state.slideRightTween = tweens;
-}
+};
 
 export const slideLeft = () => {
   var slideLefts = document.querySelectorAll('.slide-left');
@@ -99,17 +150,17 @@ export const slideLeft = () => {
     const anim1 = TweenMax.set(slideLefts[i], {
       autoAlpha: 0,
       scale: 1,
-      x: 50
+      x: 50,
     });
     const anim2 = TweenMax.to(slideLefts[i], duration, {
       autoAlpha: 1,
       x: 0,
-      delay: delay
+      delay: delay,
     });
     tweens = [...tweens, anim1, anim2];
   }
   state.slideLeftTween = tweens;
-}
+};
 
 export const slideUp = () => {
   var slideUps = document.querySelectorAll('.slide-up');
@@ -120,17 +171,17 @@ export const slideUp = () => {
     const anim1 = TweenMax.set(slideUps[i], {
       autoAlpha: 0,
       scale: 1,
-      y: 50
+      y: 50,
     });
     const anim2 = TweenMax.to(slideUps[i], duration, {
       autoAlpha: 1,
       y: 0,
-      delay: delay
+      delay: delay,
     });
     tweens = [...tweens, anim1, anim2];
   }
   state.slideUpTween = tweens;
-}
+};
 
 export const slideDown = () => {
   var slideDowns = document.querySelectorAll('.slide-down');
@@ -141,21 +192,21 @@ export const slideDown = () => {
     const anim1 = TweenMax.set(slideDowns[i], {
       autoAlpha: 0,
       scale: 1,
-      y: -50
+      y: -50,
     });
     const anim2 = TweenMax.to(slideDowns[i], duration, {
       autoAlpha: 1,
       y: 0,
-      delay: delay
+      delay: delay,
     });
     tweens = [...tweens, anim1, anim2];
   }
   state.slideDownTween = tweens;
-}
+};
 
-export const reverseTweens = (name) => {
+export const reverseTweens = name => {
   const tweenObj = state[name];
-  if(!tweenObj && name !== 'all') {
+  if (!tweenObj && name !== 'all') {
     return;
   }
   switch (name) {
@@ -163,9 +214,10 @@ export const reverseTweens = (name) => {
     case 'slideRightTween':
     case 'slideUpTween':
     case 'slideDownTween':
-    console.log(tweenObj)
+      // console.log(tweenObj);
       tweenObj.map(tween => {
         tween.reverse();
+        return true;
       });
       break;
     case 'titleTween':
@@ -175,4 +227,12 @@ export const reverseTweens = (name) => {
     default:
       break;
   }
-}
+};
+
+export const reverseAllTweens = () => {
+  reverseTweens('slideLeftTween');
+  reverseTweens('slideRightTween');
+  reverseTweens('slideUpTween');
+  reverseTweens('slideDownTween');
+  reverseTweens('titleTween');
+};

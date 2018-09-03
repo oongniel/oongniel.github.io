@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import history from '../../history';
+import { reverseAllTweens } from '../../scripts/utils';
 class Header extends Component {
+  handleNavigate = (link) => {
+    reverseAllTweens();
+    const delay = 800;
+    setTimeout(() => {
+      history.push(link);
+    }, delay);
+  }
   render() {
     const { dark } = this.props;
     return (
@@ -10,25 +18,25 @@ class Header extends Component {
       >
         <div className="row">
           <div>
-            <Link to="/dubai">DUBAI</Link>
+            <a onClick={this.handleNavigate.bind(this, "/dubai")} >DUBAI</a>
           </div>
           <div>
-            <Link to="/difc">DIFC</Link>
+            <a onClick={this.handleNavigate.bind(this, "/difc")} >DIFC</a>
           </div>
           <div>
-            <Link to="/gatevillage">GATE VILLAGE</Link>
+            <a onClick={this.handleNavigate.bind(this, "/gatevillage")} >GATE VILLAGE</a>
           </div>
           <div>
-            <Link to="/masterplan">MASTERPLAN</Link>
+            <a onClick={this.handleNavigate.bind(this, "/masterplan")} >MASTERPLAN</a>
           </div>
           <div>
-            <Link to="/gateavenue">GATE AVENUE</Link>
+            <a onClick={this.handleNavigate.bind(this, "/gateavenue")} >GATE AVENUE</a>
           </div>
           <div>
-            <Link to="/entertainmenthub">ENTERTAINMENT HUB</Link>
+            <a onClick={this.handleNavigate.bind(this, "/entertainmenthub")} >ENTERTAINMENT HUB</a>
           </div>
           <div>
-            <Link to="/techvisual">TECH VISUALS</Link>
+            <a onClick={this.handleNavigate.bind(this, "/techvisual")} >TECH VISUALS</a>
           </div>
         </div>
       </div>
