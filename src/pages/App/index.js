@@ -35,6 +35,7 @@ class App extends Component {
     const { routeList } = this.state;
     const pageIndex = routeList.indexOf(page);
     const delay = 800;
+    console.log(page, pageIndex)
     switch (keyCode) {
       case 37:
       case 38:

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route, Switch, Redirect } from 'react-router-dom';
+import { HashRouter, Router, Route, Switch, Redirect } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import PageTitle from './pages/PageTitle';
 import PageDetailsTypeA from './pages/PageDetails/TypeA';
@@ -52,6 +52,7 @@ class AppRouter extends Component {
   };
 
   onExiting = node => {
+    console.log(node)
     if (!node) return;
     const { forward } = this.props;
     pageExitAnimation(node, forward)
@@ -66,9 +67,11 @@ class AppRouter extends Component {
   render() {
     const { forward, handleNavigate } = this.props;
     return (
-      <Router history={history}>
+      <HashRouter 
+      >
         <Route
           render={({ location }) => {
+            console.log(location)
             return (
               <div className="app-wrapper">
               <Nav handleNavigate={handleNavigate}/>
@@ -104,7 +107,7 @@ class AppRouter extends Component {
             );
           }}
         />
-      </Router>
+      </HashRouter>
     );
   }
 }
