@@ -20,7 +20,9 @@ class Home extends Component {
       className,
       list,
       listBottom,
-      forward
+      forward,
+      boldHeaders,
+      contacts
     } = params;
     
     return (
@@ -47,6 +49,30 @@ class Home extends Component {
                   );
                 })}
               </ul>
+            ) : null}
+            {boldHeaders ? (
+              <div className="bold-headers">
+                {boldHeaders.map((item, index) => {
+                  return <span className="slide-right" data-duration="0.7"
+                  data-delay={0.1 * (index + 1)}>{item}</span>
+                })}
+              </div>
+            ) : null}
+            {contacts ? (
+              <div className="contacts">
+                {contacts.map((item, index) => {
+                  return (
+                    <div className="slide-right" data-duration="0.7"
+                    data-delay={0.15 * (index + 1)}>
+                      <span>{item.name}</span>
+                      <span>{item.position}</span>
+                      <span>{item.position2}</span>
+                      <span>{item.contact}</span>
+                      <span>{item.email}</span>
+                    </div>
+                  )
+                })}
+              </div>
             ) : null}
             {paragraph ? (
               <div>

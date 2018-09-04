@@ -72,6 +72,26 @@ export default [
     hasHeader: false,
     title: "Thank||You",
     image: TVPage4,
-    showLogo: true
+    showLogo: true,
+    boldHeaders: [
+      "For more details please visit gateavenue.difc.ae",
+      "Or you may contact the Gate Avenue Retail Leasing Team:"
+    ],
+    contacts: [
+      {
+        name: "Warren Krawchuk",
+        position: "Senior Vice President –",
+        position2: "Retail Leasing",
+        number: "M: +971 50 104 9578",
+        email: "Warren.Krawchuk@difc.ae"
+      },
+      {
+        name: "Olesya Buravskaya",
+        position: "Assistant Vice President –",
+        position2: "Retail Leasing",
+        number: "M: +971 50 650 8486",
+        email: "Olesya.Buravskaya@difc.ae"
+      },
+    ]
   }
 ];

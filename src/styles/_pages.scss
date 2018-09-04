@@ -78,6 +78,24 @@ body {
     padding-left: 0;
     font-size: 1.3em;
   }
+  .bold-headers {
+    font-weight: bold;
+    font-size: 1.7em;
+    span {
+      display: block;
+      margin-bottom: 30px;
+    }
+  }
+  .contacts {
+    font-size: 1.8em;
+    opacity: 0.7;
+    > div {
+      margin-bottom: 20px;
+    }
+    span {
+      display: block;
+    }
+  }
   .left {
     padding: 0 50px;
   }
@@ -354,10 +372,14 @@ body {
 .page {
   height: 100%;
   background-color: $color-white;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: top right;
-  animation: animateBg 25s infinite alternate;
+  background-size: 80% 100%;
+  background-position: bottom center;
+  &:not(.page-details-type-d) {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: top right;
+    animation: animateBg 25s infinite alternate;
+  }
 }
 
 .page-title-text {
