@@ -30,6 +30,9 @@ body {
     font-size: 6em;
     font-weight: 200;
     // opacity: 0;
+    @include screen1260 {
+      font-size: 4em;
+    }
     &.active {
       opacity: 1;
     }
@@ -77,6 +80,9 @@ body {
     margin-bottom: 25px;
     line-height: 1.2;
     color: $color-black;
+    @include screen1260 {
+      font-size: 1.2em;
+    }
   }
   ul {
     color: $color-white;
@@ -84,8 +90,14 @@ body {
     padding-left: 25px;
     font-size: 1.5em;
     list-style: disc;
+    @include screen1260 {
+      font-size: 1.2em;
+    }
     li {
-      padding: 10px 0;
+      padding: 0;
+      @include screen1260 {
+        padding: 3px 0;
+      }
     }
   }
   .logo {
@@ -93,7 +105,10 @@ body {
     bottom: 20px;
     left: 50px;
     img {
-      width: 100%;
+      width: 250px;
+      @include screen1260 {
+        width: 60%;
+      }
     }
   }
 
@@ -166,10 +181,23 @@ body {
   top: 40px;
   text-align: center;
   z-index: 10;
+  @include screen1260 {
+    top: 20px;
+    right: 10px;
+  }
   .row > div {
     position: relative;
-    padding: 3px 5px;
-    margin: 0 15px;
+    padding: 3px 15px;
+    margin: 0 10px 0 17px;
+    @include screen1024 {
+      margin: 0 0 0 8px;
+    }
+    &.active {
+      background: $color-white;
+      a {
+        color: $color-black;
+      }
+    }
     &:not(:last-child) {
       // border-right: 2px solid white;
       &:after {
@@ -180,6 +208,9 @@ body {
         background: white;
         top: 0;
         right: -15px;
+        @include screen1024 {
+          right: -5px;
+        }
       }
     }
     &:before {
@@ -207,6 +238,9 @@ body {
     padding: 0;
     cursor: pointer;
     text-transform: uppercase;
+    @include screen1260 {
+      font-size: 1.1em;
+    }
   }
   &.dark {
     .row > div {
@@ -218,6 +252,12 @@ body {
       &:before {
         background: $color-black;
       }
+      &.active {
+        background: $color-black;
+        a {
+          color: $color-white;
+        }
+      }
     }
     a {
       color: $color-black;
@@ -225,10 +265,10 @@ body {
   }
 }
 .image-full {
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: top right;
-  animation: animateBg 25s infinite alternate;
+  background-position: center;
+  // animation: animateBg 25s infinite alternate;
 }
 .transition-enter {
   // z-index: 2;
@@ -264,4 +304,11 @@ body {
     background: #fdfdfd;
     border-radius: 50%;
   }
+}
+
+.skylight-close-button {
+  display: none!important;
+}
+.hidden {
+  display: none!important;
 }

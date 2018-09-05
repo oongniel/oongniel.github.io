@@ -49,7 +49,7 @@ class Page extends Component {
                       <span className="suffix">{item.suffix}</span>
                     ) : null}
                     {item.counts ? (
-                      <div className={split && 'row'}>
+                      <div className={split ? 'row' : ''}>
                         {item.counts.map(count => {
                           return (
                             <div className={split && 'col-lg-6'}>

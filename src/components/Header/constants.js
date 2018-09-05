@@ -1,7 +1,7 @@
 export default [
   {
     link: "/dubai",
-    title: "Dubai"
+  title: "Dubai"
   },
   {
     link: "/difc",
@@ -19,12 +19,12 @@ export default [
     link: "/gateavenue",
     title: "gate avenue"
   },
+  // {
+  //   link: "/entertainmenthub",
+  //   title: "entertainment hub"
+  // },
   {
-    link: "/entertainmenthub",
-    title: "entertainment hub"
-  },
-  {
-    link: "/techvisual",
-    title: "tech visuals"
+    link: "/settingup",
+    title: "Setting Up"
   },
 ]

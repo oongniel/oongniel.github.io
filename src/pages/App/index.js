@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import $ from "jquery";
+import $ from 'jquery';
 import Router from '../../router';
 import history from '../../history';
 import config from '../../config';
@@ -10,32 +10,31 @@ class App extends Component {
     super(props);
     this.state = {
       routeList: [],
-      forward: true
+      forward: true,
     };
   }
   componentDidMount() {
     getRouteList(list => {
       this.setState({ routeList: list });
-    })
+    });
     document.addEventListener('mousemove', event => {
-      $("#mouse-pointer").css({
-        top: event.pageY + "px",
-        left: event.pageX + "px"
+      $('#mouse-pointer').css({
+        top: event.pageY + 'px',
+        left: event.pageX + 'px',
       });
-    })
+    });
     document.addEventListener('keydown', event => {
       const keyCode = event.which;
       this.handleNavigate(keyCode);
     });
-  };
+  }
 
-  handleNavigate = (keyCode) => {
+  handleNavigate = keyCode => {
     let page = history.location.pathname.substr(1);
     page = Number(page) || page;
     const { routeList } = this.state;
     const pageIndex = routeList.indexOf(page);
-    const delay = 800;
-    console.log(page, pageIndex)
+    const delay = 700;
     switch (keyCode) {
       case 37:
       case 38:
@@ -43,11 +42,11 @@ class App extends Component {
         if (page === 1) {
           return false;
         }
-          this.handleReverseAnimate()
-          setTimeout(() => {
-            this.setState({ forward: false });
-            history.push(`/${routeList[pageIndex - 1]}`);
-          }, delay);
+        this.handleReverseAnimate();
+        setTimeout(() => {
+          this.setState({ forward: false });
+          history.push(`/${routeList[pageIndex - 1]}`);
+        }, delay);
         break;
       case 39:
       case 40:
@@ -55,16 +54,16 @@ class App extends Component {
         if (page >= config.length) {
           return false;
         }
-          this.handleReverseAnimate()
-          setTimeout(() => {
-            this.setState({ forward: true });
-            history.push(`/${routeList[pageIndex + 1]}`);
-          }, delay);
+        this.handleReverseAnimate();
+        setTimeout(() => {
+          this.setState({ forward: true });
+          history.push(`/${routeList[pageIndex + 1]}`);
+        }, delay);
         break;
       default:
         return false;
     }
-  }
+  };
 
   handleReverseAnimate = () => {
     reverseAllTweens();
@@ -73,7 +72,10 @@ class App extends Component {
   render() {
     return (
       <div className="page-main ">
-        <Router forward={this.state.forward} handleNavigate={this.handleNavigate.bind(this)}/>
+        <Router
+          forward={this.state.forward}
+          handleNavigate={this.handleNavigate.bind(this)}
+        />
       </div>
     );
   }

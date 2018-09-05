@@ -19,6 +19,18 @@ export const getRouteList = cb => {
   cb(list);
 };
 
+export const getRouteListForNav = cb => {
+  let activeOn = "";
+  const list = config.map((item, index) => {
+    let obj = {};
+    activeOn = item.route || activeOn;
+    obj.activeOn = activeOn;
+    obj.route = item.route ? item.route : index + 1
+    return obj;
+  });
+  cb(list);
+};
+
 export const pageEnterAnimation = (node, forward, handleComplete) => {
   // New
   const tl = new TimelineMax();
@@ -33,12 +45,12 @@ export const pageEnterAnimation = (node, forward, handleComplete) => {
     xPercent: forward ? 50 : -50,
   });
 
-  tl.to(node, 0.8, {
+  tl.to(node, 0.5, {
     xPercent: 0,
     opacity: 1,
   });
 
-  tl.to(node, 1, {
+  tl.to(node, 0.7, {
     scale: 1,
     onComplete: handleComplete,
     onCompleteParams: [node],
@@ -58,7 +70,7 @@ export const pageExitAnimation = (node, forward) => {
     scale: 0.5,
   });
 
-  tl.to(node, 1.5, {
+  tl.to(node, 1, {
     xPercent: forward ? -100 : 100,
   });
 };

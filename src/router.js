@@ -39,7 +39,6 @@ class AppRouter extends Component {
   };
   
   handleComplete = target => {
-    // TweenLite.set(target, { clearProps: 'all' });
     this.initAnimate();
   };
 
@@ -52,7 +51,7 @@ class AppRouter extends Component {
   };
 
   onExiting = node => {
-    console.log(node)
+    // console.log(node)
     if (!node) return;
     const { forward } = this.props;
     pageExitAnimation(node, forward)
@@ -71,13 +70,12 @@ class AppRouter extends Component {
       >
         <Route
           render={({ location }) => {
-            console.log(location)
             return (
               <div className="app-wrapper">
-              <Nav handleNavigate={handleNavigate}/>
+              <Nav handleNavigate={handleNavigate} location={location}/>
               <TransitionGroup>
                 <CSSTransition
-                  timeout={1500}
+                  timeout={1000}
                   classNames="transition"
                   appear={true}
                   key={location.pathname}

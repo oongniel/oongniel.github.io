@@ -9,7 +9,6 @@ class Home extends Component {
   renderContent = content => {
     const isImage = content.match(/(svg|png|jpg|jpeg)/g);
     const type = isImage ? "image" : typeof content;
-    console.log();
     switch (type) {
       case "string":
         return <p>{content}</p>;

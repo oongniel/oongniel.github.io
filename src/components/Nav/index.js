@@ -1,17 +1,48 @@
 import React, { Component } from "react";
+import { getRouteList } from "../../scripts/utils";
+
 class Navigate extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      routeList: []
+    };
+  }
   handleClick = action => {
     if(!action) {
       return;
     }
     this.props.handleNavigate(action);
   }
+
+  componentDidMount() {
+    getRouteList(list => {
+      this.setState({ routeList: list });
+    });
+  }
+
+  componentWillReceiveProps(nextProps, prevProps) {
+    // console.log(nextProps, this.props)
+    // if(nextProps.location.pathname !== this.props.location.pathname) {
+    //   this.checkIfDisabled(nextProps.location.pathname);
+    // }
+  };
+
   render() {
+    const { location } = this.props;
+    const { routeList } = this.state;
+    let page = location.pathname.substr(1);
+    page = Number(page) || page;
+    let nextItem = routeList.indexOf(page) + 1;
+    nextItem = routeList[nextItem];
+    const hideNext = typeof nextItem === 'string' || typeof nextItem === 'undefined';
+    console.log(nextItem)
     return (
       <nav>
         <ul className="cd-vertical-nav">
-          <li onClick={this.handleClick.bind(this, 'previous')}><a className="cd-prev">Next</a></li>
-          <li onClick={this.handleClick.bind(this, 'next')}><a className="cd-next">Prev</a></li>
+          <li onClick={this.handleClick.bind(this, 'previous')}><a className="cd-prev">Prev</a></li>
+          <li onClick={this.handleClick.bind(this, 'next')}><a className={`cd-next ${hideNext ? 'hidden' : ''}`}>Next</a></li>
         </ul>
       </nav>
     );
