@@ -24,7 +24,7 @@ class Header extends Component {
         page = Number(page) || page;
         return route.route === page;
       })
-      activeNav = filtered[0].activeOn;
+      activeNav = filtered.length ? filtered[0].activeOn : '';
     });
     return activeNav;
   };
