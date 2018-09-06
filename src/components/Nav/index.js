@@ -22,13 +22,6 @@ class Navigate extends Component {
     });
   }
 
-  componentWillReceiveProps(nextProps, prevProps) {
-    // console.log(nextProps, this.props)
-    // if(nextProps.location.pathname !== this.props.location.pathname) {
-    //   this.checkIfDisabled(nextProps.location.pathname);
-    // }
-  };
-
   render() {
     const { location } = this.props;
     const { routeList } = this.state;
@@ -37,7 +30,7 @@ class Navigate extends Component {
     let nextItem = routeList.indexOf(page) + 1;
     nextItem = routeList[nextItem];
     const hideNext = typeof nextItem === 'string' || typeof nextItem === 'undefined';
-    console.log(nextItem)
+
     return (
       <nav>
         <ul className="cd-vertical-nav">

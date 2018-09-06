@@ -1,5 +1,5 @@
 // import createHistory from "history/createBrowserHistory";
-import {createHashHistory} from "history";
+import createHashHistory from 'history/createHashHistory';
 // export default createHistory();
 
 export default createHashHistory({

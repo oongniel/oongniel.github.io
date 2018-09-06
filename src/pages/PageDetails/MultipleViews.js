@@ -1,18 +1,18 @@
-import React, { Component } from "react";
-import { DefaultView, VerticalView, HalfView } from "./views";
-import { tweenHeader } from "../../scripts/utils";
+import React, { Component } from 'react';
+import { DefaultView, VerticalView, HalfView } from './MultipleViewsCategories';
+import { tweenHeader } from '../../scripts/utils';
 
-class Home extends Component {
+class MultipleViews extends Component {
   componentDidMount() {
     tweenHeader();
   }
   renderContent = content => {
     const isImage = content.match(/(svg|png|jpg|jpeg)/g);
-    const type = isImage ? "image" : typeof content;
+    const type = isImage ? 'image' : typeof content;
     switch (type) {
-      case "string":
+      case 'string':
         return <p>{content}</p>;
-      case "image":
+      case 'image':
         return <img src={content} width="100%" alt="" />;
       default:
         break;
@@ -23,7 +23,7 @@ class Home extends Component {
     const { params } = this.props;
     const { light, view } = params;
     return (
-      <div className={`page page-details-type-c ${light ? "light" : "dark"}`}>
+      <div className={`page page-details-type-c ${light ? 'light' : 'dark'}`}>
         {
           {
             default: (
@@ -37,7 +37,7 @@ class Home extends Component {
             ),
             half: (
               <HalfView params={params} renderContent={this.renderContent} />
-            )
+            ),
           }[view]
         }
       </div>
@@ -45,4 +45,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default MultipleViews;

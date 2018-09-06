@@ -50,12 +50,12 @@ export default [
     image: GAPage2,
     showLogo: false,
     list: [
-      "185 F&B, fashion and lifestyle stores",
-      "22,500 sqft upscale urban food hall",
-      "4,000 sqft Design House featuring local talent",
-      "9-screen movie theatre",
-      "15,000 sqft gym by one of Dubai’s leading fitness brand",
-      "10,000 sqft DIFCF in Tech Hive"
+      "<b>185</b> F&B, fashion and lifestyle stores",
+      "<b>22,500</b> sqft upscale urban food hall",
+      "<b>4,000</b> sqft Design House featuring local talent",
+      "<b>9</b>-screen movie theatre",
+      "<b>15,000</b> sqft gym by one of Dubai’s leading fitness brand",
+      "<b>10,000</b> sqft DIFCF in Tech Hive"
     ],
     paragraph: [
       "All within a fully connected year-round walkable destination, with outdoor promenade and urban landscaping."

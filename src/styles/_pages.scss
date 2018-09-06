@@ -36,6 +36,12 @@ body {
 }
 
 .page-title {
+  &.setting-up {
+    background: #a67d33!important;
+    &:before {
+      content: none;
+    }
+  }
   h1 {
     padding: 120px 0 0 50px;
     color: $color-white;
@@ -97,6 +103,12 @@ body {
       padding: 0;
     }
   }
+  b {
+    color: #00a0df;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0 2px 0 0;
+  }
   .bold-headers {
     font-weight: bold;
     font-size: 1.4em;
@@ -130,6 +142,9 @@ body {
     margin-bottom: 25px;
     @include screen1260 {
       font-size: 1.2em;
+    }
+    li {
+      padding: 5px 0;
     }
   }
   .list-bottom {
@@ -449,6 +464,17 @@ body {
   }
 }
 
+.page-details-type-e {
+  background: red;
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    font-size: 6em;
+  }
+}
+
 .dark {
   p,
   h1 {
@@ -486,6 +512,7 @@ body {
 }
 .page-title,
 .page-details-type-b,
+.page-details-type-e,
 .page-details-type-a .image-full {
   &:before {
     content: '';

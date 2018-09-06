@@ -18,10 +18,12 @@ class App extends Component {
       this.setState({ routeList: list });
     });
     document.addEventListener('mousemove', event => {
-      $('#mouse-pointer').css({
-        top: event.pageY + 'px',
-        left: event.pageX + 'px',
-      });
+      if(true) {
+        $('#mouse-pointer').css({
+          top: event.pageY + 'px',
+          left: event.pageX + 'px',
+        });
+      }
     });
     document.addEventListener('keydown', event => {
       const keyCode = event.which;
@@ -30,7 +32,7 @@ class App extends Component {
   }
 
   handleNavigate = keyCode => {
-    let page = history.location.pathname.substr(1);
+    let page = window.location.hash.substr(2);
     page = Number(page) || page;
     const { routeList } = this.state;
     const pageIndex = routeList.indexOf(page);

@@ -110,12 +110,11 @@ export const animateCount = delay => {
 
 export const generateHeader = title => {
   const arr = String(title).split(delimiter);
-  return arr.map(item => {
+  return arr.map((item, index) => {
     return (
-      <ul className="row-item">
-        {item.split('').map(letters => {
-          // console.log(letters.length);
-          return <li>{letters}</li>;
+      <ul className="row-item" key={index}>
+        {item.split('').map((letters, i) => {
+          return <li key={i}>{letters}</li>;
         })}
       </ul>
     );

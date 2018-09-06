@@ -1,6 +1,6 @@
-import React from "react";
-import Header from "../../components/Header";
-import { generateHeader } from "../../scripts/utils";
+import React from 'react';
+import Header from '../../components/Header';
+import { generateHeader } from '../../scripts/utils';
 const DefaultView = props => {
   // console.log(props);
   const { params, renderContent } = props;
@@ -14,7 +14,7 @@ const DefaultView = props => {
     Content6,
     Content7,
     Content8,
-    light
+    light,
   } = params;
   return (
     <div className="view default-view">
@@ -23,7 +23,9 @@ const DefaultView = props => {
         <div className="col-lg-12 top">
           <div className="row">
             <div className="col-lg-6 left">
-              {title && <h1 className="page-title-text">{generateHeader(title)}</h1>}
+              {title && (
+                <h1 className="page-title-text">{generateHeader(title)}</h1>
+              )}
               <div className="row">
                 <div
                   className="col-lg-6 slide-down"
@@ -47,33 +49,35 @@ const DefaultView = props => {
               data-duration="0.6"
               data-delay="0.1"
               style={{
-                backgroundImage: `url(${Content3})`
+                backgroundImage: `url(${Content3})`,
               }}
             />
           </div>
         </div>
         <div className={`col-lg-12 bottom ${!!Content7 && 'full'}`}>
           <div className="row">
-            {Content7 ? <div
-              className="col-lg-3 slide-up"
-              data-duration="0.6"
-              data-delay="0.1"
-              style={{
-                backgroundImage: `url(${Content7})`
-              }}
-            /> : null}
+            {Content7 ? (
+              <div
+                className="col-lg-3 slide-up"
+                data-duration="0.6"
+                data-delay="0.1"
+                style={{
+                  backgroundImage: `url(${Content7})`,
+                }}
+              />
+            ) : null}
             <div
               className={`col-lg-3 slide-up ${!!Content7 ? '' : 'offset-lg-3'}`}
               data-duration="0.6"
               data-delay="0.2"
               style={{
-                backgroundImage: `url(${Content4})`
+                backgroundImage: `url(${Content4})`,
               }}
             />
             <div
               className="col-lg-3 slide-up"
               style={{
-                backgroundImage: `url(${Content5})`
+                backgroundImage: `url(${Content5})`,
               }}
               data-duration="0.6"
               data-delay="0.3"
@@ -81,7 +85,7 @@ const DefaultView = props => {
             <div
               className="col-lg-3 slide-up"
               style={{
-                backgroundImage: `url(${Content6})`
+                backgroundImage: `url(${Content6})`,
               }}
               data-duration="0.6"
               data-delay="0.4"
@@ -102,7 +106,9 @@ const VerticalView = props => {
       <Header dark={light} />
       <div className="row">
         <div className="col-lg-12 top">
-          {title && <h1 className="page-title-text">{generateHeader(title)}</h1>}
+          {title && (
+            <h1 className="page-title-text">{generateHeader(title)}</h1>
+          )}
         </div>
         <div className="col-lg-12 bottom">
           <div className="row">
@@ -113,8 +119,8 @@ const VerticalView = props => {
             >
               <p className="reveal-text">{paragraph}</p>
               <ul className="reveal-text">
-                {list.map(item => {
-                  return <li>{item}</li>;
+                {list.map((item, index) => {
+                  return <li key={index}>{item}</li>;
                 })}
               </ul>
             </div>
@@ -125,7 +131,7 @@ const VerticalView = props => {
                   data-duration="0.6"
                   data-delay="0.2"
                   style={{
-                    backgroundImage: `url(${Image1})`
+                    backgroundImage: `url(${Image1})`,
                   }}
                 />
                 <div
@@ -133,7 +139,7 @@ const VerticalView = props => {
                   data-duration="0.6"
                   data-delay="0.3"
                   style={{
-                    backgroundImage: `url(${Image2})`
+                    backgroundImage: `url(${Image2})`,
                   }}
                 />
               </div>
@@ -141,7 +147,7 @@ const VerticalView = props => {
             <div
               className="col-lg-6 slide-up"
               style={{
-                backgroundImage: `url(${Image3})`
+                backgroundImage: `url(${Image3})`,
               }}
               data-duration="0.6"
               data-delay="0.4"
@@ -189,7 +195,7 @@ const HalfView = props => {
               data-delay="0.3"
               style={{
                 backgroundImage: `url(${Content3})`,
-                backgroundPosition: "bottom"
+                backgroundPosition: 'bottom',
               }}
             />
           </div>
@@ -198,7 +204,7 @@ const HalfView = props => {
           className="col-lg-6 slide-left"
           data-delay="0.5"
           style={{
-            backgroundImage: `url(${Content4})`
+            backgroundImage: `url(${Content4})`,
           }}
         />
       </div>

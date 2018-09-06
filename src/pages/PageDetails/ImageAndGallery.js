@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import Header from "../../components/Header";
-import { tweenHeader, generateHeader } from "../../scripts/utils";
+import React, { Component } from 'react';
+import Header from '../../components/Header';
+import { tweenHeader, generateHeader } from '../../scripts/utils';
 import SkyLight from 'react-skylight';
 
-class Page extends Component {
+class ImageAndGallery extends Component {
   constructor(props) {
     super(props);
     this.state = {
       modalOpen: false,
-      image: null
-    }
+      image: null,
+    };
   }
   componentDidMount() {
     tweenHeader();
@@ -17,40 +17,46 @@ class Page extends Component {
   handleImagePreview = image => {
     this.galleryPreview.show();
     this.setState({ modalOpen: true, image });
-  }
+  };
   render() {
     const { params } = this.props;
     const { title, paragraph, image, className } = params;
-    const isGallery = typeof image !== "string";
+    const isGallery = typeof image !== 'string';
     return (
-      <div
-        className={`page page-details-type-d ${className}`}
-      >
+      <div className={`page page-details-type-d ${className}`}>
         <Header dark={true} />
         <SkyLight
           hideOnOverlayClicked
-          ref={ref => this.galleryPreview = ref}
-          transitionDuration={500} 
+          ref={ref => (this.galleryPreview = ref)}
+          transitionDuration={500}
         >
-          <img src={this.state.image} width="100%"/>
+          <img src={this.state.image} width="100%" />
         </SkyLight>
         <div className="row top">
           <div className="col-lg-6 ">
-          {title && <h1 className="page-title-text">{generateHeader(title)}</h1>}
+            {title && (
+              <h1 className="page-title-text">{generateHeader(title)}</h1>
+            )}
           </div>
           <div className="col-lg-4 sub-title">
-            {paragraph && <p className="slide-left reveal-text dark">{paragraph}</p>}
+            {paragraph && (
+              <p className="slide-left reveal-text dark">{paragraph}</p>
+            )}
           </div>
         </div>
-        <div className="row bottom" style={{
-          backgroundImage: `url(${image})`
-        }}>
-          <div className={`col-lg-12 ${isGallery ? "gallery" : "full"}`}>
+        <div
+          className="row bottom"
+          style={{
+            backgroundImage: `url(${image})`,
+          }}
+        >
+          <div className={`col-lg-12 ${isGallery ? 'gallery' : 'full'}`}>
             {isGallery ? (
               <div className="row gallery">
                 {image.map((item, index) => {
                   return (
                     <div
+                      key={index}
                       className="col-lg-3 gallery-item slide-up"
                       data-duration="0.6"
                       data-delay={0.2 * (index + 1)}
@@ -73,4 +79,4 @@ class Page extends Component {
   }
 }
 
-export default Page;
+export default ImageAndGallery;

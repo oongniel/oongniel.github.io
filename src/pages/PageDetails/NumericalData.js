@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../../components/Header';
 import { generateHeader, tweenHeader } from '../../scripts/utils';
 
-class Page extends Component {
+class NumericalData extends Component {
   componentDidMount() {
     tweenHeader();
   }
@@ -22,12 +22,12 @@ class Page extends Component {
               <h1 className="page-title-text">{generateHeader(title)}</h1>
             )}
           </div>
-          {/* <div className="col-lg-12 count-data-container"> */}
           <div className="row count-data-container">
             {countData.map((item, index) => {
               const delay = 0.5 + 0.25 * (index + 1);
               return (
                 <div
+                  key={index}
                   className={`slide-up info-count col-lg-${
                     index === 0 && split
                       ? '6'
@@ -50,9 +50,12 @@ class Page extends Component {
                     ) : null}
                     {item.counts ? (
                       <div className={split ? 'row' : ''}>
-                        {item.counts.map(count => {
+                        {item.counts.map((count, index) => {
                           return (
-                            <div className={split && 'col-lg-6'}>
+                            <div
+                              className={split ? 'col-lg-6' : ''}
+                              key={index}
+                            >
                               {count.count ? (
                                 <span className="count">{count.count}</span>
                               ) : null}
@@ -77,4 +80,4 @@ class Page extends Component {
   }
 }
 
-export default Page;
+export default NumericalData;

@@ -8,29 +8,16 @@ import IconScheme from "../images/icons/scheme.png";
 import IconBadge from "../images/icons/badge.png";
 import IconZero from "../images/icons/zero.png";
 import IconPaperPencil from "../images/icons/paper_pencil.png";
+import ThankYouBG from "../images/thankyou-bg.jpg";
+
 export default [
   {
     template: "page-title",
     route: "settingup",
     hasHeader: true,
-    title: "Setting Up"
+    title: "Setting Up",
+    className: "setting-up"
   },
-  // {
-  //   // Title and paragraph on left, BG Image
-  //   template: "page-details-d",
-  //   hasHeader: true,
-  //   className: "full-image",
-  //   title: "Final Concept",
-  //   image: TVPage1
-  // },
-  // {
-  //   // Title and paragraph on left, BG Image
-  //   template: "page-details-d",
-  //   hasHeader: true,
-  //   className: "full-image",
-  //   title: "Vehicle &||Pedestrian Access",
-  //   image: TVPage2
-  // },
   {
     // WIth Count Data
     template: "page-details-b",
@@ -93,5 +80,10 @@ export default [
         email: "Olesya.Buravskaya@difc.ae"
       },
     ]
-  }
+  },
+  {
+    template: "page-details-e",
+    title: "Thank you!",
+    image: ThankYouBG
+  },
 ];

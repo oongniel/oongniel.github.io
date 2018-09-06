@@ -8,10 +8,10 @@ class Page extends Component {
   }
   render() {
     const { params } = this.props;
-    const { title, paragraph, image, hasHeader, subTitle } = params;
+    const { title, paragraph, image, hasHeader, subTitle, className } = params;
     return (
       <div
-        className="page page-title"
+        className={`page page-title ${className}`}
         style={{
           backgroundImage: `url(${image})`,
           backgroundColor: '#000',
