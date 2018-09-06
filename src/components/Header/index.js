@@ -40,9 +40,10 @@ class Header extends Component {
             return (
               <div
                 key={item.link}
-                className={
-                  this.checkIfActive(item.link) === item.link.substr(1) ? 'active' : ''
-                }
+                className={`
+                  ${this.checkIfActive(item.link) === item.link.substr(1) ? 'active' : ''}
+                  ${item.className}
+                `}
               >
                 <a onClick={this.handleNavigate.bind(this, item.link)}>
                   {item.title}

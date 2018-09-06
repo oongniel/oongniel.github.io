@@ -23,6 +23,7 @@ class ContentLeftImageRight extends Component {
       forward,
       boldHeaders,
       contacts,
+      video
     } = params;
 
     return (
@@ -134,10 +135,24 @@ class ContentLeftImageRight extends Component {
               forward ? 'right' : 'left'
             }`}
             data-duration="1.5"
-            style={{
-              backgroundImage: `url(${image})`,
-            }}
-          />
+            // style={{
+            //   backgroundImage: `url(${image})`,
+            // }}
+          >
+            {image ? <img src={image} /> : null}
+            {video ? (
+            <div className="fullscreen-bg">
+              <video
+                loop={true}
+                muted={true}
+                autoPlay={true}
+                className="fullscreen-bg__video"
+              >
+                <source src={video} type="video/mp4" />
+              </video>
+            </div>
+          ) : null}
+          </div>
         </div>
       </div>
     );

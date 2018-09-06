@@ -25,6 +25,7 @@ export default [
   // },
   {
     link: "/settingup",
-    title: "Setting Up"
+    title: "Setting Up",
+    className: "setting-up"
   },
 ]

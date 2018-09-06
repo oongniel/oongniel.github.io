@@ -31,12 +31,34 @@ class App extends Component {
     });
   }
 
+  allownavigate = () => {
+    const { routeList } = this.state;
+    let page = window.location.pathname.substr(2);
+    page = Number(page) || page;
+    let nextItem = routeList.indexOf(page) + 1;
+    nextItem = routeList[nextItem];
+    const hideNext = typeof nextItem === 'string' || typeof nextItem === 'undefined';
+    console.log(nextItem, routeList);
+  };
+
   handleNavigate = keyCode => {
     let page = window.location.hash.substr(2);
     page = Number(page) || page;
     const { routeList } = this.state;
     const pageIndex = routeList.indexOf(page);
     const delay = 700;
+
+    // 
+    let nextItem = pageIndex + 1;
+    nextItem = routeList[nextItem];
+
+    let prevItem = pageIndex - 1;
+    prevItem = routeList[prevItem];
+    console.log(nextItem, prevItem)
+    // 
+    const hideNext = typeof nextItem === 'string' || typeof nextItem === 'undefined';
+    // const hidePrev = (typeof prevItem === 'string' || typeof prevItem === 'undefined') && typeof page === "number";
+
     switch (keyCode) {
       case 37:
       case 38:
@@ -53,7 +75,7 @@ class App extends Component {
       case 39:
       case 40:
       case 'next':
-        if (page >= config.length) {
+        if ((page >= config.length || hideNext) && page !== 1) {
           return false;
         }
         this.handleReverseAnimate();

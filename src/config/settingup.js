@@ -12,16 +12,10 @@ import ThankYouBG from "../images/thankyou-bg.jpg";
 
 export default [
   {
-    template: "page-title",
-    route: "settingup",
-    hasHeader: true,
-    title: "Setting Up",
-    className: "setting-up"
-  },
-  {
     // WIth Count Data
     template: "page-details-b",
     hasHeader: true,
+    route: "settingup",
     title: "Setting up||Your store||With Ease",
     image: TVPage3,
     className: "",
@@ -56,7 +50,7 @@ export default [
   {
     template: "page-details-a",
     className: "title",
-    hasHeader: false,
+    hasHeader: true,
     title: "Get||In Touch",
     image: TVPage4,
     showLogo: true,

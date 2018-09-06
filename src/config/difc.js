@@ -1,6 +1,6 @@
 import DIFCTitleBG from "../images/difc-titlebg.jpg";
 import DIFCPage1 from "../images/difc-page1.jpg";
-
+import DIFCVideo from "../videos/difc.mp4";
 import DubaiCount2BG from "../images/dubai-count2bg.jpg";
 import DubaiCount3BG from "../images/dubai-count3bg.jpg";
 // import IconArrow from "../images/arrow-up.svg";
@@ -18,7 +18,8 @@ export default [
     route: "difc",
     hasHeader: true,
     title: "Welcome||TO DIFC",
-    image: DIFCTitleBG
+    // image: DIFCTitleBG,
+    video: DIFCVideo
   },
   {
     // Title on Left, Image on right

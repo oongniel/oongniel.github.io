@@ -1,4 +1,5 @@
 import HomeBG from "../images/home-bg.jpg";
+import HomeVideo from "../videos/gate_avenue.mp4";
 import DubaiTitleBG from "../images/dubai-titlebg.jpg";
 import DubaiCount1BG from "../images/dubai-count1bg.jpg";
 import IconArrowUp from "../images/icons/arrow_up.png";
@@ -14,7 +15,8 @@ export default [
     className: "title",
     hasHeader: true,
     title: "A New||Avenue||To DIFC",
-    image: HomeBG,
+    // image: HomeBG,
+    video: HomeVideo,
     showLogo: true
   },
   {

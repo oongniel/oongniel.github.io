@@ -1,4 +1,5 @@
 import GVPageTitle from "../images/gv-titlebg.jpg";
+import MasterPlanPageTitle from "../images/masterplan-titlebg.jpg";
 import GVPage1 from "../images/gv-page1.jpg";
 import GVPage2 from "../images/gv-page2.jpg";
 import GVPage3 from "../images/gv-page3.jpg";
@@ -153,5 +154,14 @@ export default [
       "Immerse yourself in luxury at one of DIFC’s five-star hotels. The Ritz Carlton, Four Seasons and soon to open Waldorf Astoria have chosen to set up within the district.",
       "These premium hotels boast some of the city’s finest restaurants and event spaces, and provide a constant flow of business and leisure travellers."
     ]
-  }
+  },
+  {
+    template: "page-title",
+    hasHeader: true,
+    title: "A FIT and||Active||Workforce",
+    image: MasterPlanPageTitle,
+    paragraph: [
+      "The DIFC community loves to work hard and play hard. Keeping fit is also high on their agenda. DIFC offers a range of training facilities including Barry’s Bootcamp, D5 Executive Training and a platinum level Fitness First."
+    ]
+  },
 ];
