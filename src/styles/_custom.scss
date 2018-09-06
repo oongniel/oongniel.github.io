@@ -4,6 +4,12 @@
 * {
   cursor: none !important;
 }
+html,
+body,
+#root,
+.page-main {
+  height: 100%;
+}
 body {
   color: $color-black;
   font-family: 'TSTAR-Regular';
@@ -11,8 +17,6 @@ body {
   font-size: 1em;
 }
 .page-main {
-  height: 100vh;
-  // padding: 20px;
   overflow: hidden;
   .renderer {
     height: 100%;
