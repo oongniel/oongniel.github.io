@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+// import objectFitImages from 'object-fit-images';
 import Header from '../../components/Header';
 import Logo from '../../images/logo.png';
 import { generateHeader, tweenHeader } from '../../scripts/utils';
@@ -7,6 +8,9 @@ import { generateHeader, tweenHeader } from '../../scripts/utils';
 class ContentLeftImageRight extends Component {
   componentDidMount() {
     tweenHeader();
+    // objectFitImages($('.image-full img'), {
+    //   watchMQ: true
+    // })
   }
   render() {
     const { params } = this.props;
@@ -23,7 +27,8 @@ class ContentLeftImageRight extends Component {
       forward,
       boldHeaders,
       contacts,
-      video
+      video,
+      imageList
     } = params;
 
     return (
@@ -90,7 +95,7 @@ class ContentLeftImageRight extends Component {
                       <span>{item.name}</span>
                       <span>{item.position}</span>
                       <span>{item.position2}</span>
-                      <span>{item.contact}</span>
+                      <span>{item.number}</span>
                       <span>{item.email}</span>
                     </div>
                   );
@@ -103,9 +108,10 @@ class ContentLeftImageRight extends Component {
                   return (
                     <p
                       key={index}
-                      className={`reveal-text dark slide-${
+                      className={` dark slide-${
                         forward ? 'right' : 'left'
                       }`}
+                      data-delay={0.2 * (index + 1)}
                     >
                       {item}
                     </p>
@@ -113,8 +119,15 @@ class ContentLeftImageRight extends Component {
                 })}
               </div>
             ) : null}
+            {imageList ? 
+              <div className="row image-list">
+                {imageList.map((item, index) => {
+                  return <div className="col-xl-4 col-md-4 slide-up" data-delay={0.15 * (index + 1)}><img src={item} alt="" /></div>
+                })}
+              </div>  
+            : null}
             {showLogo ? (
-              <div className="reveal-text dark logo " data-delay="1">
+              <div className=" dark logo " data-delay="1">
                 <img src={Logo} width="100%" alt="" />
               </div>
             ) : null}
@@ -139,19 +152,8 @@ class ContentLeftImageRight extends Component {
             //   backgroundImage: `url(${image})`,
             // }}
           >
-            {image ? <img src={image} /> : null}
-            {video ? (
-            <div className="fullscreen-bg">
-              <video
-                loop={true}
-                muted={true}
-                autoPlay={true}
-                className="fullscreen-bg__video"
-              >
-                <source src={video} type="video/mp4" />
-              </video>
-            </div>
-          ) : null}
+            {image ? <div style={{ backgroundImage: `url(${image})`}} id="image-background-container"></div> : null}
+            {/* {image ? <img src={image} alt="" data-object-fit="cover"/> : null} */}
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import { TimelineMax, TweenMax } from 'gsap';
+import { TimelineMax, TweenMax, TweenLite } from 'gsap';
 import config from "../config";
 
 const delimiter = '||';
@@ -31,30 +31,78 @@ export const getRouteListForNav = cb => {
   cb(list);
 };
 
+// export const pageEnterAnimation = (node, forward, handleComplete) => {
+//   // Old
+//   const tl = new TimelineMax();
+
+//   tl.set(node, {
+//     scale: 0.5,
+//     xPercent: forward ? 100 : -100,
+//     opacity: 0.5,
+//   });
+
+//   tl.to(node, 0.3, {
+//     xPercent: forward ? 50 : -50,
+//   });
+
+//   tl.to(node, 0.5, {
+//     xPercent: 0,
+//     opacity: 1,
+//   });
+
+//   tl.to(node, 0.7, {
+//     scale: 1,
+//     onComplete: handleComplete,
+//     onCompleteParams: [node],
+//   });
+
+// };
+
+// export const pageExitAnimation = (node, forward) => {
+//   const tl = new TimelineMax();
+
+//   tl.set(node, {
+//     xPercent: 0,
+//     scale: 1,
+//     transformOrigin: '50% 50%',
+//   });
+
+//   tl.to(node, 0.3, {
+//     scale: 0.5,
+//   });
+
+//   tl.to(node, 1, {
+//     xPercent: forward ? -100 : 100,
+//   });
+// };
+
 export const pageEnterAnimation = (node, forward, handleComplete) => {
-  // New
+  // Old
   const tl = new TimelineMax();
-
+  
   tl.set(node, {
-    scale: 0.5,
+    // scale: 0.5,
     xPercent: forward ? 100 : -100,
-    opacity: 0.5,
+    autoAlpha: 0
   });
 
-  tl.to(node, 0.3, {
-    xPercent: forward ? 50 : -50,
-  });
+  // tl.to(node, 0.3, {
+  //   xPercent: forward ? 50 : -50,
+  // });
 
-  tl.to(node, 0.5, {
+  tl.to(node, 0.8, {
     xPercent: 0,
-    opacity: 1,
-  });
-
-  tl.to(node, 0.7, {
-    scale: 1,
+    autoAlpha: 1,
     onComplete: handleComplete,
     onCompleteParams: [node],
   });
+
+  // tl.to(node, 1, {
+  //   // scale: 1,
+  //   onComplete: handleComplete,
+  //   onCompleteParams: [node],
+  // });
+
 };
 
 export const pageExitAnimation = (node, forward) => {
@@ -62,16 +110,16 @@ export const pageExitAnimation = (node, forward) => {
 
   tl.set(node, {
     xPercent: 0,
-    scale: 1,
-    transformOrigin: '50% 50%',
+    autoAlpha: 1,
   });
 
-  tl.to(node, 0.3, {
-    scale: 0.5,
-  });
+  // tl.to(node, 0.3, {
+  //   scale: 0.5,
+  // });
 
-  tl.to(node, 1, {
+  tl.to(node, 0.8, {
     xPercent: forward ? -100 : 100,
+    autoAlpha: 0
   });
 };
 
@@ -135,7 +183,8 @@ export const tweenHeader = reverse => {
       return (index + 1) * 5;
     },
     autoAlpha: 0,
-  }).delay(2);
+    delay: 1
+  });
   state.titleTween = tl;
 };
 

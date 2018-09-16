@@ -19,6 +19,12 @@ body {
 .page-main {
   overflow: hidden;
   .renderer {
+    overflow: hidden;
+    height: 100%;
+  }
+  .page > .row {
+    z-index: 3;
+    position: relative;
     height: 100%;
   }
   .row {
@@ -52,6 +58,7 @@ body {
       z-index: 1;
       line-height: 1;
       &:before {
+        display: block;
         content: '';
         position: absolute;
         z-index: 1;
@@ -80,6 +87,7 @@ body {
 
       &:before {
         transform: translateY(100%);
+        display: block;
       }
     }
   }
@@ -113,17 +121,17 @@ body {
     bottom: 20px;
     left: 50px;
     img {
-      width: 250px;
-      @include screen1260 {
-        width: 60%;
-      }
+      width: 150px;
+      // @include screen1260 {
+      //   width: 60%;
+      // }
     }
   }
 
   .cd-vertical-nav {
     list-style-type: none !important;
     position: fixed;
-    z-index: 1;
+    z-index: 5;
     right: 3%;
     top: 50%;
     bottom: auto;
@@ -197,14 +205,29 @@ body {
     position: relative;
     padding: 3px 15px;
     margin: 0 10px 0 17px;
-    @include screen1024 {
-      margin: 0 0 0 8px;
+    @include screen1400 {
+      padding: 3px 10px;
+      @include screen1260 {
+        @include screen1024 {
+          margin: 0 0 0 8px;
+        }
+      }
     }
     &.setting-up {
       background: #A67D34;
-      &.active {
+      padding: 3px 0;
+      a {
+        padding: 10px 15px;
+        background: #A67D34;
+        color: $color-white!important;
+      }
+      &.active, &:hover {
+        &:before {
+          content: none;
+        }
         a {
-          color: #A67D34;
+          color: #A67D34!important;
+          background: #fff!important;
         }
       }
     }
@@ -238,9 +261,11 @@ body {
       transition: all 0.2s linear;
       width: 0;
       bottom: 0px;
+      display: block;
     }
     &:hover:before,
     &.active:before {
+      display: block;
       width: 100%;
       margin-left: -50%;
     }
@@ -267,6 +292,7 @@ body {
       }
       &:before {
         background: $color-black;
+        display: block;
       }
       &.active {
         background: $color-black;
@@ -285,11 +311,12 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   padding: 0!important;
-  overflow: hidden;;
+  overflow: hidden;
   img {
+    object-fit: cover;
     width: 100%;
     height: 100%;
-    animation: zoomImage 15s infinite;
+    @extend .zoom-image;
   }
 }
 .transition-enter {
@@ -307,7 +334,7 @@ body {
 
 #mouse-pointer {
   position: absolute;
-  background-color: #48484859;
+  background-color: rgba(72, 72, 72, 0.3);
   width: 25px;
   height: 25px;
   transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
@@ -317,6 +344,7 @@ body {
   z-index: 10000;
   border-radius: 100%;
   &:before {
+    display: block;
     content: '';
     position: absolute;
     width: 15px;
@@ -335,7 +363,7 @@ body {
   display: none!important;
 }
 
-.fullscreen-bg {
+#fullscreen-video {
   position: fixed;
   top: 0;
   right: 0;
@@ -343,12 +371,38 @@ body {
   left: 0;
   overflow: hidden;
   z-index: 0;
-  video {
+  iframe {
+    width: 100vw;
+    height: 56.25vw;
+    min-height: 100%;
+    min-width: 177.77vh;
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 50%;
-    height: 100%;
-    width: auto;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
+  }
+}
+.image-overlay {
+  position: absolute;
+  z-index: 1;
+  background: #0000002e;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45098039215686275) 0%, rgba(0, 0, 0, 0.09019607843137255) 50%, rgba(0, 0, 0, 0.5882352941176471) 100%);
+}
+
+.__react_component_tooltip {
+  opacity: 0.9;
+  margin-top: 0px!important;
+  margin-left: 0px;
+  visibility: visible;
+  left: -196px;
+  top: 1px;
+  color: #fff;
+  background-color: #337AB7!important;
+  margin-left: -10px;
+  &:after {
+    display: none!important;
   }
 }

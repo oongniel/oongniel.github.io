@@ -1,13 +1,56 @@
 import React, { Component } from 'react';
+import Player from '@vimeo/player';
+import $ from 'jquery';
+import { TweenMax, Power3 } from 'gsap';
 import Header from '../../components/Header';
 import { tweenHeader, generateHeader } from '../../scripts/utils';
+import Mute from "../../images/icons/mute.svg";
+import Unmute from "../../images/icons/unmute.svg";
 
 class Page extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isChrome: false,
+      muted: true,
+      player: null
+    }
+  }
   componentDidMount() {
     tweenHeader();
+    const { video } = this.props.params;
+    const { muted } = this.state;
+    if(video) {
+      const player = new Player('fullscreen-video', {
+        id: video,
+        loop: true,
+        background: true,
+        muted: false,
+      });
+      this.setState({ player });
+      var isGoogleChrome = window.chrome != null && window.navigator.vendor === "Google Inc.";
+      // player.on('progress', data => {
+      //   if(data.seconds >= 30 && muted) {
+      //     $('#mute').trigger('click');
+      //   }
+      // })
+      this.setState({ isChrome: isGoogleChrome })
+      if(!isGoogleChrome) {
+        player.setVolume(1);
+      }
+    }
   }
+
+  handleMute = () => {
+    const { muted, player } = this.state;
+    // console.log(muted, player)
+    player.setVolume(muted ? 1 : 0);
+    this.setState({ muted: !muted});
+  }
+
   render() {
     const { params } = this.props;
+    const { isChrome, muted } = this.state;
     const {
       title,
       paragraph,
@@ -21,23 +64,17 @@ class Page extends Component {
       <div
         className={`page page-title ${className}`}
         style={{
-          backgroundImage: `url(${image})`,
           backgroundColor: '#000',
         }}
       >
-        <div className="row">
-          {video ? (
-            <div className="fullscreen-bg">
-              <video
-                loop={true}
-                muted={true}
-                autoPlay={true}
-                className="fullscreen-bg__video"
-              >
-                <source src={video} type="video/mp4" />
-              </video>
-            </div>
+        <div className="image-overlay" />
+        {/* {image ?<img src={image} /> : null} */}
+        {image ? <div style={{ backgroundImage: `url(${image})`}} id="image-background-container"></div> : null}
+        {video && isChrome ? <img id="mute" src={muted ? Mute : Unmute} onClick={this.handleMute} />: null}
+        {video ? (
+            <div id="fullscreen-video" />
           ) : null}
+        <div className="row">
           {hasHeader && <Header />}
           <div className="col-lg-12 title">
             {title && (

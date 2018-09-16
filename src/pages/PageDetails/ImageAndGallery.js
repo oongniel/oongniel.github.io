@@ -20,17 +20,22 @@ class ImageAndGallery extends Component {
   };
   render() {
     const { params } = this.props;
-    const { title, paragraph, image, className } = params;
+    const { title, paragraph, image, className, imageClass } = params;
     const isGallery = typeof image !== 'string';
     return (
-      <div className={`page page-details-type-d ${className}`}>
+      <div
+        className={`page page-details-type-d ${className}`}
+        style={{
+          // backgroundImage: `url(${image})`,
+        }}
+      >
         <Header dark={true} />
         <SkyLight
           hideOnOverlayClicked
           ref={ref => (this.galleryPreview = ref)}
           transitionDuration={500}
         >
-          <img src={this.state.image} width="100%" />
+          <img src={this.state.image} width="100%" alt="" />
         </SkyLight>
         <div className="row top">
           <div className="col-lg-6 ">
@@ -39,13 +44,11 @@ class ImageAndGallery extends Component {
             )}
           </div>
           <div className="col-lg-4 sub-title">
-            {paragraph && (
-              <p className="slide-left reveal-text dark">{paragraph}</p>
-            )}
+            {paragraph && <p className="slide-left dark">{paragraph}</p>}
           </div>
         </div>
         <div
-          className="row bottom"
+          className={`row bottom ${imageClass}`}
           style={{
             backgroundImage: `url(${image})`,
           }}
@@ -71,7 +74,10 @@ class ImageAndGallery extends Component {
                   );
                 })}
               </div>
-            ) : null}
+            ) : (
+              // <img src={image} className={`slide-up ${imageClass}`} data-object-fit="contain" />
+              null
+            )}
           </div>
         </div>
       </div>

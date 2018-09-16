@@ -1,7 +1,7 @@
 
 import TVPage3 from "../images/tv-page3.jpg";
 import TVPage4 from "../images/tv-page4.jpg";
-import IconArrow from "../images/arrow-up.svg";
+// import IconArrow from "../images/arrow-up.svg";
 import IconTag from "../images/icons/tag.png";
 import IconCoins from "../images/icons/coins.png";
 import IconScheme from "../images/icons/scheme.png";
@@ -49,7 +49,7 @@ export default [
   },
   {
     template: "page-details-a",
-    className: "title",
+    className: "title get-in-touch",
     hasHeader: true,
     title: "Get||In Touch",
     image: TVPage4,
@@ -63,14 +63,14 @@ export default [
         name: "Warren Krawchuk",
         position: "Senior Vice President –",
         position2: "Retail Leasing",
-        number: "M: +971 50 104 9578",
+        number: "M: +971 4 362 2622",
         email: "Warren.Krawchuk@difc.ae"
       },
       {
         name: "Olesya Buravskaya",
         position: "Assistant Vice President –",
         position2: "Retail Leasing",
-        number: "M: +971 50 650 8486",
+        number: "M: +971 4 362 2450",
         email: "Olesya.Buravskaya@difc.ae"
       },
     ]

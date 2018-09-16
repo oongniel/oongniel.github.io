@@ -7,15 +7,16 @@ export default [
     template: "page-details-d",
     route: "masterplan",
     hasHeader: true,
-    className: "full-image",
-    title: "DIFC||Masterplan",
+    className: "full-image masterplan-1",
+    title: "DIFC Masterplan",
     image: MasterPlanPage1
   },
   {
     // Title and paragraph on left, BG Image
     template: "page-details-d",
     hasHeader: true,
-    className: "full-image",
+    className: "full-image full",
+    // imageClass: "height-100",
     title: "DIFC||Masterplan",
     image: MasterPlanPage2
   }

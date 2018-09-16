@@ -13,9 +13,11 @@ class NumericalData extends Component {
     return (
       <div
         className={`page page-details-type-b ${className}`}
-        style={{ backgroundImage: `url(${image})` }}
       >
         <Header />
+        <div className="image-overlay" />
+        {/* {image ?<img src={image} /> : null} */}
+        {image ? <div style={{ backgroundImage: `url(${image})`}} id="image-background-container"></div> : null}
         <div className="row">
           <div className="col-lg-12 title">
             {title && (
@@ -35,7 +37,6 @@ class NumericalData extends Component {
                   } `}
                   data-duration="0.8"
                   data-delay={delay}
-                  key={index}
                 >
                   <div>
                     {item.icon ? <img src={item.icon} alt="" /> : null}

@@ -47,7 +47,7 @@ class Navigate extends Component {
               Next
             </a>
           </li>
-          {page === 1 ? <ReactTooltip id="tool-tip" place="top" type="info" effect="solid">
+          {page === 1 ? <ReactTooltip id="tool-tip" place="left" type="info" effect="solid" className="place-left type-info">
             <span>Use these arrows <br />to navigate through the slide, <br />or use your keyboard arrow keys</span>
           </ReactTooltip> : null}
         </ul>

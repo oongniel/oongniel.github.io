@@ -45,6 +45,12 @@ body {
   h1 {
     padding: 120px 0 0 50px;
     color: $color-white;
+    @include screenHeight900 {
+      font-size: 4em;
+      @include screenHeight600 {
+        font-size: 3em;
+      }
+    }
   }
   h3 {
     font-size: 2em;
@@ -58,6 +64,12 @@ body {
   }
   p {
     color: $color-white;
+    @include screenHeight900 {
+      font-size: 1.2em;
+      @include screenHeight600 {
+        font-size: 1em;
+      }
+    }
   }
   .description {
     height: auto !important;
@@ -69,11 +81,17 @@ body {
 .page-details-type-a {
   &:not(.title) {
     h1 {
-      font-size: 5em;
+      font-size: 4em;
+      @include screenHeight900 {
+        font-size: 3em;
+        padding-bottom: 20px;
+      }
       @include screen1400 {
-        font-size: 3.9em;
+        font-size: 3.4em;
+        padding: 50px 0 30px;
         @include screen1260 {
-          font-size: 3em;
+          font-size: 2.5em;
+          padding-bottom: 20px;
           @include screen1024 {
             font-size: 2.6em;
           }
@@ -83,6 +101,14 @@ body {
   }
   h1 {
     padding: 100px 0 50px;
+    @include screenHeight900 {
+      font-size: 4em;
+      padding-bottom: 20px;
+      @include screenHeight600 {
+        font-size: 3em;
+        padding-top: 30px;
+      }
+    }
     @include screen1260 {
       padding: 50px 0;
     }
@@ -91,8 +117,17 @@ body {
     }
     &.multiple {
       font-size: 4em;
+      @include screenHeight900 {
+        font-size: 3em;
+        @include screenHeight600 {
+          font-size: 2em;
+        }
+      }
       @include screen1400 {
         font-size: 3em;
+        @include screen1260 {
+          font-size: 2.4em;
+        }
       }
     }
   }
@@ -101,11 +136,21 @@ body {
     margin: 0 0 20px;
     padding-left: 0;
     font-size: 1.3em;
+    @include screenHeight900 {
+      font-size: 1em;
+      margin: 0 0 10px;
+      padding: 0 10px 10px;
+      @include screenHeight600 {
+        font-size: 0.9em;
+      }
+    }
     @include screen1400 {
-      // @include screen1260 {
       font-size: 1.2em;
       padding: 0;
-      // }
+      @include screen1260 {
+        font-size: 1em;
+        padding: 0;
+      }
     }
   }
   b {
@@ -114,9 +159,41 @@ body {
     font-size: 1.2em;
     padding: 0 2px 0 0;
   }
+  &.get-in-touch {
+    h1 {
+      padding: 50px 0 30px;
+    }
+  }
+  .image-list {
+    margin-top: 10px;
+    align-items: center;
+    @include screen1260 {
+      // margin: 0;
+    }
+    > div {
+      padding: 2px 10px;
+      @include screen1260 {
+        padding: 2px 0;
+      }
+    }
+    img {
+      width: 50%;
+      display: block;
+      margin: auto;
+      @include screenHeight900 {
+        width: 40%;
+      }
+      @include screen1260 {
+        width: 40%;
+      }
+    }
+  }
   .bold-headers {
     font-weight: bold;
     font-size: 1.4em;
+    @include screenHeight900 {
+      font-size: 1em;
+    }
     @include screen1400 {
       font-size: 1.1em;
     }
@@ -126,20 +203,26 @@ body {
     }
   }
   .contacts {
-    font-size: 1.4em;
+    font-size: 1.2em;
     opacity: 0.7;
+    @include screenHeight900 {
+      font-size: 1em;
+    }
     @include screen1400 {
-      font-size: 1.1em;
+      font-size: 0.9em;
     }
     > div {
       margin-bottom: 20px;
     }
     span {
       display: block;
+      margin-bottom: 5px;
     }
   }
   .left {
     padding: 0 50px;
+    position: relative;
+    height: 100vh;
     @include screen1024 {
       padding: 0 30px 0 40px;
     }
@@ -147,12 +230,21 @@ body {
   > .row {
     height: 100%;
   }
+  .image-full {
+    height: 100vh;
+  }
   ul {
     color: $color-black;
     font-size: 1.5em;
     margin-bottom: 25px;
+    @include screenHeight900 {
+      font-size: 1.2em;
+    }
     @include screen1400 {
       font-size: 1.2em;
+      @include screen1260 {
+        font-size: 1em;
+      }
     }
     li {
       padding: 5px 0;
@@ -167,17 +259,24 @@ body {
     position: absolute;
     bottom: 20px;
     width: calc(100% - 100px);
+    @include screenHeight900 {
+      font-size: 0.9em;
+      @include screenHeight600 {
+        font-size: 0.7em;
+      }
+    }
     li {
       padding: 5px 0;
     }
     @include screen1400 {
-      font-size: 1em;
-      padding: 15px 0;
+      font-size: 0.8em;
+      padding: 10px 0;
     }
   }
 }
 .page-details-type-b {
   &:before {
+    display: block;
     content: '';
     position: absolute;
     left: 0;
@@ -204,6 +303,12 @@ body {
     padding: 130px 0 0 50px;
     font-size: 4.5em;
     color: $color-white;
+    @include screenHeight900 {
+      font-size: 3.5em;
+      @include screenHeight600 {
+        font-size: 2.5em;
+      }
+    }
     @include screen1400 {
       font-size: 4em;
       @include screen1260 {
@@ -238,7 +343,9 @@ body {
         height: 80px;
         margin: 0 0 20px 0;
         display: block;
-
+        @include screenHeight900 {
+          height: 60px;
+        }
         @include screen1400 {
           height: 70px;
           @include screen1260 {
@@ -268,6 +375,9 @@ body {
       span {
         font-size: 1.3em;
         line-height: 1.2;
+        @include screenHeight900 {
+          font-size: 1.1em;
+        }
         @include screen1400 {
           font-size: 1em;
         }
@@ -280,6 +390,9 @@ body {
         font-weight: bold;
         font-size: 3em;
         padding-right: 10px;
+        @include screenHeight900 {
+          font-size: 2em;
+        }
         @include screen1400 {
           font-size: 2em;
           @include screen1260 {
@@ -315,11 +428,19 @@ body {
         padding-right: 1%;
       }
       .left {
-        padding: 120px 20px 0 60px;
+        padding: 80px 20px 0;
         @include screen1260 {
           padding: 60px 0 0 30px;
           @include screen1024 {
             padding-left: 0;
+          }
+        }
+        p {
+          @include screen1400 {
+            font-size: 1.1em;
+            @include screen1260 {
+              font-size: 0.9em;
+            }
           }
         }
       }
@@ -339,6 +460,7 @@ body {
         padding: 0;
         max-width: 24%;
         margin-right: 1%;
+        background-size: cover;
         // &:first-child {
         //   // margin-right: 1%;
         //   margin-left: 25%;
@@ -349,22 +471,40 @@ body {
     }
   }
   .vertical-view {
+    ul {
+      font-size: 1.2em;
+      li {
+        padding: 5px 0;
+      }
+    }
     h1 {
-      font-size: 4.5em;
+      font-size: 3.6em;
+      @include screenHeight900 {
+        font-size: 3em;
+        @include screenHeight600 {
+          font-size: 2em;
+        }
+      }
       @include screen1260 {
-        font-size: 3.8em;
+        font-size: 3em;
       }
     }
     .top {
       height: 30%;
-      padding: 120px 20px 0 60px;
+      padding: 80px 20px 0 60px;
+      @include screenHeight900 {
+        padding-left: 20px;
+      }
       @include screen1400 {
         height: 35%;
         padding-left: 15px;
+        @include screen1260 {
+          padding: 50px 20px 0;
+        }
       }
     }
     .bottom {
-      height: 70%;
+      height: 65%;
       @include screen1260 {
         height: 65%;
       }
@@ -379,6 +519,14 @@ body {
       max-height: 98.5%;
       background-size: cover;
       background-position: right;
+      img {
+        object-fit: contain;
+        width: 100%;
+        margin: auto;
+        height: 100%;
+        display: block;
+        height: 100%;
+      }
     }
   }
   .half-view {
@@ -390,7 +538,7 @@ body {
       height: 50%;
     }
     .top {
-      margin-top: 15%;
+      margin-top: 12%;
     }
     h1 {
       padding: 100px 0 0 20px;
@@ -403,13 +551,27 @@ body {
       }
     }
   }
-
+  p {
+    @include screenHeight900 {
+      font-size: 1.2em;
+      @include screenHeight600 {
+        font-size: 0.9em;
+      }
+    }
+  }
   h1 {
     font-size: 5.5em;
     margin-bottom: 70px;
+    @include screenHeight900 {
+      font-size: 4em;
+      @include screenHeight600 {
+        font-size: 3em;
+      }
+    }
     @include screen1400 {
       font-size: 4em;
       margin-bottom: 20px;
+      padding-left: 15px;
       @include screen1024 {
         font-size: 3.5em;
         padding-left: 15px;
@@ -422,30 +584,100 @@ body {
   // background-size: contain;
   background-position: bottom;
   background-repeat: no-repeat;
-  background-size: 90% !important;
-  background-position: bottom right;
+  background-size: 75%!important;
+  background-position: bottom center!important;
+  @include screen1600 {
+    background-size: 80%!important;
+    background-position: bottom center !important;
+    &.full {
+      background-size: 80%!important;
+    }
+  }
+  @include screen1260 {
+    background-size: 80% !important;
+    background-position: bottom center !important;
+    &.full {
+      background-size: 90% !important;
+      background-position: bottom right !important;
+    }
+    &.masterplan-1 {
+      background-size: 90% !important;
+      background-position: bottom center !important;
+    }
+    @include screen1024 {
+      background-size: 100% !important;
+      background-position: bottom center !important;
+      &.full {
+        background-position: bottom right !important;
+      }
+      &.masterplan-1 {
+        background-size: 95% !important;
+        background-position: center 70% !important;
+      }
+    }
+  }
+  &.vehicle {
+    > .top {
+      padding: 0;
+    }
+    background-size: 70%!important;
+  }
   &.full-image {
     > .top {
       align-items: center;
       height: 30%;
     }
   }
+  &.masterplan {
+    .bottom {
+      margin-top: -10%;
+      z-index: 2;
+      height: 78%!important;
+    }
+  }
+  &.art-gallery {
+    > .top {
+      padding: 0;
+    }
+    p {
+      @include screenHeight900 {
+        font-size: 1.2em;
+      }
+    }
+    h1 {
+      @include screenHeight600 {
+        font-size: 3em;
+      }
+    }
+  }
   > .top {
     padding: 80px 0 20px;
     align-items: flex-end;
-    height: 35%;
+    height: 30%!important;
   }
   .bottom {
-    height: 65%;
-    background-size: cover;
+    height: 70%!important;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
+    img {
+      display: block;
+      height: 100%;
+      margin: auto;
+      width: auto;
+      // object-fit: contain;
+      &.height-100 {
+        width: auto;
+        height: 100%;
+      }
+    }
   }
   .full {
-    margin-top: -8%;
+    // margin-top: -8%;
   }
   h1 {
-    padding: 20px 0 0 20px;
-    font-size: 4.5em;
+    padding: 0 0 0 20px;
+    font-size: 3.5em;
     @include screen1260 {
       font-size: 3em;
     }
@@ -470,7 +702,7 @@ body {
         z-index: 2;
         bottom: 15px;
         height: 50px;
-        background: #ffffffbf;
+        background:rgba(255, 255, 255, 0.75);
         width: 100%;
         padding: 8px;
         span {
@@ -502,15 +734,25 @@ body {
   }
 }
 .page {
+  > img {
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    @extend .zoom-image;
+  }
   height: 100%;
   background-color: $color-white;
   background-size: 80% 100%;
   background-position: bottom center;
+  overflow: hidden;
   &:not(.page-details-type-d) {
-    background-size: 100% 100%;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: top right;
-    animation: animateBg 15s infinite alternate;
+    background-position: center;
+    // animation: animateBg 15s infinite alternate;
   }
 }
 
@@ -525,12 +767,11 @@ body {
     display: inline-block;
     min-width: 15px;
     opacity: 0;
-    &:empty {
-      min-width: 25px;
+    @include screen1260 {
+      min-width: 10px;
     }
   }
 }
-.page-title,
 .page-details-type-b,
 .page-details-type-e,
 .page-details-type-a .image-full {
@@ -542,15 +783,34 @@ body {
     width: 100%;
     height: 100%;
     background: black;
-    background: linear-gradient(
-      to bottom,
-      #00000073 0%,
-      #00000017 50%,
-      #00000096 100%
-    );
-    
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45098039215686275) 0%, rgba(0, 0, 0, 0.09019607843137255) 50%, rgba(0, 0, 0, 0.5882352941176471) 100%);
+    display: block;
   }
 }
 .page-details-type-a .image-full:before  {
   z-index: 2;
+}
+
+
+#mute {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  bottom: 0;
+  right: 35px;
+  z-index: 12;
+  top: 100%;
+  margin-top: -60px;
+  opacity: 0.5;
+}
+
+#image-background-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  @extend .zoom-image;
 }

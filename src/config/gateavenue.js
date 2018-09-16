@@ -31,7 +31,7 @@ export default [
     hasHeader: true,
     title: "Introducing||Gate Avenue",
     subTitle: "An Experience by DIFC",
-    image: GAPageTitle
+    video: 289270358
   },
   {
     template: "page-details-a",
@@ -55,7 +55,7 @@ export default [
       "<b>4,000</b> sqft Design House featuring local talent",
       "<b>9</b>-screen movie theatre",
       "<b>15,000</b> sqft gym by one of Dubai’s leading fitness brand",
-      "<b>10,000</b> sqft DIFCF in Tech Hive"
+      "<b>10,000</b> sqft DIFC FinTech Hive"
     ],
     paragraph: [
       "All within a fully connected year-round walkable destination, with outdoor promenade and urban landscaping."
@@ -148,56 +148,58 @@ export default [
   //   title: "Entertainment||Hub",
   //   image: EHPageTitle
   // },
-  {
-    // Title on Left, Image on right
-    template: "page-details-c",
-    view: "vertical",
-    hasHeader: true,
-    title: "A Vibrant||Sensory Hub",
-    Image1: EHPage1Small1,
-    Image2: EHPage1Small2,
-    Image3: EHPage1Large,
-    paragraph:
-      "Keeping Gate Avenue revitalised with energy and excitement, the Entertainment Hub will be a must-visit destination and truly act as the epicentre for the district when it opens in 2021.",
-    list: [
-      "Progressive architectural style",
-      "A rotating calendar of events",
-      "Energetic night life",
-      "9-screen cinema with Premier, Gold Class and kids-only theatre",
-      "Themed restaurants with outdoor terrace"
-    ]
-  },
-  {
-    // Title on Left, Image on right
-    template: "page-details-c",
-    view: "default",
-    hasHeader: true,
-    title: "Events to||Inspire",
-    Content1:
-      "Gate Avenue will be brought to life through an extensive activation programme that supports all retailers.",
-    Content2:
-      "A calendar of bespoke events, spread across Gate Avenue’s indoor and outdoor areas will run throughout the year.",
-    Content3: EHPage2Large,
-    Content4: EHPage2Small2,
-    light: false,
-    Content5: EHPage2Small3,
-    Content6: EHPage2Small4,
-    Content7: EHPage2Small1,
-    Content8: "Art, fashion, food, theatre, design and music activations will keep the area buzzing throughout the seasons and ensure visitors are frequently coming back."
-  },
+  // {
+  //   // Title on Left, Image on right
+  //   template: "page-details-c",
+  //   view: "vertical",
+  //   hasHeader: true,
+  //   title: "A Vibrant||Sensory Hub",
+  //   Image1: EHPage1Small1,
+  //   Image2: EHPage1Small2,
+  //   Image3: EHPage1Large,
+  //   paragraph:
+  //     "Keeping Gate Avenue revitalised with energy and excitement, the Entertainment Hub will be a must-visit destination and truly act as the epicentre for the district when it opens in 2021.",
+  //   list: [
+  //     "Progressive architectural style",
+  //     "A rotating calendar of events",
+  //     "Energetic night life",
+  //     "9-screen cinema with Premier, Gold Class and kids-only theatre",
+  //     "Themed restaurants with outdoor terrace"
+  //   ]
+  // },
+  // {
+  //   // Title on Left, Image on right
+  //   template: "page-details-c",
+  //   view: "default",
+  //   hasHeader: true,
+  //   title: "Events to||Inspire",
+  //   Content1:
+  //     "Gate Avenue will be brought to life through an extensive activation programme that supports all retailers.",
+  //   Content2:
+  //     "A calendar of bespoke events, spread across Gate Avenue’s indoor and outdoor areas will run throughout the year.",
+  //   Content3: EHPage2Large,
+  //   Content4: EHPage2Small2,
+  //   light: false,
+  //   Content5: EHPage2Small3,
+  //   Content6: EHPage2Small4,
+  //   Content7: EHPage2Small1,
+  //   Content8: "Art, fashion, food, theatre, design and music activations will keep the area buzzing throughout the seasons and ensure visitors are frequently coming back."
+  // },
   {
     // Title and paragraph on left, BG Image
     template: "page-details-d",
     hasHeader: true,
     className: "full-image",
     title: "Final Concept",
+    imageClass: "height-100",
     image: TVPage1
   },
   {
     // Title and paragraph on left, BG Image
     template: "page-details-d",
     hasHeader: true,
-    className: "full-image",
+    className: "full-image vehicle",
+    imageClass: "height-100",
     title: "Vehicle &||Pedestrian Access",
     image: TVPage2
   },

@@ -10,7 +10,7 @@ import PageDetailsTypeE from './pages/PageDetails/ContentHeadingCenter';
 
 import Nav from './components/Nav';
 import Renderer from './components/Renderer';
-// import history from './history';
+import history from './history';
 import config from './config';
 import {
   slideRight,
@@ -81,14 +81,10 @@ class AppRouter extends Component {
     pageEnterAnimation(node, forward, this.handleComplete);
   };
 
-  pushHistoryState = link => {
-    const { history } = this.state;
-  };
-
   render() {
     const { forward, handleNavigate } = this.props;
     return (
-      <HashRouter>
+      <HashRouter history={history}>
         <Route
           render={({ location }) => {
             return (

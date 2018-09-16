@@ -1,4 +1,4 @@
-import DIFCTitleBG from "../images/difc-titlebg.jpg";
+// import DIFCTitleBG from "../images/difc-titlebg.jpg";
 import DIFCPage1 from "../images/difc-page1.jpg";
 import DIFCVideo from "../videos/difc.mp4";
 import DubaiCount2BG from "../images/dubai-count2bg.jpg";
@@ -19,7 +19,7 @@ export default [
     hasHeader: true,
     title: "Welcome||TO DIFC",
     // image: DIFCTitleBG,
-    video: DIFCVideo
+    video: 289269075
   },
   {
     // Title on Left, Image on right
@@ -139,7 +139,7 @@ export default [
       },
       {
         prefix: "",
-        suffix: "minute drive from Dubai International Airport Accessible via two metro stations",
+        suffix: "minute drive from Dubai International Airport. Accessible via two metro stations",
         count: 15,
         icon: IconAirport
       },

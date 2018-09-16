@@ -13,6 +13,13 @@ import GVGallery6 from "../images/gv-gallery6.jpg";
 import GVGallery7 from "../images/gv-gallery7.jpg";
 import GVGallery8 from "../images/gv-gallery8.jpg";
 
+// Logos
+import LogoCipriani from "../images/logos/cipriani.png";
+import LogoGaucho from "../images/logos/gaucho.png";
+import LogoMaison from "../images/logos/la-petite-maison.png";
+import LogoRobertos from "../images/logos/robertos.png";
+import LogoZuma from "../images/logos/zuma.jpg";
+
 export default [
   {
     // Title on Left, Image on right
@@ -35,6 +42,14 @@ export default [
     title: "Global||Dining||Institutions",
     image: GVPage1,
     showLogo: false,
+    imageList: [
+      LogoZuma,
+      LogoGaucho,
+      null,
+      LogoCipriani,
+      LogoRobertos,
+      LogoMaison
+    ],
     paragraph: [
       "DIFC hosts Dubai’s trendiest restaurants, including some of the world’s top listed venues."
     ],
@@ -96,6 +111,7 @@ export default [
     // Title and paragraph on left, BG Image
     template: "page-details-d",
     hasHeader: true,
+    className: "art-gallery",
     title: "ART||Amongst||Architecture",
     paragraph:
       "The DIFC Art Integration Programme features permanent and rotating art installations by local and global artists, scattered amongst the DIFC district.",
@@ -147,7 +163,7 @@ export default [
     template: "page-details-a",
     className: "",
     hasHeader: true,
-    title: "A Flow||Of Tourist",
+    title: "A Flow||Of Tourists",
     image: GVPage5,
     showLogo: false,
     paragraph: [

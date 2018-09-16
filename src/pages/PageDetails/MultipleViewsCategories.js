@@ -117,8 +117,8 @@ const VerticalView = props => {
               data-duration="0.6"
               data-delay="0.1"
             >
-              <p className="reveal-text">{paragraph}</p>
-              <ul className="reveal-text">
+              <p className="">{paragraph}</p>
+              <ul className="">
                 {list.map((item, index) => {
                   return <li key={index}>{item}</li>;
                 })}
@@ -147,11 +147,22 @@ const VerticalView = props => {
             <div
               className="col-lg-6 slide-up"
               style={{
-                backgroundImage: `url(${Image3})`,
+                background: `#fff`,
               }}
               data-duration="0.6"
               data-delay="0.4"
-            />
+            >
+              <img
+                src={Image3}
+                style={{
+                  objectFit: 'cover',
+                  width: '80%',
+                  margin: 'auto',
+                  height: '100%',
+                  display: 'block',
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -173,7 +184,7 @@ const HalfView = props => {
             return (
               <p
                 key={index}
-                className="reveal-text dark slide-right"
+                className="dark slide-right"
                 data-delay={0.1 * (index + 1)}
               >
                 {item}
