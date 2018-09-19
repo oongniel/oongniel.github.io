@@ -31,7 +31,7 @@ export default [
     showLogo: false,
     paragraph: [
       "DIFC is one of Dubai’s anchor institutions and a key contributor to the city’s economy.",
-      "The world’s leading financial companies have chosen it as their regional home and it has also become renowned for its trendsetting cultural and food scene"
+      "The world’s leading financial companies have chosen it as their regional home and it has also become renowned for its trendsetting cultural and food scene."
     ],
     listBottom: [
       "ABN Amro Bank",

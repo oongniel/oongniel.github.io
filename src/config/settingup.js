@@ -21,7 +21,7 @@ export default [
     className: "",
     countData: [
       {
-        prefix: "Enjoy 100% No restrictions foreign ownership",
+        prefix: "100% Foreign ownership",
         icon: IconTag
       },
       {
@@ -42,7 +42,7 @@ export default [
         icon: IconZero
       },
       {
-        prefix: "Independent judicial system with laws issued in English",
+        prefix: "Independent English Common Law framework",
         icon: IconPaperPencil
       }
     ]
@@ -63,14 +63,14 @@ export default [
         name: "Warren Krawchuk",
         position: "Senior Vice President –",
         position2: "Retail Leasing",
-        number: "M: +971 4 362 2622",
+        number: "T: +971 4 362 2450",
         email: "Warren.Krawchuk@difc.ae"
       },
       {
         name: "Olesya Buravskaya",
         position: "Assistant Vice President –",
         position2: "Retail Leasing",
-        number: "M: +971 4 362 2450",
+        number: "T: +971 4 362 2450",
         email: "Olesya.Buravskaya@difc.ae"
       },
     ]

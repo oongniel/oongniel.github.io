@@ -70,7 +70,7 @@ export default [
     showLogo: false,
     paragraph: [
       "Gate Avenue will further the Centre’s reputation for iconic architecture, with its open air promenade, DIFC Grand Mosque and eye-catching Entertainment Hub.",
-      "The Gate Trilogy stretch along the full length of the avenue. The three structures take inspiration from the Gate Building and are illuminated at night. They house retail boutiques and are the perfect spots to stop and soak up the atmosphere."
+      "The Gate Trilogy stretches along the full length of the avenue. The three structures take inspiration from the Gate Building and are illuminated at night. They house retail boutiques and are the perfect spots to stop and soak up the atmosphere."
     ]
   },
   {
@@ -82,7 +82,7 @@ export default [
     showLogo: false,
     paragraph: [
       "Gate Avenue tenants benefit from steady footfall year round, thanks to the immediate DIFC workforce, neighbouring residents and visiting tourists.",
-      "Featuring smart urban design, Gate Avenue is connected to the district’s existing business and residential towers, with direct access points into the mall."
+      "Featuring smart urban design, Gate Avenue is connected to the district’s existing business and residential towers, with direct access points into the development."
     ]
   },
 
@@ -92,11 +92,11 @@ export default [
     hasHeader: true,
     title: "A Modern Day||Market",
     Content1: [
-      "South Market is Gate Avenue’s urban food hall. Its a buzzing combination of gourmet food stalls and rotating artisan food kiosks offering cuisines from across the globe.",
+      "South Market is Gate Avenue’s urban food hall. It is a buzzing combination of gourmet food stalls and rotating artisan food kiosks offering cuisines from across the globe.",
       "This modern-day marketplace has been designed with exposed ceilings, beautiful steel beams, raw timber and concrete features, neon signage and street art murals."
     ],
     Content2:
-      "It’s the perfect setting for the local workforce and shoppers to take a break and be entertained by the ongoing line-up of events and activities.",
+      "It is the perfect setting for the local workforce and shoppers to take a break and be entertained by the ongoing line-up of events and activities.",
     Content3: GAPage5Small,
     light: true,
     Content4: GAPage5Large
@@ -108,7 +108,7 @@ export default [
     paragraph: [
       "The Design House, within Gate Avenue, will attract Dubai’s up-and-coming SMEs and entrepreneurs.",
       "It is a custom-designed modular space to showcase these homegrown startup brands.",
-      "The Design House builds on the Centre’s reputation for supporting the SME’s community within Dubai."
+      "The Design House builds on the Centre’s reputation for supporting the SMEs community within Dubai."
     ],
     image: GAPage6
   },
@@ -137,7 +137,7 @@ export default [
     image: GAPage8,
     showLogo: false,
     paragraph: [
-      "FinTech Hive in Gate Avenue is the region’s first FinTech accelerator. It invites and nurtures global entrepreneurs, start-ups and SMEs to craft solutions for the regional financial services industry.",
+      "FinTech Hive is the region’s first FinTech accelerator. It invites and nurtures global entrepreneurs, start-ups and SMEs to craft solutions for the regional financial services industry.",
       "FinTech Hive creates a mutually beneficial symbiotic relationship between the start-ups and the financial businesses within DIFC."
     ]
   },

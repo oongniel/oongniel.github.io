@@ -17,7 +17,7 @@ export default [
   },
   {
     link: "/gateavenue",
-    title: "gate avenue"
+    title: "Lifestyle"
   },
   // {
   //   link: "/entertainmenthub",

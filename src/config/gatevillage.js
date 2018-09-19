@@ -54,22 +54,25 @@ export default [
       "DIFC hosts Dubai’s trendiest restaurants, including some of the world’s top listed venues."
     ],
     listBottom: [
-      "Avli by Tashas",
-      "Indie",
-      "BBs Social Dinning",
-      "Intersect by Lexus",
-      "Boca",
-      "Le Petit Maison",
-      "Caramel",
-      "Marea, Baoli",
-      "China Tang",
-      "Michael Mina Bistro",
-      "Cipriani’s",
-      "Robertos",
-      "Coming soon:",
+      "BB Social Dinning",
+      "Roberto's",
+      "Baoli",
       "Royal China",
-      "Gaia, Yeeels",
-      "Zuma"
+      "Boca",
+      "Zuma",
+      "Caramel",
+      "Coming soon:",
+      "Cipriani",
+      "Avli by Tasha's",
+      "Gaucho",
+      "China Tang",
+      "Indie",
+      "Gaia",
+      "Intersect by Lexus",
+      "Marea",
+      "La Petit Maison",
+      "Yeeels",
+      "Michael Mina Bistro"
     ]
   },
   {
@@ -84,13 +87,13 @@ export default [
       "Explore the region’s most influential art galleries, showcasing young cutting-edge Middle Eastern and international artists."
     ],
     listBottom: [
-      "Al Farjam",
-      "Opera Gallery",
-      "Christies",
-      "Sotheby’s",
+      "The Farjam Foundation",
+      "Christie's",
       "Cuadro",
+      "The Empty Quarter",
+      "Opera Gallery",
+      "Sotheby’s",
       "Tabari Art Space",
-      "Empty Quarter",
       "V – Art"
     ]
   },
