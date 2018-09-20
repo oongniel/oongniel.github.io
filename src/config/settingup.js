@@ -25,7 +25,7 @@ export default [
         icon: IconTag
       },
       {
-        prefix: "No restrictions foreign ownership on Capital repatriation",
+        prefix: "No restrictions on Capital repatriation",
         icon: IconCoins
       },
       {

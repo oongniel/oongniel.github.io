@@ -134,10 +134,8 @@ class ContentLeftImageRight extends Component {
             {listBottom ? (
               <ul className="slide-up row list-bottom" data-duration="1">
                 {listBottom.map(item => {
-                  return (
-                    <li className="col-lg-6" key={item}>
-                      {item}
-                    </li>
+                return (
+                    <li className="col-lg-6" key={item} dangerouslySetInnerHTML={{ __html: item }} />
                   );
                 })}
               </ul>

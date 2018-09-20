@@ -54,14 +54,14 @@ export default [
       "DIFC hosts Dubai’s trendiest restaurants, including some of the world’s top listed venues."
     ],
     listBottom: [
-      "BB Social Dinning",
+      "BB Social Dining",
       "Roberto's",
       "Baoli",
       "Royal China",
       "Boca",
       "Zuma",
       "Caramel",
-      "Coming soon:",
+      "<b>Coming soon:</b>",
       "Cipriani",
       "Avli by Tasha's",
       "Gaucho",
@@ -70,7 +70,7 @@ export default [
       "Gaia",
       "Intersect by Lexus",
       "Marea",
-      "La Petit Maison",
+      "La Petite Maison",
       "Yeeels",
       "Michael Mina Bistro"
     ]
