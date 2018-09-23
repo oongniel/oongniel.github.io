@@ -9,7 +9,7 @@ export default [
   },
   {
     link: "/gatevillage",
-    title: "gate village"
+    title: "Lifestyle"
   },
   {
     link: "/masterplan",
@@ -17,7 +17,7 @@ export default [
   },
   {
     link: "/gateavenue",
-    title: "Lifestyle"
+    title: "Gate Avenue"
   },
   // {
   //   link: "/entertainmenthub",
