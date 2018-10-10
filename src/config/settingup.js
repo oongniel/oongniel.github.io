@@ -60,18 +60,18 @@ export default [
     ],
     contacts: [
       {
-        name: "Warren Krawchuk",
-        position: "Senior Vice President –",
-        position2: "Retail Leasing",
-        number: "T: +971 4 362 2450",
-        email: "Warren.Krawchuk@difc.ae"
-      },
-      {
         name: "Olesya Buravskaya",
-        position: "Assistant Vice President –",
-        position2: "Retail Leasing",
+        position: "Acting Vice President –",
+        position2: "Leasing",
         number: "T: +971 4 362 2450",
         email: "Olesya.Buravskaya@difc.ae"
+      },
+      {
+        name: "Sabreen Al Mansoori",
+        position: "General Manager –",
+        position2: "Gate Avenue Retail Leasing",
+        number: "T: +971 4 362 2629",
+        email: "Sabreen.AlMansoori@difc.ae"
       },
     ]
   },
