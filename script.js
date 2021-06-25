@@ -1,6 +1,14 @@
 $(() => {
   const $typeWrap = $(".type-wrap");
   const $mainWrap = $(".main-wrap");
+  const $viewDetails = $(".view-details");
+
+  const bindEvents = () => {
+    $viewDetails.on("click", () => {
+      animateMain();
+    });
+  };
+
   const initTyped = () => {
     new Typed("#type-animation", {
       strings: [
@@ -19,20 +27,27 @@ $(() => {
       loop: false,
       onComplete: () => {
         setTimeout(() => {
-          animateMain();
-        }, 1000);
+          $viewDetails.addClass("active");
+        }, 500);
       },
     });
   };
 
   const animateMain = () => {
     $typeWrap.addClass("inactive");
+    $viewDetails.removeClass("active");
     $typeWrap.html();
+    $(".my_audio").trigger("load");
+
     setTimeout(() => {
       $mainWrap.addClass("active");
+      const $audio = document.getElementById("my_audio");
+      $audio.currentTime = 36;
+      $audio.play();
     }, 300);
   };
   const init = () => {
+    bindEvents();
     initTyped();
   };
   init();

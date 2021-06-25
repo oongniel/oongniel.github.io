@@ -3,7 +3,7 @@
 
 body {
   margin: 0;
-  height: 100vh;
+  height: calc(100vh - 50px);
   font-family: "Poppins", sans-serif;
   overflow: hidden;
   padding: 0 15px;
@@ -80,7 +80,7 @@ body {
 .divider {
   margin: 15px auto;
   max-width: 85%;
-  height: 3px;
+  height: 5px;
 }
 
 .divider.pink {
@@ -89,6 +89,10 @@ body {
 
 .divider.blue {
   background: #ddf2f7;
+}
+
+audio {
+  display: none;
 }
 
 .table {
@@ -120,12 +124,32 @@ body {
   font-size: 14px;
 }
 
-.main-wrap * {
+.main-wrap .table,
+.main-wrap .divider,
+.main-wrap h1,
+.main-wrap svg,
+.main-wrap a {
   opacity: 0;
-  transition: 600ms all;
+  transition-duration: 600ms;
+  transition-delay: 150ms;
 }
 
-.main-wrap.active * {
+.main-wrap .table,
+.main-wrap .divider,
+.main-wrap h1,
+.main-wrap svg,
+.main-wrap a {
   opacity: 1;
-  transition-delay: 150ms;
+}
+
+.view-details {
+  display: block;
+  position: absolute;
+  top: calc(50% + 25px);
+  opacity: 0;
+  transition: 500ms all;
+}
+
+.view-details.active {
+  opacity: 1;
 }
