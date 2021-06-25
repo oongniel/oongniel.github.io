@@ -1,16 +1,15 @@
 $(() => {
   var typed4 = new Typed("#type-animation", {
     strings: [
-      "Hello!",
-      "you there?",
-      "... :)",
+      "Hello... you there?? :)",
+      "Pls save the date...",
       "Drinks are on US!",
-      "July 07, 2021",
-      "Golden Sands 10 Hotel..",
+      "Hold on....",
+      // "...07.07.2021",
       "and oh!",
       "...",
       "????",
-      "WE'RE GETTING MARRIED! :)",
+      "WE'RE GETTING MARRIED! &lt;3 &lt;3",
     ],
     typeSpeed: 60,
     backSpeed: 30,
