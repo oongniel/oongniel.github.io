@@ -21,7 +21,7 @@ $(() => {
         "...",
         "WE'RE GETTING MARRIED!&lt;3",
       ],
-      typeSpeed: 59,
+      typeSpeed: 50,
       backSpeed: 30,
       loop: false,
       onComplete: () => {
