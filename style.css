@@ -12,6 +12,9 @@ body {
   max-width: 540px;
   margin: 0 auto;
 }
+a {
+  cursor: pointer;
+}
 
 .flex {
   display: flex;
