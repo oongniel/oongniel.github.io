@@ -13,6 +13,7 @@ $(() => {
     new Typed("#type-animation", {
       strings: [
         "Hello... you there?? :)",
+        "Unmute your phone... :P",
         "Pls save the date...",
         "Drinks are on US!",
         "Hold on....",
