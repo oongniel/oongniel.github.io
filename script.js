@@ -48,7 +48,7 @@ $(() => {
   const init = () => {
     bindEvents();
     initTyped();
-    $viewDetails.addClass("active");
+    // $viewDetails.addClass("active");
   };
   init();
 });
