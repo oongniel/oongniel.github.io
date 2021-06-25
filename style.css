@@ -55,20 +55,15 @@ input {
   width: 100%;
 }
 
-input {
-  height: 50px;
+.type-wrap {
+  height: 20px;
   border-radius: 25px;
-
   border: 1px solid black;
   padding: 10px;
   background: none;
   color: black;
   font-family: "Source Code Pro", monospace;
   font-size: 18px;
-  line-height: 50px;
+  line-height: 20px;
   padding: 15px 15px 15px 15px;
-}
-
-input::placeholder {
-  color: #000000;
 }

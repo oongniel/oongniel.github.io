@@ -1,5 +1,5 @@
 $(() => {
-  var typed4 = new Typed("#typed4", {
+  var typed4 = new Typed("#type-animation", {
     strings: [
       "Hello!",
       "you there?",
@@ -12,10 +12,8 @@ $(() => {
       "????",
       "WE'RE GETTING MARRIED! :)",
     ],
-    typeSpeed: 70,
+    typeSpeed: 60,
     backSpeed: 30,
-    attr: "placeholder",
-    bindInputFocusEvents: false,
     loop: false,
     onComplete: () => {
       console.log("Done");
