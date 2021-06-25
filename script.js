@@ -1,4 +1,6 @@
 $(() => {
+  const $typeWrap = $(".type-wrap");
+  const $mainWrap = $(".main-wrap");
   const initTyped = () => {
     new Typed("#type-animation", {
       strings: [
@@ -16,12 +18,24 @@ $(() => {
       backSpeed: 30,
       loop: false,
       onComplete: () => {
-        console.log("Done");
+        setTimeout(() => {
+          animateMain();
+        }, 1000);
       },
     });
   };
+
+  const animateMain = () => {
+    // console.log("hey");
+    $typeWrap.addClass("inactive");
+    $typeWrap.html();
+    setTimeout(() => {
+      $mainWrap.addClass("active");
+    }, 300);
+  };
   const init = () => {
     initTyped();
+    // animateMain();
   };
   init();
   // var typed4 =;

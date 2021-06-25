@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
-@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,300&display=swap");
 
 body {
   margin: 0;
   height: 100vh;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
   overflow: hidden;
   padding: 0 15px;
   background-color: #fff;
@@ -40,4 +39,92 @@ body {
   left: 12px;
   position: absolute;
   opacity: 0.8;
+}
+
+.type-wrap.inactive {
+  opacity: 0;
+  display: none;
+}
+
+.main-wrap {
+  opacity: 0;
+  display: none;
+  text-align: center;
+}
+.main-wrap.active {
+  opacity: 1;
+  display: block;
+}
+
+.main-wrap svg {
+  width: 70%;
+  display: block;
+  margin: auto;
+}
+
+.main-wrap h1 {
+  font-weight: 500;
+  font-size: 20px;
+  margin: 25px 0;
+}
+
+.main-wrap a {
+  font-size: 15px;
+  text-decoration: none;
+  color: black;
+  display: block;
+  margin: 25px 0;
+}
+
+.divider {
+  margin: 15px auto;
+  max-width: 85%;
+  height: 3px;
+}
+
+.divider.pink {
+  background: #f5dedd;
+}
+
+.divider.blue {
+  background: #ddf2f7;
+}
+
+.table {
+  display: flex;
+  width: 85%;
+  margin: auto;
+  margin: auto;
+  border: 1px solid black;
+  border-width: 1px 0;
+  flex-direction: column;
+}
+
+.table-row .bordered-right {
+  border-right: 1px solid black;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+.table-row.bordered-top {
+  border-top: 1px solid black;
+}
+.table-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.table-row div {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.main-wrap * {
+  opacity: 0;
+  transition: 600ms all;
+}
+
+.main-wrap.active * {
+  opacity: 1;
+  transition-delay: 150ms;
 }
