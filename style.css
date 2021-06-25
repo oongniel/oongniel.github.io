@@ -153,3 +153,7 @@ audio {
 .view-details.active {
   opacity: 1;
 }
+
+.addeventatc {
+  margin-bottom: 25px;
+}

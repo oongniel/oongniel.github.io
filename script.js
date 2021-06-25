@@ -16,10 +16,8 @@ $(() => {
         "Pls save the date...",
         "Drinks are on US!",
         "Hold on....",
-        // "...07.07.2021",
         "and oh!",
         "...",
-        "????",
         "WE'RE GETTING MARRIED!&lt;3",
       ],
       typeSpeed: 60,
@@ -42,13 +40,14 @@ $(() => {
     setTimeout(() => {
       $mainWrap.addClass("active");
       const $audio = document.getElementById("my_audio");
-      $audio.currentTime = 36;
+      $audio.currentTime = 80;
       $audio.play();
     }, 300);
   };
   const init = () => {
     bindEvents();
     initTyped();
+    $viewDetails.addClass("active");
   };
   init();
 });
