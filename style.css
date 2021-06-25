@@ -57,6 +57,9 @@ body {
   display: block;
 }
 
+.main-wrap p {
+  font-size: 13px;
+}
 .main-wrap svg {
   width: 240px;
   display: block;
@@ -146,12 +149,12 @@ audio {
   display: block;
   position: absolute;
   top: calc(50% + 75px);
-  opacity: 0;
+  opacity: 0 !important;
   transition: 500ms all;
 }
 
 .view-details.active {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 .addeventatc {
