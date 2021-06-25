@@ -50,6 +50,7 @@ body {
   opacity: 0;
   display: none;
   text-align: center;
+  width: 100%;
 }
 .main-wrap.active {
   opacity: 1;
@@ -57,9 +58,9 @@ body {
 }
 
 .main-wrap svg {
-  width: 70%;
+  width: 240px;
   display: block;
-  margin: auto;
+  margin: 0 auto 10px;
 }
 
 .main-wrap h1 {

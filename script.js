@@ -26,7 +26,6 @@ $(() => {
   };
 
   const animateMain = () => {
-    // console.log("hey");
     $typeWrap.addClass("inactive");
     $typeWrap.html();
     setTimeout(() => {
@@ -35,8 +34,6 @@ $(() => {
   };
   const init = () => {
     initTyped();
-    // animateMain();
   };
   init();
-  // var typed4 =;
 });
