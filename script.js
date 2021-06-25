@@ -1,27 +1,24 @@
-$(window).load(function () {
-  setTimeout(function () {
-    $("#preloader").velocity(
-      {
-        opacity: 0.1,
-        translateY: "-80px",
-      },
-      {
-        duration: 1000,
-        complete: function () {
-          $("#hola").velocity(
-            {
-              translateY: "-100%",
-            },
-            {
-              duration: 1000,
-              easing: [0.7, 0, 0.3, 1],
-              complete: function () {
-                $(".home").addClass("animate-border divide");
-              },
-            }
-          );
-        },
-      }
-    );
-  }, 1000);
+$(() => {
+  var typed4 = new Typed("#typed4", {
+    strings: [
+      "Hello!",
+      "you there?",
+      "... :)",
+      "Drinks are on US!",
+      "July 07, 2021",
+      "Golden Sands 10 Hotel..",
+      "and oh!",
+      "...",
+      "????",
+      "WE'RE GETTING MARRIED! :)",
+    ],
+    typeSpeed: 70,
+    backSpeed: 30,
+    attr: "placeholder",
+    bindInputFocusEvents: false,
+    loop: false,
+    onComplete: () => {
+      console.log("Done");
+    },
+  });
 });
