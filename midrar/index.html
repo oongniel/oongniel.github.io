@@ -1,0 +1,172 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Midrar Al Jud</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      position: relative;
+      font-family: Montserrat;
+    }
+
+    h1 {
+      color: white;
+      font-size: 25px;
+    }
+    .font-arabic {
+      font-family: Tajawal;
+    }
+    .bg {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      positioN: absolute;
+      z-index: 1;
+    }
+
+    .animation-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 100%;
+      height: 80%;
+      z-index: 2;
+    }
+
+
+
+    .animation-sequence img {
+      margin: auto;
+      max-width: 50vw;
+    }
+
+    .slick-initialized .slick-slide {
+      display: flex;
+    }
+
+    .intro {
+      text-align: center;
+      transition: 700ms all;
+      opacity: 0;
+      display: none;
+    }
+
+    .intro.active, .midrar.active {
+      display: block;
+    }
+
+    .intro.animate,
+    .midrar.animate {
+      opacity: 1;
+    }
+
+    .eid {
+      filter: invert(1);
+      transform: scale(1.1);
+    }
+
+    .midrar {
+      transition: 700ms all;
+      opacity: 0;
+      display: none;
+      text-align: center;
+    }
+
+    .midrar img {
+      max-width: 50vw;
+    }
+
+    .midrar div {
+      display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    margin: 15px 0 0;
+    }
+
+    .midrar span {
+      padding: 0 15px;
+    }
+
+    iframe {
+      display: none;
+    }
+  
+
+  </style>
+</head>
+<body>
+  <iframe src="https://player.vimeo.com/video/107965154?autoplay=1&loop=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+  <div class="animation-wrapper">
+    <div style="text-align: center;" class="intro">
+      <img class="eid" src="eid.png" />
+      <h1>EID AL ADHA MUBARAK</h1>
+    </div>
+
+    <div class="midrar">
+      <img src="midrar_logo.png" />
+      <div>
+        <span>midrartrade.com</span> |
+        <span>+97144204551</span> | 
+        <span>info@midrartrade.com</span>
+      </div>
+    </div>
+    <!-- <h1 class="font-arabic">عيد الأضحى المبارك</h1> -->
+      <!-- <div class="animation-sequence fade">
+        <div><img src="midrar_logo.png" /></div>
+        <div><img src="gofar.png" /><img src="mgt.png" /><img src="akras.png" /></div>
+      </div> -->
+  </div>
+  <img class="bg" src="background.GIF" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+
+    $(() => {
+
+      const showMidrar = () => {
+        $('.intro').removeClass('animate');
+        setTimeout(() => {
+          $('.intro').removeClass('active');
+          $('.midrar').addClass('active');
+        }, 100)
+
+        setTimeout(() => {
+          // $('.intro').removeClass('active');
+          $('.midrar').addClass('animate');
+        }, 200)
+        // $('.midrar').addClass('active');
+      }
+
+      const initializeAnimation = () => {
+        setTimeout(() => {
+          $('.intro').addClass('active');
+        }, 1100);
+        setTimeout(() => {
+          $('.intro').addClass('animate');
+        }, 1200);
+
+        setTimeout(() => {
+          showMidrar();
+        }, 3900);
+      }
+
+      const init = () => {
+        initializeAnimation();
+      }
+
+      init();
+    })
+  </script>
+</body>
+</html>
