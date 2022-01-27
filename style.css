@@ -1,177 +1,152 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,300&display=swap");
-
-body {
-  margin: 0;
-  /* height: calc(100vh - 50px); */
-  font-family: "Poppins", sans-serif;
+body,
+html {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  overflow-y: auto;
-  padding: 15px;
   background-color: #fff;
-  max-width: 540px;
-  margin: 0 auto;
+  margin: 0;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+h1,
+h2 {
+  font-size: 2rem;
+}
+h2 span,
+h1 span {
+  font-size: 2rem;
+}
+.f {
+  position: fixed;
+  bottom: 5px;
+  right: 15px;
+  font-family: "Arial";
+  font-size: 0.7rem;
+  color: #070707;
+  text-align: center;
 }
 a {
-  cursor: pointer;
+  font-size: 0.8rem;
+  color: #4062bb;
 }
-
-.flex {
+._splitWrap {
+  visibility: hidden;
+  margin: auto;
+}
+._centerText {
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 85%;
+
+  height: 100%;
   align-items: center;
   justify-content: center;
-}
-
-.type-wrap {
-  width: 100%;
-  max-width: 100%;
-  height: 20px;
-  border-radius: 25px;
-  border: 1.25px solid black;
-  padding: 10px;
-  background: none;
-  color: black;
-  font-family: "Source Code Pro", monospace;
-  font-size: 18px;
-  line-height: 20px;
-  padding: 15px 15px 15px 40px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.type-wrap svg {
-  margin-right: 8px;
-  left: 12px;
-  position: absolute;
-  opacity: 0.8;
-}
-
-.type-wrap.inactive {
-  opacity: 0;
-  display: none;
-}
-
-.main-wrap {
-  opacity: 0;
-  display: none;
   text-align: center;
-  width: 100%;
-}
-.main-wrap.active {
-  opacity: 1;
-  display: block;
-}
-
-.main-wrap p {
-  font-size: 13px;
-  width: 85%;
-  margin: 15px auto 0;
-}
-
-.main-wrap p.hashtag {
-  margin: 15px auto 25px;
-  font-size: 15px;
-}
-
-.main-wrap svg {
-  width: 240px;
-  display: block;
-  margin: 0 auto 10px;
-}
-
-.main-wrap h1 {
-  font-weight: 500;
-  font-size: 20px;
-  margin: 25px 0;
-}
-
-.main-wrap a {
-  font-size: 15px;
-  text-decoration: none;
-  color: black;
-  display: block;
-  margin: 25px 0;
-}
-
-.divider {
-  margin: 15px auto;
-  max-width: 85%;
-  height: 5px;
-}
-
-.divider.pink {
-  background: #f5dedd;
-}
-
-.divider.blue {
-  background: #ddf2f7;
-}
-
-audio {
-  display: none;
-}
-
-.table {
-  display: flex;
-  width: 85%;
   margin: auto;
-  margin: auto;
-  border: 1px solid black;
-  border-width: 1px 0;
   flex-direction: column;
 }
 
-.table-row .bordered-right {
-  border-right: 1px solid black;
-  padding-right: 10px;
-  margin-right: 10px;
+.styled-select {
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 3px;
+
+  overflow: hidden;
+  position: relative;
+}
+.styled-select,
+.styled-select select {
+  /* width: 240px; */
+  width: 90%;
+  max-width: 350px;
+  text-align: center;
+}
+select:focus {
+  outline: none;
+}
+.styled-select select {
+  height: 34px;
+  padding: 5px 0 5px 5px;
+  background: transparent;
+  border: none;
+
+  /*hide default down arrow in webkit */
+  -webkit-appearance: none;
 }
 
-.table-row.bordered-top {
-  border-top: 1px solid black;
-}
-.table-row {
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-}
-.table-row div {
-  padding: 5px;
-  font-size: 14px;
+@-moz-document url-prefix() {
+  .styled-select select {
+    width: 110%;
+  }
 }
 
-.main-wrap .table,
-.main-wrap .divider,
-.main-wrap h1,
-.main-wrap svg,
-.main-wrap a {
-  opacity: 0;
-  transition-duration: 600ms;
-  transition-delay: 150ms;
-}
-
-.main-wrap .table,
-.main-wrap .divider,
-.main-wrap h1,
-.main-wrap svg,
-.main-wrap a {
-  opacity: 1;
-}
-
-.view-details {
-  display: block;
+.fa-sort-desc {
   position: absolute;
-  top: calc(50% + 75px);
-  opacity: 0 !important;
-  transition: 500ms all;
+  top: 0;
+  right: 12px;
+  font-size: 24px;
 }
 
-.view-details.active {
-  opacity: 1 !important;
+select::-ms-expand {
+  display: none;
+} /* hide default down arrow in IE10*/
+
+/* hack to fall back in opera */
+_:-o-prefocus,
+.selector .styled-select {
+  background: none;
 }
 
-.addeventatc {
-  margin-bottom: 25px;
+/* CSS */
+.btn {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  color: black;
+}
+
+.btn:after {
+  content: "";
+  background-color: rgb(211 183 149 / 64%);
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.btn:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+.el {
+  opacity: 0;
+}
+@media (min-width: 768px) {
+  .btn {
+    padding: 13px 50px 13px;
+  }
+}
+
+#text-wrapper--third a {
+  margin: 0 0 20px;
+}
+
+#proceed {
+  margin: 20px 0;
 }

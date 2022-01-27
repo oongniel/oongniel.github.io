@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,300&display=swap");
+
+body {
+  margin: 0;
+  /* height: calc(100vh - 50px); */
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  overflow-y: auto;
+  padding: 15px;
+  background-color: #fff;
+  max-width: 540px;
+  margin: 0 auto;
+}
+a {
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.type-wrap {
+  width: 100%;
+  max-width: 100%;
+  height: 20px;
+  border-radius: 25px;
+  border: 1.25px solid black;
+  padding: 10px;
+  background: none;
+  color: black;
+  font-family: "Source Code Pro", monospace;
+  font-size: 18px;
+  line-height: 20px;
+  padding: 15px 15px 15px 40px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.type-wrap svg {
+  margin-right: 8px;
+  left: 12px;
+  position: absolute;
+  opacity: 0.8;
+}
+
+.type-wrap.inactive {
+  opacity: 0;
+  display: none;
+}
+
+.main-wrap {
+  opacity: 0;
+  display: none;
+  text-align: center;
+  width: 100%;
+}
+.main-wrap.active {
+  opacity: 1;
+  display: block;
+}
+
+.main-wrap p {
+  font-size: 13px;
+  width: 85%;
+  margin: 15px auto 0;
+}
+
+.main-wrap p.hashtag {
+  margin: 15px auto 25px;
+  font-size: 15px;
+}
+
+.main-wrap svg {
+  width: 240px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.main-wrap h1 {
+  font-weight: 500;
+  font-size: 20px;
+  margin: 25px 0;
+}
+
+.main-wrap a {
+  font-size: 15px;
+  text-decoration: none;
+  color: black;
+  display: block;
+  margin: 25px 0;
+}
+
+.divider {
+  margin: 15px auto;
+  max-width: 85%;
+  height: 5px;
+}
+
+.divider.pink {
+  background: #f5dedd;
+}
+
+.divider.blue {
+  background: #ddf2f7;
+}
+
+audio {
+  display: none;
+}
+
+.table {
+  display: flex;
+  width: 85%;
+  margin: auto;
+  margin: auto;
+  border: 1px solid black;
+  border-width: 1px 0;
+  flex-direction: column;
+}
+
+.table-row .bordered-right {
+  border-right: 1px solid black;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+.table-row.bordered-top {
+  border-top: 1px solid black;
+}
+.table-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.table-row div {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.main-wrap .table,
+.main-wrap .divider,
+.main-wrap h1,
+.main-wrap svg,
+.main-wrap a {
+  opacity: 0;
+  transition-duration: 600ms;
+  transition-delay: 150ms;
+}
+
+.main-wrap .table,
+.main-wrap .divider,
+.main-wrap h1,
+.main-wrap svg,
+.main-wrap a {
+  opacity: 1;
+}
+
+.view-details {
+  display: block;
+  position: absolute;
+  top: calc(50% + 75px);
+  opacity: 0 !important;
+  transition: 500ms all;
+}
+
+.view-details.active {
+  opacity: 1 !important;
+}
+
+.addeventatc {
+  margin-bottom: 25px;
+}
