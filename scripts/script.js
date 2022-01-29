@@ -276,10 +276,18 @@ class CameraMouseControl {
 
 class AnimateText {
   constructor() {
-    this.initialAnimation = new TimelineLite();
-    this.firstAnimation = new TimelineLite();
-    this.secondAnimation = new TimelineLite();
-    this.thirdAnimation = new TimelineLite();
+    this.initialAnimation = new TimelineMax();
+    this.firstAnimation = new TimelineMax();
+    this.secondAnimation = new TimelineMax();
+    this.thirdAnimation = new TimelineMax();
+    this.thirdAnimationAnimated = false;
+    this.venueAnimation = new TimelineMax();
+    this.venueAnimated = false;
+    this.dressCodeAnimation = new TimelineMax();
+    this.dressCodeAnimated = false;
+    this.wishlistAnimation = new TimelineMax();
+    this.wishlistAnimated = false;
+    this.activeSection = "";
     this.initialise();
     this.bindEvents();
   }
@@ -389,6 +397,12 @@ class AnimateText {
   };
 
   animateThirdScreen = () => {
+    if (this.thirdAnimationAnimated) {
+      this.thirdAnimation.restart(true, false);
+
+      return;
+    }
+    this.thirdAnimationAnimated = true;
     this.thirdAnimation.set(
       document.getElementById("text-wrapper--third"),
       { autoAlpha: 1 },
@@ -411,31 +425,175 @@ class AnimateText {
     );
 
     this.thirdAnimation.staggerFromTo(
-      "#venue",
+      "#text-wrapper--third a",
       0.5,
       { y: 20, opacity: 0, ease: Back.easeOut.config(2) },
-      { y: 0, opacity: 1, ease: Back.easeOut.config(2) }
+      { y: 0, opacity: 1, ease: Back.easeOut.config(2) },
+      0.3
     );
-    this.thirdAnimation.staggerFromTo(
-      "#dresscode",
-      0.5,
-      { y: 20, opacity: 0, ease: Back.easeOut.config(2) },
-      { y: 0, opacity: 1, ease: Back.easeOut.config(2) }
+    // this.thirdAnimation.staggerFromTo(
+    //   "#dresscode",
+    //   0.5,
+    //   { y: 20, opacity: 0, ease: Back.easeOut.config(2) },
+    //   { y: 0, opacity: 1, ease: Back.easeOut.config(2) }
+    // );
+    // this.thirdAnimation.staggerFromTo(
+    //   "#wishlist",
+    //   0.5,
+    //   { y: 20, opacity: 0, ease: Back.easeOut.config(2) },
+    //   { y: 0, opacity: 1, ease: Back.easeOut.config(2) }
+    // );
+  };
+
+  animateVenue = () => {
+    this.activeSection = "venue";
+    if (this.venueAnimated) {
+      this.venueAnimation.restart(true, false);
+
+      return;
+    }
+    this.venueAnimated = true;
+    this.venueAnimation.set(
+      document.getElementById("text-wrapper--venue"),
+      { autoAlpha: 1 },
+      0
     );
-    this.thirdAnimation.staggerFromTo(
-      "#wishlist",
-      0.5,
-      { y: 20, opacity: 0, ease: Back.easeOut.config(2) },
-      { y: 0, opacity: 1, ease: Back.easeOut.config(2) }
+
+    this.venueAnimation.staggerFromTo(
+      "#text-wrapper--venue a, #text-wrapper--venue h3, #text-wrapper--venue p",
+      1,
+      { x: 50, opacity: 0, ease: Back.easeOut.config(2) },
+      { x: 0, opacity: 1, ease: Back.easeOut.config(2) },
+      0.3
+    );
+  };
+
+  animateWishlist = () => {
+    this.activeSection = "wishlist";
+    if (this.wishlistAnimated) {
+      this.wishlistAnimation.restart(true, false);
+
+      return;
+    }
+    this.wishlistAnimated = true;
+    this.wishlistAnimation.set(
+      document.getElementById("text-wrapper--wishlist"),
+      { autoAlpha: 1 },
+      0
+    );
+
+    this.wishlistAnimation.staggerFromTo(
+      "#text-wrapper--wishlist a, #text-wrapper--wishlist h3, #text-wrapper--wishlist p",
+      1,
+      { x: 50, opacity: 0, ease: Back.easeOut.config(2) },
+      { x: 0, opacity: 1, ease: Back.easeOut.config(2) },
+      0.3
+    );
+  };
+
+  animateDressCode = () => {
+    this.activeSection = "dresscode";
+    if (this.dressCodeAnimated) {
+      this.dressCodeAnimation.restart(true, false);
+
+      return;
+    }
+    this.dressCodeAnimated = true;
+    this.dressCodeAnimation.set(
+      document.getElementById("text-wrapper--dresscode"),
+      { autoAlpha: 1 },
+      0
+    );
+
+    this.dressCodeAnimation.staggerFromTo(
+      "#text-wrapper--dresscode a, #text-wrapper--dresscode h3, #text-wrapper--dresscode p",
+      1,
+      { x: 50, opacity: 0, ease: Back.easeOut.config(2) },
+      { x: 0, opacity: 1, ease: Back.easeOut.config(2) },
+      0.3
     );
   };
 
   bindEvents = () => {
+    document.getElementById("switch-user").addEventListener(
+      "click",
+      (event) => {
+        localStorage.clear();
+        window.location.reload();
+      },
+      false
+    );
     document.getElementById("amazing").addEventListener(
       "click",
       (event) => {
         this.secondAnimation.reverse(1);
+        setTimeout(() => {
+          this.animateThirdScreen();
+        }, 1000);
+      },
+      false
+    );
 
+    document.getElementById("venue").addEventListener(
+      "click",
+      (event) => {
+        this.thirdAnimation.reverse(1);
+
+        setTimeout(() => {
+          this.animateVenue();
+        }, 1000);
+      },
+      false
+    );
+
+    document.getElementById("dresscode").addEventListener(
+      "click",
+      (event) => {
+        this.thirdAnimation.reverse(1);
+
+        setTimeout(() => {
+          this.animateDressCode();
+        }, 1000);
+      },
+      false
+    );
+
+    document.getElementById("wishlist").addEventListener(
+      "click",
+      (event) => {
+        this.thirdAnimation.reverse(1);
+
+        setTimeout(() => {
+          this.animateWishlist();
+        }, 1000);
+      },
+      false
+    );
+
+    document.getElementById("go-back").addEventListener(
+      "click",
+      (event) => {
+        this.venueAnimation.reverse(1);
+        setTimeout(() => {
+          this.animateThirdScreen();
+        }, 1000);
+      },
+      false
+    );
+    document.getElementById("go-back-wl").addEventListener(
+      "click",
+      (event) => {
+        this.wishlistAnimation.reverse(1);
+        setTimeout(() => {
+          this.animateThirdScreen();
+        }, 1000);
+      },
+      false
+    );
+    document.getElementById("go-back-dc").addEventListener(
+      "click",
+      (event) => {
+        this.dressCodeAnimation.reverse(1);
         setTimeout(() => {
           this.animateThirdScreen();
         }, 1000);
@@ -446,7 +604,6 @@ class AnimateText {
 }
 
 const initializeAnimation = () => {
-  document.getElementById("initial-screen").remove();
   const webgl = new Webgl(windowWidth, windowHeight);
   document.body.appendChild(webgl.dom);
 
@@ -455,18 +612,6 @@ const initializeAnimation = () => {
 
   const fontLoader = new FontLoader();
   const fontAsset = fontLoader.parse(fontFile);
-
-  // setTimeout(() => {
-  //   const text = new AnimatedText(
-  //     `Hello ${localStorage.getItem("NAME")}!`,
-  //     fontAsset,
-  //     true
-  //   );
-  //   text.position.x -= text.basePosition * 0.5;
-  //   text.position.y -= 0.5;
-  //   webgl.add(text);
-  //   text.show();
-  // }, 1000);
 
   const cameraControl = new CameraMouseControl(webgl.camera);
   function _onResize() {
@@ -483,12 +628,18 @@ const initializeAnimation = () => {
     requestAnimationFrame(_loop);
   }
   _loop();
-
-  setTimeout(() => {
-    new AnimateText();
-  }, 1500);
 };
 
+const drawAvatar = () => {
+  document.getElementById("initial-screen").remove();
+
+  TweenMax.to(".avatar", 0.5, {
+    autoAlpha: 1,
+  });
+  document.getElementById("name").innerHTML = `<span>${localStorage.getItem(
+    "NAME"
+  )}</span>`;
+};
 document.getElementById("select--name").onchange = function (e) {
   console.log(e.target.value);
   localStorage.setItem("NAME", e.target.value);
@@ -498,7 +649,13 @@ document.addEventListener(
   "click",
   (event) => {
     if (event.target.matches("#proceed")) {
-      initializeAnimation();
+      TweenMax.to("#initial-screen", 1, {
+        autoAlpha: 0,
+      });
+      setTimeout(() => {
+        drawAvatar();
+        new AnimateText();
+      }, 1000);
     } else {
       return;
     }
@@ -506,8 +663,17 @@ document.addEventListener(
   false
 );
 
-if (localStorage.getItem("NAME")) {
-  initializeAnimation();
+initializeAnimation();
+
+if (!localStorage.getItem("NAME")) {
+  TweenMax.to("#initial-screen", 0.5, {
+    autoAlpha: 1,
+  });
+} else {
+  // $(".avatar").append();
+
+  drawAvatar();
+  new AnimateText();
 }
 var anchors = document.getElementsByTagName("a");
 for (var i = 0; i < anchors.length; i++) {
