@@ -70,7 +70,8 @@ select:focus {
   outline: none;
 }
 .styled-select select {
-  height: 40px;
+  font-size: 18px;
+  height: 50px;
   color: black;
   padding: 5px 0 5px 5px;
   background: transparent;
