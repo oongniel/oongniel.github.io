@@ -483,7 +483,7 @@ class AnimateText {
     );
 
     this.wishlistAnimation.staggerFromTo(
-      "#text-wrapper--wishlist a, #text-wrapper--wishlist h3, #text-wrapper--wishlist p",
+      "#text-wrapper--wishlist, #text-wrapper--wishlist h3, #text-wrapper--wishlist p",
       1,
       { x: 50, opacity: 0, ease: Back.easeOut.config(2) },
       { x: 0, opacity: 1, ease: Back.easeOut.config(2) },
@@ -673,7 +673,7 @@ document.addEventListener(
 const API_KEY = "key2sVp4i7mkwGmdv";
 const getData = async () => {
   const response = await fetch(
-    "https://api.airtable.com/v0/appkYZZJoBgeZ8qqD/Guest%20List?sort%5B0%5D%5Bfield%5D=Name",
+    "https://api.airtable.com/v0/appkYZZJoBgeZ8qqD/Guest%20List?sort%5B0%5D%5Bfield%5D=Fullname",
     {
       headers: {
         Authorization: `Bearer ${API_KEY}`,
@@ -717,7 +717,7 @@ const getData = async () => {
 
   let giftHTML = "";
   const giftList = await fetch(
-    "https://api.airtable.com/v0/appkYZZJoBgeZ8qqD/Gift%20Ideas?maxRecords=100&view=Grid%20view&fields%5B%5D=Name&fields%5B%5D=Link&fields%5B%5D=Guest",
+    "https://api.airtable.com/v0/appkYZZJoBgeZ8qqD/Gift%20Ideas?maxRecords=100&view=Grid%20view&fields%5B%5D=Name&fields%5B%5D=Link&fields%5B%5D=Guest&sort%5B0%5D%5Bfield%5D=Name",
     {
       headers: {
         Authorization: `Bearer ${API_KEY}`,
@@ -725,9 +725,20 @@ const getData = async () => {
     }
   );
   const giftData = await giftList.json();
-  console.log(giftData);
+  // const getUser = (id) => {
+  //   return data.records.filter((record) => record.id === id);
+  // };
   giftData.records.map((gift) => {
-    giftHTML += `<li>${gift.fields.Name}</li>`;
+    const hasUser = gift?.fields?.Guest?.length;
+
+    giftHTML += `<li class="${hasUser ? "hasUser" : ""}"><span>${
+      gift.fields.Name
+    } </span> ${hasUser ? "" : "<a>GIFT</a>"}</li>`;
+    // ${
+    //   gift?.fields?.Guest
+    //     ? `<a>@${getUser(gift?.fields?.Guest[0])[0].fields.Fullname}</a>`
+    //     : ""
+    // }
   });
 
   document.getElementById("gift-list").innerHTML = giftHTML;
