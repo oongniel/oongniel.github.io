@@ -211,3 +211,15 @@ p {
   column-gap: 5px;
   margin: 0 0 25px;
 }
+
+#gift-list {
+  max-height: 35vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  list-style: none;
+  padding: 0;
+}
+
+#gift-list li {
+  margin: 0 0 15px;
+}

@@ -489,6 +489,14 @@ class AnimateText {
       { x: 0, opacity: 1, ease: Back.easeOut.config(2) },
       0.3
     );
+
+    this.wishlistAnimation.staggerFromTo(
+      "#text-wrapper--wishlist li",
+      0.5,
+      { y: 20, opacity: 0, ease: Back.easeOut.config(1) },
+      { y: 0, opacity: 1, ease: Back.easeOut.config(1) },
+      0.1
+    );
   };
 
   animateDressCode = () => {
@@ -662,29 +670,66 @@ document.addEventListener(
   },
   false
 );
-
-initializeAnimation();
-
-if (!localStorage.getItem("NAME")) {
-  TweenMax.to("#initial-screen", 0.5, {
-    autoAlpha: 1,
-  });
-} else {
-  // $(".avatar").append();
-
-  drawAvatar();
-  new AnimateText();
-}
-var anchors = document.getElementsByTagName("a");
-for (var i = 0; i < anchors.length; i++) {
-  var current = anchors[i];
-  current.addEventListener(
-    "click",
-    () => {
-      document.getElementById("audio").play();
-    },
-    false
+const API_KEY = "key2sVp4i7mkwGmdv";
+const getData = async () => {
+  const response = await fetch(
+    "https://api.airtable.com/v0/appkYZZJoBgeZ8qqD/Guest%20List?sort%5B0%5D%5Bfield%5D=Name",
+    {
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+      },
+    }
   );
-}
+  const data = await response.json();
+  console.log(data);
+  let html = "<option  selected disabled>Select your name</option>";
+  data.records.map((item) => {
+    console.log(item);
+    html += `<option value="${item.fields.Name}">${item.fields.Fullname}</option>`;
+  });
+  document.getElementById("select--name").innerHTML = html;
+  // return;
+  initializeAnimation();
 
-document.getElementById("audio--bg").play();
+  if (!localStorage.getItem("NAME")) {
+    TweenMax.to("#initial-screen", 0.5, {
+      autoAlpha: 1,
+    });
+  } else {
+    // $(".avatar").append();
+
+    drawAvatar();
+    new AnimateText();
+  }
+  var anchors = document.getElementsByTagName("a");
+  for (var i = 0; i < anchors.length; i++) {
+    var current = anchors[i];
+    current.addEventListener(
+      "click",
+      () => {
+        document.getElementById("audio").play();
+      },
+      false
+    );
+  }
+
+  document.getElementById("audio--bg").play();
+
+  let giftHTML = "";
+  const giftList = await fetch(
+    "https://api.airtable.com/v0/appkYZZJoBgeZ8qqD/Gift%20Ideas?maxRecords=100&view=Grid%20view&fields%5B%5D=Name&fields%5B%5D=Link&fields%5B%5D=Guest",
+    {
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+      },
+    }
+  );
+  const giftData = await giftList.json();
+  console.log(giftData);
+  giftData.records.map((gift) => {
+    giftHTML += `<li>${gift.fields.Name}</li>`;
+  });
+
+  document.getElementById("gift-list").innerHTML = giftHTML;
+};
+getData();
