@@ -351,6 +351,7 @@ class AnimateText {
     //   tl.reverse(1);
     //   //   this.animateSecondScreen();
     // }, 2000);
+    // return;
     setTimeout(() => {
       this.firstAnimation.reverse(1);
       setTimeout(() => {
@@ -372,12 +373,12 @@ class AnimateText {
       }),
       target2 = split2.words;
 
-    this.secondAnimation.staggerFromTo(
-      "#amazing",
-      0.5,
-      { y: 20, opacity: 0, ease: Back.easeOut.config(2) },
-      { y: 0, opacity: 1, ease: Back.easeOut.config(2), delay: 1.2 }
-    );
+    let split3 = new SplitText("#gender-reveal", {
+        type: "words",
+        wordsClass: "SplitClass",
+      }),
+      target3 = split3.words;
+
     this.secondAnimation.staggerFrom(
       target2,
       0.5,
@@ -386,6 +387,23 @@ class AnimateText {
       function () {
         split2.revert();
       }
+    );
+
+    this.secondAnimation.staggerFrom(
+      target3,
+      0.5,
+      { y: 20, autoAlpha: 0, ease: Back.easeOut.config(2), delay: 2 },
+      0.05,
+      function () {
+        split3.revert();
+      }
+    );
+
+    this.secondAnimation.staggerFromTo(
+      "#amazing",
+      0.5,
+      { y: 20, opacity: 0, ease: Back.easeOut.config(2) },
+      { y: 0, opacity: 1, ease: Back.easeOut.config(2), delay: 0.8 }
     );
 
     // setTimeout(() => {
@@ -425,7 +443,7 @@ class AnimateText {
     );
 
     this.thirdAnimation.staggerFromTo(
-      "#text-wrapper--third a",
+      "#text-wrapper--third a, #text-wrapper--third p",
       0.5,
       { y: 20, opacity: 0, ease: Back.easeOut.config(2) },
       { y: 0, opacity: 1, ease: Back.easeOut.config(2) },

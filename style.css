@@ -166,7 +166,12 @@ _:-o-prefocus,
 }
 
 .avatar img {
-  width: 60px;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px dashed black;
+  margin-right: 5px;
 }
 
 #switch-user {
@@ -238,4 +243,15 @@ p {
 .hasUser span {
   text-decoration: line-through;
   opacity: 0.5;
+}
+
+#text-wrapper--wishlist p {
+  font-size: 13px;
+}
+
+#text-wrapper--second h2 {
+  margin: 0 0 30px;
+}
+#filler div:nth-child(5) {
+  /* background-color: yellow; */
 }
