@@ -344,3 +344,11 @@ p {
     height: 2px;
   }
 }
+
+#gift-item {
+  position: absolute;
+  top: 70px;
+  left: 15px;
+  width: calc(100% - 30px);
+  font-size: 11px;
+}

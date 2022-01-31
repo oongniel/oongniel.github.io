@@ -637,14 +637,14 @@ class AnimateText {
         // return;
         // console.log(this.getAttribute("data-id"));
         // return;
-        let text = "Are you sure?";
+        let text = "Are you sure you want to give this to our baby?";
         if (confirm(text) == true) {
           this.base("Gift Ideas").update(
             [
               {
                 id: event.currentTarget.dataset.id,
                 fields: {
-                  Guest: ["recwUSWYpxUlFBRzJ"],
+                  Guest: [localStorage.getItem("ID")],
                 },
               },
             ],
@@ -653,8 +653,14 @@ class AnimateText {
                 console.error(err);
                 return;
               }
+              alert("Thank you! This is much appreciated! See you!");
               item.parentNode.classList.add("hasUser");
               item.remove();
+              const items = document.querySelectorAll(".gift-btn");
+
+              items.forEach((box) => {
+                box.remove();
+              });
               // target.classList.add("hasUser");
               // records.forEach(function (record) {
               //   console.log(record.get("Name"));
@@ -704,10 +710,6 @@ const drawAvatar = () => {
     "NAME"
   )}</span>`;
 };
-document.getElementById("select--name").onchange = function (e) {
-  console.log(e.target.value);
-  localStorage.setItem("NAME", e.target.value);
-};
 
 document.addEventListener(
   "click",
@@ -741,11 +743,20 @@ const getData = async () => {
   console.log(data);
   let html = "<option  selected disabled>Select your name</option>";
   data.records.map((item) => {
-    console.log(item);
-    html += `<option value="${item.fields.Name}">${item.fields.Fullname}</option>`;
+    html += `<option data-id="${item.id}" value="${item.id}">${item.fields.Fullname}</option>`;
   });
   document.getElementById("select--name").innerHTML = html;
   // return;
+
+  document.getElementById("select--name").onchange = function (e) {
+    // console.log(e.currentTarget.dataset.id);
+    let item = data.records.filter((record) => record.id === e.target.value);
+    console.log(item);
+    if (item.length) {
+      localStorage.setItem("NAME", item[0].fields.Name);
+      localStorage.setItem("ID", e.target.value);
+    }
+  };
 
   var anchors = document.getElementsByTagName("a");
   for (var i = 0; i < anchors.length; i++) {
@@ -770,6 +781,11 @@ const getData = async () => {
       },
     }
   );
+  const activeID = localStorage.getItem("ID");
+  const activeUser = data.records.filter((record) => record.id === activeID);
+  const userHasGift = activeUser[0]?.fields?.Gift?.length;
+  // console.log(userHasGift);
+
   const giftData = await giftList.json();
   giftData.records.map((gift) => {
     const hasUser = gift?.fields?.Guest?.length;
@@ -777,14 +793,25 @@ const getData = async () => {
     giftHTML += `<li class="${hasUser ? "hasUser" : ""}"><span>${
       gift.fields.Name
     } </span> ${
-      hasUser ? "" : `<a class='gift-btn' data-id='${gift.id}'>GIFT</a>`
+      hasUser || userHasGift
+        ? ""
+        : `<a class='gift-btn' data-id='${gift.id}'>GIFT</a>`
     }</li>`;
   });
-
+  giftHTML += `<li>Other baby essentials</li>`;
   document.getElementById("gift-list").innerHTML = giftHTML;
+
+  if (userHasGift) {
+    const giftID = activeUser[0].fields.Gift[0];
+    const gft = giftData.records.filter((record) => record.id === giftID)[0];
+    document.getElementById(
+      "gift-item"
+    ).innerHTML = `You are bringing: ${gft.fields.Name}`;
+  }
+
   initializeAnimation();
 
-  if (!localStorage.getItem("NAME")) {
+  if (!localStorage.getItem("ID")) {
     TweenMax.to("#initial-screen", 0.5, {
       autoAlpha: 1,
     });
