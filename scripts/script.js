@@ -293,6 +293,12 @@ class AnimateText {
     this.base = new Airtable({ apiKey: "key2sVp4i7mkwGmdv" }).base(
       "appkYZZJoBgeZ8qqD"
     );
+    this.giftName = localStorage.getItem("GIFT_NAME");
+    if (this.giftName) {
+      document.getElementById(
+        "gift-item"
+      ).innerHTML = `You are bringing: ${this.giftName}`;
+    }
   }
 
   initialise = () => {
@@ -746,19 +752,6 @@ const getData = async () => {
   data.records.map((item) => {
     html += `<option data-id="${item.id}" value="${item.id}">${item.fields.Fullname}</option>`;
   });
-  document.getElementById("select--name").innerHTML = html;
-  // return;
-
-  document.getElementById("select--name").onchange = function (e) {
-    // console.log(e.currentTarget.dataset.id);
-    let item = data.records.filter((record) => record.id === e.target.value);
-    console.log(item);
-    if (item.length) {
-      activeID = e.target.value;
-      localStorage.setItem("NAME", item[0].fields.Name);
-      localStorage.setItem("ID", e.target.value);
-    }
-  };
 
   var anchors = document.getElementsByTagName("a");
   for (var i = 0; i < anchors.length; i++) {
@@ -783,11 +776,7 @@ const getData = async () => {
       },
     }
   );
-
-  const activeUser = data.records.filter((record) => record.id === activeID);
-  const userHasGift = activeUser[0]?.fields?.Gift?.length;
-  // console.log(userHasGift);
-
+  let hasGift = localStorage.getItem("GIFT_NAME");
   const giftData = await giftList.json();
   giftData.records.map((gift) => {
     const hasUser = gift?.fields?.Guest?.length;
@@ -795,7 +784,7 @@ const getData = async () => {
     giftHTML += `<li class="${hasUser ? "hasUser" : ""}"><span>${
       gift.fields.Name
     } </span> ${
-      hasUser || userHasGift
+      hasUser || hasGift
         ? ""
         : `<a class='gift-btn' data-id='${gift.id}'>GIFT</a>`
     }</li>`;
@@ -803,13 +792,41 @@ const getData = async () => {
   giftHTML += `<li>Other baby essentials</li>`;
   document.getElementById("gift-list").innerHTML = giftHTML;
 
-  if (userHasGift) {
-    const giftID = activeUser[0].fields.Gift[0];
-    const gft = giftData.records.filter((record) => record.id === giftID)[0];
-    document.getElementById(
-      "gift-item"
-    ).innerHTML = `You are bringing: ${gft.fields.Name}`;
-  }
+  const activeUser = data.records.filter((record) => record.id === activeID);
+  // let userHasGift = activeUser[0]?.fields?.Gift?.length;
+  // console.log(userHasGift);
+
+  document.getElementById("select--name").innerHTML = html;
+  // return;
+
+  document.getElementById("select--name").onchange = function (e) {
+    // console.log(e.currentTarget.dataset.id);
+    let item = data.records.filter((record) => record.id === e.target.value);
+    console.log(item);
+    if (item.length) {
+      activeID = e.target.value;
+      localStorage.setItem("NAME", item[0].fields.Name);
+      localStorage.setItem("ID", e.target.value);
+      if (item[0]?.fields?.Gift?.length) {
+        localStorage.setItem("GIFT_NAME", item[0]?.fields?.GiftName[0]);
+      }
+      let userHasGift = localStorage.getItem("GIFT_NAME");
+      let htmlGift = "";
+      giftData.records.map((gift) => {
+        const hasUser = gift?.fields?.Guest?.length;
+
+        htmlGift += `<li class="${hasUser ? "hasUser" : ""}"><span>${
+          gift.fields.Name
+        } </span> ${
+          hasUser || userHasGift
+            ? ""
+            : `<a class='gift-btn' data-id='${gift.id}'>GIFT</a>`
+        }</li>`;
+      });
+      htmlGift += `<li>Other baby essentials</li>`;
+      document.getElementById("gift-list").innerHTML = htmlGift;
+    }
+  };
 
   initializeAnimation();
 
