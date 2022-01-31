@@ -276,6 +276,8 @@ class CameraMouseControl {
 
 class AnimateText {
   constructor() {
+    this.giftName = localStorage.getItem("GIFT_NAME");
+
     this.initialAnimation = new TimelineMax();
     this.firstAnimation = new TimelineMax();
     this.secondAnimation = new TimelineMax();
@@ -289,17 +291,22 @@ class AnimateText {
     this.wishlistAnimated = false;
     this.activeSection = "";
     this.initialise();
+    this.updateGift(true);
+
     this.bindEvents();
     this.base = new Airtable({ apiKey: "key2sVp4i7mkwGmdv" }).base(
       "appkYZZJoBgeZ8qqD"
     );
-    this.giftName = localStorage.getItem("GIFT_NAME");
-    if (this.giftName) {
-      document.getElementById(
-        "gift-item"
-      ).innerHTML = `You are bringing: ${this.giftName}`;
-    }
   }
+
+  updateGift = (addRemove) => {
+    if (this.giftName) {
+      document.getElementById("gift-item").innerHTML = `You are bringing: ${
+        this.giftName
+      } ${addRemove ? `<a id="remove-gift">Remove</a>` : ""}`;
+      localStorage.setItem("GIFT_NAME", this.giftName);
+    }
+  };
 
   initialise = () => {
     document.getElementById("hello").innerHTML = `Hello, ${localStorage.getItem(
@@ -356,11 +363,6 @@ class AnimateText {
         split2.revert();
       }
     );
-    // setTimeout(() => {
-    //   tl.reverse(1);
-    //   //   this.animateSecondScreen();
-    // }, 2000);
-    // return;
     setTimeout(() => {
       this.firstAnimation.reverse(1);
       setTimeout(() => {
@@ -414,13 +416,6 @@ class AnimateText {
       { y: 20, opacity: 0, ease: Back.easeOut.config(2) },
       { y: 0, opacity: 1, ease: Back.easeOut.config(2), delay: 0.8 }
     );
-
-    // setTimeout(() => {
-    // this.secondAnimation.reverse(1);
-    //   setTimeout(() => {
-    //     this.animateThirdScreen();
-    //   }, 1000);
-    // }, 3000);
   };
 
   animateThirdScreen = () => {
@@ -458,18 +453,6 @@ class AnimateText {
       { y: 0, opacity: 1, ease: Back.easeOut.config(2) },
       0.3
     );
-    // this.thirdAnimation.staggerFromTo(
-    //   "#dresscode",
-    //   0.5,
-    //   { y: 20, opacity: 0, ease: Back.easeOut.config(2) },
-    //   { y: 0, opacity: 1, ease: Back.easeOut.config(2) }
-    // );
-    // this.thirdAnimation.staggerFromTo(
-    //   "#wishlist",
-    //   0.5,
-    //   { y: 20, opacity: 0, ease: Back.easeOut.config(2) },
-    //   { y: 0, opacity: 1, ease: Back.easeOut.config(2) }
-    // );
   };
 
   animateVenue = () => {
@@ -638,27 +621,25 @@ class AnimateText {
 
     document.querySelectorAll(".gift-btn").forEach((item) => {
       item.addEventListener("click", (event) => {
-        //handle click
-        // console.log(this.base);
-        // return;
-        // console.log(this.getAttribute("data-id"));
-        // return;
         let text = "Are you sure you want to give this to our baby?";
+        const gftName = event.currentTarget.dataset.name;
+        const id = event.currentTarget.dataset.id;
         if (confirm(text) == true) {
           this.base("Gift Ideas").update(
             [
               {
-                id: event.currentTarget.dataset.id,
+                id,
                 fields: {
                   Guest: [localStorage.getItem("ID")],
                 },
               },
             ],
-            function (err, records) {
+            (err, records) => {
               if (err) {
                 console.error(err);
                 return;
               }
+              localStorage.setItem("GIFT_ID", id);
               alert("Thank you! This is much appreciated! See you!");
               item.parentNode.classList.add("hasUser");
               item.remove();
@@ -667,15 +648,53 @@ class AnimateText {
               items.forEach((box) => {
                 box.remove();
               });
-              // target.classList.add("hasUser");
-              // records.forEach(function (record) {
-              //   console.log(record.get("Name"));
-              // });
+              this.giftName = gftName;
+              this.updateGift(false);
             }
           );
         }
       });
     });
+    if (document.getElementById("remove-gift")) {
+      document.getElementById("remove-gift").addEventListener(
+        "click",
+        (event) => {
+          let text = "Are you sure you want to remove your gift?";
+          const gftName = event.currentTarget.dataset.name;
+          if (confirm(text) == true) {
+            this.base("Gift Ideas").update(
+              [
+                {
+                  id: localStorage.getItem("GIFT_ID"),
+                  fields: {
+                    Guest: [],
+                  },
+                },
+              ],
+              function (err, records) {
+                if (err) {
+                  console.error(err);
+                  return;
+                }
+                alert(
+                  "No problem! In case you want to select another gift, please refresh the page. See you!"
+                );
+                // item.parentNode.classList.add("hasUser");
+                // item.remove();
+                // const items = document.querySelectorAll(".gift-btn");
+
+                // items.forEach((box) => {
+                //   box.remove();
+                // });
+                document.getElementById("gift-item").innerHTML = ``;
+                localStorage.setItem("GIFT_NAME", "");
+              }
+            );
+          }
+        },
+        false
+      );
+    }
   };
 }
 
@@ -786,7 +805,7 @@ const getData = async () => {
     } </span> ${
       hasUser || hasGift
         ? ""
-        : `<a class='gift-btn' data-id='${gift.id}'>GIFT</a>`
+        : `<a class='gift-btn' data-name='${gift.fields.Name}' data-id='${gift.id}'>GIFT</a>`
     }</li>`;
   });
   giftHTML += `<li>Other baby essentials</li>`;
@@ -809,6 +828,9 @@ const getData = async () => {
       localStorage.setItem("ID", e.target.value);
       if (item[0]?.fields?.Gift?.length) {
         localStorage.setItem("GIFT_NAME", item[0]?.fields?.GiftName[0]);
+        localStorage.setItem("GIFT_ID", item[0]?.fields?.Gift[0]);
+      } else {
+        localStorage.removeItem("GIFT_NAME");
       }
       let userHasGift = localStorage.getItem("GIFT_NAME");
       let htmlGift = "";
@@ -820,7 +842,7 @@ const getData = async () => {
         } </span> ${
           hasUser || userHasGift
             ? ""
-            : `<a class='gift-btn' data-id='${gift.id}'>GIFT</a>`
+            : `<a class='gift-btn' data-name='${gift.fields.Name}' data-id='${gift.id}'>GIFT</a>`
         }</li>`;
       });
       htmlGift += `<li>Other baby essentials</li>`;
@@ -846,6 +868,7 @@ getData();
 const audio = new Audio("assets/bg.mp3");
 audio.autoplay = true;
 audio.loop = true;
+audio.volume = 0.4;
 
 let isPlaying = false;
 document.getElementById("play-sound").addEventListener("click", function () {

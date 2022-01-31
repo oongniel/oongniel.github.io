@@ -351,4 +351,12 @@ p {
   left: 15px;
   width: calc(100% - 30px);
   font-size: 11px;
+  z-index: 22222;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 15px;
+}
+#gift-item a {
+  font-size: 11px;
 }
