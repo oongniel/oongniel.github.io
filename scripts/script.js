@@ -290,6 +290,9 @@ class AnimateText {
     this.activeSection = "";
     this.initialise();
     this.bindEvents();
+    this.base = new Airtable({ apiKey: "key2sVp4i7mkwGmdv" }).base(
+      "appkYZZJoBgeZ8qqD"
+    );
   }
 
   initialise = () => {
@@ -626,6 +629,41 @@ class AnimateText {
       },
       false
     );
+
+    document.querySelectorAll(".gift-btn").forEach((item) => {
+      item.addEventListener("click", (event) => {
+        //handle click
+        // console.log(this.base);
+        // return;
+        // console.log(this.getAttribute("data-id"));
+        // return;
+        let text = "Are you sure?";
+        if (confirm(text) == true) {
+          this.base("Gift Ideas").update(
+            [
+              {
+                id: event.currentTarget.dataset.id,
+                fields: {
+                  Guest: ["recwUSWYpxUlFBRzJ"],
+                },
+              },
+            ],
+            function (err, records) {
+              if (err) {
+                console.error(err);
+                return;
+              }
+              item.parentNode.classList.add("hasUser");
+              item.remove();
+              // target.classList.add("hasUser");
+              // records.forEach(function (record) {
+              //   console.log(record.get("Name"));
+              // });
+            }
+          );
+        }
+      });
+    });
   };
 }
 
@@ -688,6 +726,7 @@ document.addEventListener(
   },
   false
 );
+
 const API_KEY = "key2sVp4i7mkwGmdv";
 const getData = async () => {
   const response = await fetch(
@@ -707,18 +746,7 @@ const getData = async () => {
   });
   document.getElementById("select--name").innerHTML = html;
   // return;
-  initializeAnimation();
 
-  if (!localStorage.getItem("NAME")) {
-    TweenMax.to("#initial-screen", 0.5, {
-      autoAlpha: 1,
-    });
-  } else {
-    // $(".avatar").append();
-
-    drawAvatar();
-    new AnimateText();
-  }
   var anchors = document.getElementsByTagName("a");
   for (var i = 0; i < anchors.length; i++) {
     var current = anchors[i];
@@ -731,7 +759,7 @@ const getData = async () => {
     );
   }
 
-  document.getElementById("audio--bg").play();
+  // document.getElementById("audio--bg").play();
 
   let giftHTML = "";
   const giftList = await fetch(
@@ -743,22 +771,45 @@ const getData = async () => {
     }
   );
   const giftData = await giftList.json();
-  // const getUser = (id) => {
-  //   return data.records.filter((record) => record.id === id);
-  // };
   giftData.records.map((gift) => {
     const hasUser = gift?.fields?.Guest?.length;
 
     giftHTML += `<li class="${hasUser ? "hasUser" : ""}"><span>${
       gift.fields.Name
-    } </span> ${hasUser ? "" : "<a>GIFT</a>"}</li>`;
-    // ${
-    //   gift?.fields?.Guest
-    //     ? `<a>@${getUser(gift?.fields?.Guest[0])[0].fields.Fullname}</a>`
-    //     : ""
-    // }
+    } </span> ${
+      hasUser ? "" : `<a class='gift-btn' data-id='${gift.id}'>GIFT</a>`
+    }</li>`;
   });
 
   document.getElementById("gift-list").innerHTML = giftHTML;
+  initializeAnimation();
+
+  if (!localStorage.getItem("NAME")) {
+    TweenMax.to("#initial-screen", 0.5, {
+      autoAlpha: 1,
+    });
+  } else {
+    // $(".avatar").append();
+
+    drawAvatar();
+    new AnimateText();
+  }
 };
 getData();
+
+const audio = new Audio("assets/bg.mp3");
+audio.autoplay = true;
+audio.loop = true;
+
+let isPlaying = false;
+document.getElementById("play-sound").addEventListener("click", function () {
+  if (isPlaying) {
+    audio.pause();
+    this.classList.remove("active");
+    isPlaying = false;
+  } else {
+    audio.play();
+    isPlaying = true;
+    this.classList.add("active");
+  }
+});
