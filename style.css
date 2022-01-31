@@ -347,7 +347,7 @@ p {
 
 #gift-item {
   position: absolute;
-  top: 70px;
+  bottom: 15px;
   left: 15px;
   width: calc(100% - 30px);
   font-size: 11px;

@@ -731,6 +731,7 @@ document.addEventListener(
 
 const API_KEY = "key2sVp4i7mkwGmdv";
 const getData = async () => {
+  let activeID = localStorage.getItem("ID");
   const response = await fetch(
     "https://api.airtable.com/v0/appkYZZJoBgeZ8qqD/Guest%20List?sort%5B0%5D%5Bfield%5D=Fullname",
     {
@@ -753,6 +754,7 @@ const getData = async () => {
     let item = data.records.filter((record) => record.id === e.target.value);
     console.log(item);
     if (item.length) {
+      activeID = e.target.value;
       localStorage.setItem("NAME", item[0].fields.Name);
       localStorage.setItem("ID", e.target.value);
     }
@@ -781,7 +783,7 @@ const getData = async () => {
       },
     }
   );
-  const activeID = localStorage.getItem("ID");
+
   const activeUser = data.records.filter((record) => record.id === activeID);
   const userHasGift = activeUser[0]?.fields?.Gift?.length;
   // console.log(userHasGift);
