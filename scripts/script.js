@@ -640,7 +640,9 @@ class AnimateText {
                 return;
               }
               localStorage.setItem("GIFT_ID", id);
-              alert("Thank you! This is much appreciated! See you!");
+              alert(
+                "Thank you! This is much appreciated! If you change your mind and would like to change or remove the selected gift, please refresh the page. Thank you! See you!"
+              );
               item.parentNode.classList.add("hasUser");
               item.remove();
               const items = document.querySelectorAll(".gift-btn");
