@@ -716,8 +716,8 @@ class BuildSite {
               record.fields.Name
             } </span> ${
               hasUser || this.data?.Gift?.length
-                ? ""
-                : `<a class='gift-btn' data-name='${record.fields.Name}' data-id='${record.id}'>GIFT</a>`
+                ? `<a>SELECTED</a>`
+                : `<a class='gift-btn' data-name='${record.fields.Name}' data-id='${record.id}'>SELECT</a>`
             }</li>`;
           });
           giftHTML += `<li>Other baby essentials</li>`;
@@ -758,6 +758,9 @@ class BuildSite {
 
           records.forEach((record) => {
             // console.log("Retrieved", record);
+            console.log(
+              `${record.fields.Name} : https://oongniel.github.io?user=${record.id}`
+            );
             if (!record.fields.HideFromList) {
               guestHTML += `<li ><span>${record.fields.Fullname} </span> </li>`;
             }

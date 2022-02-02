@@ -248,7 +248,9 @@ p {
   opacity: 0.5;
 }
 .hasUser a {
-  display: none;
+  opacity: 0.5;
+  cursor: none;
+  color: #000;
 }
 
 #text-wrapper--wishlist p {
@@ -391,4 +393,7 @@ p {
 #guest-list li {
   flex: calc(50% - 10px) 0 0;
   margin: 0 0 5px;
+}
+a {
+  cursor: pointer;
 }
