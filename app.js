@@ -621,6 +621,16 @@ class BuildSite {
       },
       false
     );
+    document.getElementById("go-back-gl").addEventListener(
+      "click",
+      (event) => {
+        this.guestListAnimation.reverse(1);
+        setTimeout(() => {
+          this.animateThirdScreen();
+        }, 1000);
+      },
+      false
+    );
   };
 
   bindRemoveGift = () => {
@@ -640,7 +650,7 @@ class BuildSite {
           ],
           (err, records) => {
             if (err) {
-              console.error(err);
+              //   console.error(err);
               return;
             }
             alert(
@@ -758,9 +768,9 @@ class BuildSite {
 
           records.forEach((record) => {
             // console.log("Retrieved", record);
-            console.log(
-              `${record.fields.Name} : https://oongniel.github.io?user=${record.id}`
-            );
+            // console.log(
+            //   `${record.fields.Name} : https://oongniel.github.io?user=${record.id}`
+            // );
             if (!record.fields.HideFromList) {
               guestHTML += `<li ><span>${record.fields.Fullname} </span> </li>`;
             }
@@ -811,7 +821,7 @@ class Setup {
         ...record.fields,
         id: record.id,
       });
-      console.log("Retrieved", record.fields);
+      //   console.log("Retrieved", record.fields);
     });
   };
 

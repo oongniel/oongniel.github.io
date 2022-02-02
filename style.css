@@ -393,6 +393,7 @@ p {
 #guest-list li {
   flex: calc(50% - 10px) 0 0;
   margin: 0 0 5px;
+  font-size: 14px;
 }
 a {
   cursor: pointer;
