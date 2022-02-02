@@ -726,7 +726,7 @@ class BuildSite {
               record.fields.Name
             } </span> ${
               hasUser || this.data?.Gift?.length
-                ? `<a>SELECTED</a>`
+                ? ``
                 : `<a class='gift-btn' data-name='${record.fields.Name}' data-id='${record.id}'>SELECT</a>`
             }</li>`;
           });
