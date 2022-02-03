@@ -662,6 +662,7 @@ class BuildSite {
               id,
               ...fields,
             };
+            this.giftName = null;
             this.getGiftList();
           }
         );
@@ -693,7 +694,7 @@ class BuildSite {
             return;
           }
           alert("Thank you! This is much appreciated! Thank you and see you!");
-
+          const { id, fields } = records[0];
           this.getGiftList();
           this.giftName = gftName;
           this.updateGift();
@@ -717,7 +718,7 @@ class BuildSite {
       .eachPage(
         (records, fetchNextPage) => {
           // This function (`page`) will get called for each page of records.
-
+          console.log(this.data);
           records.forEach((record) => {
             // console.log("Retrieved", record);
             const hasUser = record?.fields?.Guest?.length;
@@ -725,7 +726,7 @@ class BuildSite {
             giftHTML += `<li class="${hasUser ? "hasUser" : ""}"><span>${
               record.fields.Name
             } </span> ${
-              hasUser || this.data?.Gift?.length
+              hasUser || this.giftName
                 ? ``
                 : `<a class='gift-btn' data-name='${record.fields.Name}' data-id='${record.id}'>SELECT</a>`
             }</li>`;
