@@ -876,6 +876,16 @@ class SetupAudio {
           this.classList.add("active");
         }
       });
+
+    window.onblur = function () {
+      audio.pause();
+    };
+
+    window.onfocus = function () {
+      if (isPlaying) {
+        audio.play();
+      }
+    };
   };
 }
 
