@@ -281,6 +281,12 @@ class App {
         { y: 20, autoAlpha: 0, ease: Back.easeOut.config(2) },
         { y: 0, autoAlpha: 1, ease: Back.easeOut.config(2) }
       );
+
+      this.detailAnimation.fromTo(
+        ".button--location",
+        { y: 20, autoAlpha: 0, ease: Back.easeOut.config(2) },
+        { y: 0, autoAlpha: 1, ease: Back.easeOut.config(2) }
+      );
     }, 300);
   };
 }
