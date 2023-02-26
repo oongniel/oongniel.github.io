@@ -20,12 +20,13 @@ html {
   font-family: "Glass Antiqua", sans-serif;
   color: #5e5e5e;
 }
-body > svg {
-  width: 98%;
-  height: auto;
-  margin-top: -28px;
-  margin: auto;
-  margin-left: 1%;
+
+body > div {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 225px;
+  bottom: -32px;
 }
 h1,
 h2 {
@@ -46,8 +47,8 @@ section {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: -1;
   transition: 300ms all;
 }
@@ -95,8 +96,9 @@ section.active {
 #invitation-text {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
+  padding-top: 150px;
 }
 
 #invitation-text h4 {
@@ -121,8 +123,9 @@ section.active {
 #detail-text {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
+  padding-top: 100px;
 }
 /* flex */
 .flex {

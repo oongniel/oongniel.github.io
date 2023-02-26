@@ -96,7 +96,7 @@ class App {
   };
 
   animateIntro = () => {
-    const player = document.querySelector("lottie-player");
+    const player = document.getElementById("pop");
     player.load("https://assets6.lottiefiles.com/packages/lf20_to8oip6o.json");
     player.addEventListener("load", () => {
       this.preparing.classList.add("fade-out");
@@ -107,8 +107,17 @@ class App {
         this.pop.play();
         setTimeout(() => {
           this.animateGreeting();
+          this.animateBearWalking();
         }, 1000);
       }, 300);
+    });
+  };
+
+  animateBearWalking = () => {
+    const player = document.getElementById("bear-float");
+    player.load("https://assets7.lottiefiles.com/packages/lf20_v8Ji51.json");
+    player.addEventListener("load", () => {
+      player.play();
     });
   };
 
