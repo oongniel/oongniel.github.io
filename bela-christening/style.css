@@ -66,7 +66,7 @@ a {
 
 .main-wrap p {
   font-size: 13px;
-  width: 85%;
+  width: 95%;
   margin: 15px auto 0;
 }
 
@@ -97,7 +97,7 @@ a {
 
 .divider {
   margin: 15px auto;
-  max-width: 85%;
+  max-width: 95%;
   height: 5px;
 }
 
@@ -115,7 +115,7 @@ audio {
 
 .table {
   display: flex;
-  width: 85%;
+  width: 95%;
   margin: auto;
   margin: auto;
   border: 1px solid black;
@@ -178,5 +178,12 @@ audio {
 }
 
 .addeventatc {
+  margin-top: 15px;
   margin-bottom: 25px;
+}
+
+.directions {
+  display: inline-block !important;
+  vertical-align: middle;
+  margin: 0 !important;
 }

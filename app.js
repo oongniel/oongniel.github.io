@@ -1,3 +1,5 @@
+import Airtable from "airtable";
+import * as THREE from "three";
 // WebGL
 const {
   WebGLRenderer,
@@ -20,8 +22,8 @@ const getRandomInt = (min, max) =>
 
 /* --------------------------- */
 /* ----------- CORE ---------- */
-let windowWidth = window.innerWidth;
-let windowHeight = window.innerHeight;
+let windowWidth = 1000;
+let windowHeight = 599;
 class Webgl {
   constructor(w, h) {
     this.meshCount = 0;
@@ -202,8 +204,8 @@ const initializeAnimation = () => {
   const windLines = new Wind();
   webgl.add(windLines);
 
-  const fontLoader = new FontLoader();
-  const fontAsset = fontLoader.parse(fontFile);
+  // const fontLoader = new FontLoader();
+  // const fontAsset = fontLoader.parse(fontFile);
 
   const cameraControl = new CameraMouseControl(webgl.camera);
   function _onResize() {
@@ -226,7 +228,7 @@ initializeAnimation();
 
 //  Events
 
-const AK_AIRTABLE = "key2sVp4i7mkwGmdv";
+const AK_AIRTABLE = "patEfo4Z6HS7QF4Fc";
 
 class BuildSite {
   constructor(data) {
