@@ -13,6 +13,19 @@ $(() => {
     $openInvite.on("click", () => {
       initTyped();
     });
+
+    // Pause and play audio based on window focus
+    $(window).on("blur", () => {
+      if (!$audio.paused) {
+        $audio.pause();
+      }
+    });
+
+    $(window).on("focus", () => {
+      if ($audio.paused) {
+        $audio.play();
+      }
+    });
   };
 
   const initTyped = () => {
@@ -57,10 +70,12 @@ $(() => {
       // $audio.currentTime = 80;
     }, 300);
   };
+
   const init = () => {
     bindEvents();
     // initTyped();
     // $viewDetails.addClass("active");
   };
+
   init();
 });
