@@ -263,6 +263,8 @@ a:focus-visible {
   transition: all 0.3s;
   cursor: pointer;
   overflow: hidden;
+  min-width: 250px;
+  text-align: center;
 }
 
 .enter::before {
@@ -330,7 +332,7 @@ a:focus-visible {
   font-size: 2rem;
   font-family: new-science-extended, sans-serif;
   font-weight: 400;
-  margin: 6rem 0 10vh;
+  margin: 6rem 0 7vh;
   line-height: 0.9;
 }
 
@@ -338,7 +340,7 @@ a:focus-visible {
   text-wrap: balance;
   display: flex;
   flex-direction: column;
-  gap: 10vh;
+  gap: 7vh;
   padding: 0 5vw;
 }
 
