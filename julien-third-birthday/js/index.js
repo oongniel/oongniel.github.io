@@ -11,6 +11,8 @@ const enterButton = document.querySelector(".enter"); // Reference to the "Explo
 const fullview = document.querySelector(".fullview"); // Reference to the fullview element
 const grid = document.querySelector(".grid"); // Reference to the grid element
 const gridRows = grid.querySelectorAll(".row"); // Reference to all row elements within the grid
+const iconSwipe = document.getElementById("icon-swipe");
+const audio = document.getElementById("my_audio");
 
 // Cache window size and update on resize
 let winsize = { width: window.innerWidth, height: window.innerHeight };
@@ -18,6 +20,21 @@ window.addEventListener("resize", () => {
   winsize = { width: window.innerWidth, height: window.innerHeight };
 });
 
+window.addEventListener("click", () => {
+  audio.play();
+});
+
+window.addEventListener("blur", () => {
+  if (!audio.paused) {
+    audio.pause();
+  }
+});
+
+window.addEventListener("focus", () => {
+  if (audio.paused) {
+    audio.play();
+  }
+});
 // Initialize mouse position object
 let mousepos = { x: winsize.width / 2, y: winsize.height / 2 };
 
@@ -262,12 +279,13 @@ const enterFullview = () => {
 
   // Hide the button
   enterButton.classList.add("hidden");
+  iconSwipe.classList.add("hidden");
   // Scrolling allowed
   body.classList.remove("noscroll");
 };
 
 const typeAnimationInit = () => {
-  const target = "OPEN INVITATION";
+  const target = "YOU'RE INVITED";
   const typingSpeed = 100; // Adjust typing speed
   const randomChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
   let currentText = "";
@@ -289,10 +307,42 @@ const typeAnimationInit = () => {
     }
   }, typingSpeed);
 };
+
+const countdownInit = () => {
+  const targetDate = new Date("March 15, 2025 11:00:00");
+
+  const timerElement = document.getElementById("countdown-timer");
+
+  function updateCountdown() {
+    const now = new Date();
+    const timeDifference = targetDate - now;
+
+    if (timeDifference <= 0) {
+      timerElement.textContent = "The countdown is over!";
+      clearInterval(interval);
+      return;
+    }
+
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor(
+      (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    timerElement.textContent = `${days}D, ${hours}H, ${minutes}M, ${seconds}S until the event`;
+  }
+
+  const interval = setInterval(updateCountdown, 1000);
+  updateCountdown();
+};
 // Initialization function
 const init = () => {
   startRendering();
   typeAnimationInit();
+  countdownInit();
   // Initialize click event for the "Explore" button
   enterButton.addEventListener("click", enterFullview);
   // Add touchstart event for mobile devices
