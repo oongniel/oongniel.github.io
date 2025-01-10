@@ -254,9 +254,9 @@ a:focus-visible {
   will-change: transform, filter;
 }
 
-.enter {
+.enter,
+.site-button {
   color: rgba(0, 0, 0, 0.8);
-  position: absolute;
   text-transform: uppercase;
   padding: 1.75rem 4rem;
   font-weight: 700;
@@ -273,9 +273,15 @@ a:focus-visible {
   overflow: hidden;
   min-width: 250px;
   text-align: center;
+  position: relative;
 }
 
-.enter::before {
+.enter {
+  position: absolute;
+}
+
+.enter::before,
+.site-button::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -289,7 +295,9 @@ a:focus-visible {
 }
 
 .enter:focus::before,
-.enter:hover::before {
+.enter:hover::before,
+.site-button:focus::before,
+.site-button:hover::before {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
