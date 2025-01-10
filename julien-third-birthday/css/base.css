@@ -475,3 +475,16 @@ a:focus-visible {
 audio {
   display: none;
 }
+.content .addeventatc {
+  visibility: visible;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none !important;
+  font-family: "new-science", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Helvetica, Arial, sans-serif;
+  border: 1px solid black;
+  width: 250px;
+  text-align: center;
+  margin: auto;
+}
