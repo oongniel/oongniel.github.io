@@ -338,94 +338,6 @@ const countdownInit = () => {
   const interval = setInterval(updateCountdown, 1000);
   updateCountdown();
 };
-// Function to generate an ICS file
-const generateICSFile = (event) => {
-  return new Promise((resolve, reject) => {
-    try {
-      const icsContent = `
-BEGIN:VCALENDAR
-VERSION:2.0
-BEGIN:VEVENT
-SUMMARY:${event.title}
-DESCRIPTION:${event.description}
-DTSTART:${formatICSDate(event.start)}
-DTEND:${formatICSDate(event.end)}
-STATUS:${event.busyStatus}
-END:VEVENT
-END:VCALENDAR
-      `.trim();
-
-      const filename = event.title ? `${event.title}.ics` : "Event.ics";
-      resolve(new File([icsContent], filename, { type: "text/calendar" }));
-    } catch (error) {
-      reject(error);
-    }
-  });
-};
-
-// Helper function to format date for ICS
-const formatICSDate = (dateArray) => {
-  // Convert date array to ICS format: YYYYMMDDTHHmmssZ
-  const [year, month, day, hour, minute] = dateArray;
-  return `${year}${pad(month)}${pad(day)}T${pad(hour)}${pad(minute)}00Z`;
-};
-
-// Helper function to pad numbers to two digits
-const pad = (number) => {
-  return number < 10 ? "0" + number : number;
-};
-
-// Function to handle the download of the ICS file
-const downloadICSFile = (file) => {
-  const url = URL.createObjectURL(file);
-  const anchor = document.createElement("a");
-  anchor.href = url;
-  anchor.download = file.name;
-  document.body.appendChild(anchor);
-  anchor.click();
-  document.body.removeChild(anchor);
-  URL.revokeObjectURL(url);
-};
-
-// Public function to add an event to the calendar
-const addToCalendar = (startDate, endDate, title) => {
-  if (!startDate || !endDate) return;
-
-  const parsedStart = new Date(startDate);
-  const parsedEnd = new Date(endDate);
-
-  const start = [
-    parsedStart.getFullYear(),
-    parsedStart.getMonth() + 1, // Months are zero-indexed
-    parsedStart.getDate(),
-    parsedStart.getHours(),
-    parsedStart.getMinutes(),
-  ];
-
-  const end = [
-    parsedEnd.getFullYear(),
-    parsedEnd.getMonth() + 1, // Months are zero-indexed
-    parsedEnd.getDate(),
-    parsedEnd.getHours(),
-    parsedEnd.getMinutes(),
-  ];
-
-  const event = {
-    title: title || "Untitled Event",
-    description: title || "Untitled Event",
-    busyStatus: "FREE",
-    start: start,
-    end: end,
-  };
-
-  generateICSFile(event)
-    .then((file) => {
-      downloadICSFile(file);
-    })
-    .catch((error) => {
-      console.error("Failed to create or download ICS file:", error);
-    });
-};
 // Initialization function
 const init = () => {
   startRendering();
@@ -435,15 +347,6 @@ const init = () => {
   enterButton.addEventListener("click", enterFullview);
   // Add touchstart event for mobile devices
   enterButton.addEventListener("touchstart", enterFullview);
-
-  calendarButton.addEventListener("click", function () {
-    // ISO 8601 format for date and time: YYYY-MM-DDTHH:mm:ssZ
-    const startDate = "2025-03-15T011:00:00"; // Start date and time in ISO format
-    const endDate = "2025-03-15T13:00:00"; // End date and time in ISO format
-    const title = "Julien's 3rd Birthday Brunch";
-
-    addToCalendar(startDate, endDate, title);
-  });
 };
 
 // Preloading images and initializing setup when complete
