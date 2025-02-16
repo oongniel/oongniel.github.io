@@ -539,3 +539,8 @@ audio {
   height: 59px;
   min-width: 300px;
 }
+
+.sub-label {
+  margin-top: 10px;
+  font-size: 10px;
+}
