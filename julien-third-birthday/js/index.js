@@ -217,6 +217,7 @@ const stopRendering = () => {
 
 const enterFullview = () => {
   // Logic to animate the middle image to full view using gsap Flip
+  audio.play();
   const flipstate = Flip.getState(middleRowItemInner);
   fullview.appendChild(middleRowItemInner);
 
