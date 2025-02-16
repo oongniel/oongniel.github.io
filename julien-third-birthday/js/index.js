@@ -355,7 +355,7 @@ const countdownInit = () => {
 };
 // Initialization function
 const init = () => {
-  typeAnimationInit(enterButton, "YOU'RE INVITED");
+  typeAnimationInit(enterButton, "SEE DETAILS");
   countdownInit();
   // Initialize click event for the "Explore" button
   enterButton.addEventListener("click", enterFullview);

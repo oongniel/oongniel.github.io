@@ -406,9 +406,11 @@ a:focus-visible {
 #icon-swipe {
   position: fixed;
   z-index: 9999;
-  bottom: 50px;
+  top: 50%;
   width: 72px;
   height: 35px;
+  transform: translateY(-50%);
+  opacity: 0.5;
 }
 
 #hand {
