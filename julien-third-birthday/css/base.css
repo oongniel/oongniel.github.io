@@ -281,7 +281,7 @@ a:focus-visible {
 
 .enter {
   position: absolute;
-  bottom: 25%;
+  bottom: 120px;
 }
 
 .enter::before,
@@ -406,7 +406,7 @@ a:focus-visible {
 #icon-swipe {
   position: fixed;
   z-index: 9999;
-  bottom: 15%;
+  bottom: 50px;
   width: 72px;
   height: 35px;
 }
