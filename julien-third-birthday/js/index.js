@@ -7,7 +7,10 @@ gsap.registerPlugin(Flip);
 const body = document.body; // Reference to the body element
 const frame = document.querySelector(".frame"); // Reference to the frame element
 const content = document.querySelector(".content"); // Reference to the content element
+const greetings = document.querySelector(".greetings"); // Reference to the content element
 const enterButton = document.querySelector(".enter"); // Reference to the "Explore" button
+const letsGoButton = document.querySelector(".lets-go"); // Reference to the "Explore" button
+
 const fullview = document.querySelector(".fullview"); // Reference to the fullview element
 const grid = document.querySelector(".grid"); // Reference to the grid element
 const gridRows = grid.querySelectorAll(".row"); // Reference to all row elements within the grid
@@ -20,9 +23,9 @@ window.addEventListener("resize", () => {
   winsize = { width: window.innerWidth, height: window.innerHeight };
 });
 
-window.addEventListener("click", () => {
-  audio.play();
-});
+// window.addEventListener("click", () => {
+//   audio.play();
+// });
 
 window.addEventListener("blur", () => {
   if (!audio.paused) {
@@ -217,7 +220,7 @@ const stopRendering = () => {
 
 const enterFullview = () => {
   // Logic to animate the middle image to full view using gsap Flip
-  audio.play();
+  // audio.play();
   const flipstate = Flip.getState(middleRowItemInner);
   fullview.appendChild(middleRowItemInner);
 
@@ -285,8 +288,19 @@ const enterFullview = () => {
   body.classList.remove("noscroll");
 };
 
-const typeAnimationInit = () => {
-  const target = "YOU'RE INVITED";
+const enterIntro = () => {
+  greetings.classList.add("fade-out");
+  startRendering();
+  setTimeout(() => {
+    audio.play();
+    init();
+  }, 300);
+  setTimeout(() => {
+    greetings.remove();
+  }, 700);
+};
+const typeAnimationInit = (buttonEl, tgt) => {
+  const target = tgt ? tgt : "YOU'RE INVITED";
   const typingSpeed = 100; // Adjust typing speed
   const randomChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
   let currentText = "";
@@ -297,10 +311,10 @@ const typeAnimationInit = () => {
       const randomPart =
         currentText +
         randomChars[Math.floor(Math.random() * randomChars.length)];
-      buttonElement.textContent = randomPart;
+      buttonEl.textContent = randomPart;
       setTimeout(() => {
         currentText += target[i];
-        buttonElement.textContent = currentText;
+        buttonEl.textContent = currentText;
         i++;
       }, typingSpeed / 4);
     } else {
@@ -341,8 +355,7 @@ const countdownInit = () => {
 };
 // Initialization function
 const init = () => {
-  startRendering();
-  typeAnimationInit();
+  typeAnimationInit(enterButton, "YOU'RE INVITED");
   countdownInit();
   // Initialize click event for the "Explore" button
   enterButton.addEventListener("click", enterFullview);
@@ -350,10 +363,16 @@ const init = () => {
   enterButton.addEventListener("touchstart", enterFullview);
 };
 
+const initGreetings = () => {
+  letsGoButton.addEventListener("click", enterIntro);
+  letsGoButton.addEventListener("touchstart", enterIntro);
+  typeAnimationInit(letsGoButton, "LET'S GO");
+};
+
 // Preloading images and initializing setup when complete
 preloadImages(".row__item-img").then(() => {
   document.body.classList.remove("loading");
-  init();
+  initGreetings();
 });
 
 // Mouse movement event listener to update mouse position

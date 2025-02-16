@@ -185,6 +185,7 @@ a:focus-visible {
   background: #000;
 }
 
+.greetings::after,
 .intro::after {
   content: "";
   position: absolute;
@@ -255,6 +256,7 @@ a:focus-visible {
 }
 
 .enter,
+.lets-go,
 .site-button {
   color: rgba(0, 0, 0, 0.8);
   text-transform: uppercase;
@@ -274,10 +276,12 @@ a:focus-visible {
   min-width: 250px;
   text-align: center;
   position: relative;
+  min-height: 59px;
 }
 
 .enter {
   position: absolute;
+  bottom: 25%;
 }
 
 .enter::before,
@@ -401,8 +405,8 @@ a:focus-visible {
 
 #icon-swipe {
   position: fixed;
-  z-index: 99999999;
-  bottom: 20%;
+  z-index: 9999;
+  bottom: 15%;
   width: 72px;
   height: 35px;
 }
@@ -495,4 +499,51 @@ audio {
   width: 250px;
   text-align: center;
   margin: auto;
+}
+
+.greetings {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: var(--color-bg);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 500ms all;
+  overflow: hidden;
+  /* width: 100%; */
+}
+
+.greetings__text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 90%;
+}
+
+@media (max-width: 768px) {
+  /* Mobile */
+  .fade-out {
+    transform: translateX(100%);
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Web */
+  .fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.lets-go {
+  max-width: 350px;
+  margin: auto;
+  margin-top: 50px;
+  height: 59px;
+  min-width: 300px;
 }
