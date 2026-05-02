@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calvin's 7th Birthday Party 🎮</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* Roblox-style font using Source Sans Pro as base with custom styling */
+            @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
+
+            :root {
+                --roblox-red: #e3242b;
+                --roblox-dark: #1a1a1a;
+                --roblox-gray: #393b3d;
+                --white: #ffffff;
+                --light-gray: #f2f2f2;
+                --accent-blue: #00a2ff;
+            }
+
+            body {
+                font-family: "Source Sans Pro", "Nunito", sans-serif;
+                overflow: hidden;
+                background: var(--white);
+                color: var(--roblox-dark);
+                height: 100vh;
+            }
+
+            .container {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            /* Layer-based screens */
+            .screen {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                overflow-y: auto;
+                overflow-x: hidden;
+                transition:
+                    opacity 0.5s ease,
+                    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+
+            /* Welcome screen - visible by default */
+            .welcome-screen {
+                background: var(--roblox-red);
+                position: relative;
+                z-index: 2;
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .welcome-screen.hidden {
+                opacity: 0;
+                transform: translateX(-100%);
+                pointer-events: none;
+            }
+
+            /* Details screen - hidden by default */
+            .details-screen {
+                z-index: 1;
+                opacity: 0;
+                transform: translateX(100%);
+                pointer-events: none;
+            }
+
+            .details-screen.active {
+                z-index: 2;
+                opacity: 1;
+                transform: translateX(0);
+                pointer-events: auto;
+            }
+
+            /* Roblox-style tilted squares pattern */
+            .squares-pattern {
+                position: absolute;
+                inset: 0;
+                overflow: hidden;
+                opacity: 0.1;
+            }
+
+            .square {
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                background: var(--white);
+                transform: rotate(45deg);
+                animation: floatSquare 20s ease-in-out infinite;
+            }
+
+            .square:nth-child(1) {
+                left: 10%;
+                top: 10%;
+                animation-delay: 0s;
+                animation-duration: 15s;
+            }
+            .square:nth-child(2) {
+                right: 15%;
+                top: 20%;
+                animation-delay: 4s;
+                width: 80px;
+                height: 80px;
+                animation-duration: 18s;
+            }
+            .square:nth-child(3) {
+                left: 15%;
+                bottom: 15%;
+                animation-delay: 8s;
+                width: 100px;
+                height: 100px;
+                animation-duration: 22s;
+            }
+            .square:nth-child(4) {
+                right: 20%;
+                bottom: 25%;
+                animation-delay: 12s;
+                animation-duration: 16s;
+            }
+            .square:nth-child(5) {
+                left: 50%;
+                top: 30%;
+                animation-delay: 16s;
+                width: 60px;
+                height: 60px;
+                animation-duration: 20s;
+            }
+
+            @keyframes floatSquare {
+                0%, 100% {
+                    transform: rotate(45deg) translateY(0) translateX(0);
+                }
+                25% {
+                    transform: rotate(55deg) translateY(-30px) translateX(20px);
+                }
+                50% {
+                    transform: rotate(35deg) translateY(-50px) translateX(-15px);
+                }
+                75% {
+                    transform: rotate(50deg) translateY(-20px) translateX(25px);
+                }
+            }
+
+            /* Floating decorative elements */
+            .floating-elements {
+                position: absolute;
+                inset: 0;
+                overflow: hidden;
+                pointer-events: none;
+            }
+
+            .float-item {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                animation: floatUpRotate 12s ease-in-out infinite;
+                opacity: 0;
+            }
+
+            /* Different geometric shapes */
+            .float-item.circle {
+                background: var(--white);
+                border-radius: 50%;
+            }
+
+            .float-item.square {
+                background: var(--white);
+                border-radius: 4px;
+            }
+
+            .float-item.triangle {
+                width: 0;
+                height: 0;
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-bottom: 35px solid var(--white);
+            }
+
+            .float-item.diamond {
+                background: var(--white);
+                transform: rotate(45deg);
+            }
+
+            .float-item.pentagon {
+                background: var(--white);
+                clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+            }
+
+            .float-item.hexagon {
+                background: var(--white);
+                clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+            }
+
+            .float-item:nth-child(1) {
+                left: 5%;
+                top: 15%;
+                animation-delay: 0s;
+                width: 35px;
+                height: 35px;
+            }
+            .float-item:nth-child(2) {
+                left: 25%;
+                top: 60%;
+                animation-delay: 3s;
+                width: 45px;
+                height: 45px;
+            }
+            .float-item:nth-child(3) {
+                left: 45%;
+                top: 25%;
+                animation-delay: 6s;
+                width: 30px;
+                height: 30px;
+            }
+            .float-item:nth-child(4) {
+                left: 65%;
+                top: 70%;
+                animation-delay: 2s;
+                width: 40px;
+                height: 40px;
+            }
+            .float-item:nth-child(5) {
+                left: 85%;
+                top: 40%;
+                animation-delay: 8s;
+                width: 50px;
+                height: 50px;
+            }
+            .float-item:nth-child(6) {
+                left: 15%;
+                top: 80%;
+                animation-delay: 5s;
+                width: 38px;
+                height: 38px;
+            }
+            .float-item:nth-child(7) {
+                left: 75%;
+                top: 20%;
+                animation-delay: 9s;
+                width: 42px;
+                height: 42px;
+            }
+            .float-item:nth-child(8) {
+                left: 35%;
+                top: 50%;
+                animation-delay: 1s;
+                width: 36px;
+                height: 36px;
+            }
+
+            @keyframes floatUpRotate {
+                0%, 100% {
+                    opacity: 0;
+                    transform: rotate(0deg) scale(0.8);
+                }
+                50% {
+                    opacity: 0.2;
+                    transform: rotate(180deg) scale(1);
+                }
+            }
+
+            /* Roblox logo style text */
+            .roblox-logo {
+                z-index: 10;
+                padding: 0 1rem;
+                animation: slideInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1)
+                    forwards;
+                margin-bottom: 1rem;
+                display: flex;
+                justify-content: center;
+            }
+
+            .roblox-logo img {
+                height: clamp(2.5rem, 8vw, 4.5rem);
+                width: auto;
+                /*filter: brightness(0) invert(1);*/
+            }
+
+            @keyframes slideInDown {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-50px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .welcome-title {
+                font-family: "Source Sans Pro", sans-serif;
+                font-size: clamp(3rem, 10vw, 6rem);
+                font-weight: 900;
+                color: var(--white);
+                text-align: center;
+                letter-spacing: -0.04em;
+                z-index: 10;
+                padding: 0 1rem;
+                animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s
+                    forwards;
+                opacity: 0;
+                line-height: 0.95;
+                text-transform: uppercase;
+            }
+
+            @keyframes slideInUp {
+                0% {
+                    opacity: 0;
+                    transform: translateY(50px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .event-badge {
+                background: var(--white);
+                color: var(--roblox-red);
+                font-family: "Source Sans Pro", sans-serif;
+                font-weight: 800;
+                font-size: clamp(1rem, 3.5vw, 1.4rem);
+                padding: 1rem 2.5rem;
+                border-radius: 100px;
+                z-index: 10;
+                margin-top: 2.5rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+                animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s
+                    forwards;
+                opacity: 0;
+            }
+
+            .cta-button {
+                font-family: "Source Sans Pro", sans-serif;
+                font-size: clamp(1rem, 3.5vw, 1.3rem);
+                font-weight: 800;
+                background: var(--roblox-dark);
+                color: var(--white);
+                border: none;
+                padding: 1.3rem 3rem;
+                border-radius: 8px;
+                cursor: pointer;
+                z-index: 10;
+                margin-top: 2.5rem;
+                box-shadow: 0 8px 0 rgba(0, 0, 0, 0.3);
+                transition: all 0.2s ease;
+                min-height: 56px;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s
+                    forwards;
+                opacity: 0;
+                position: relative;
+            }
+
+            .cta-button:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 0 rgba(0, 0, 0, 0.3);
+            }
+
+            .cta-button:active {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 0 rgba(0, 0, 0, 0.3);
+            }
+
+            /* Screen 2 - Details */
+            .details-screen {
+                background: var(--light-gray);
+                padding: 3rem 1rem;
+            }
+
+            /* Split layout container */
+            .split-container {
+                max-width: 1400px;
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                align-items: center;
+                padding: 0;
+                height: 100%;
+            }
+
+            /* Hero image section */
+            .hero-section {
+                width: 100%;
+                max-width: 700px;
+                position: relative;
+                animation: fadeInScale 0.8s cubic-bezier(0.16, 1, 0.3, 1)
+                    forwards;
+            }
+
+            .hero-image-frame {
+                background: var(--white);
+                border-radius: 20px;
+                padding: 1.5rem;
+                padding-top: 2.5rem;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+                position: relative;
+            }
+
+            .hero-image-frame::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: 20px;
+                border: 3px solid var(--roblox-red);
+                pointer-events: none;
+            }
+
+            .hero-image {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 12px;
+            }
+
+            /* Roblox badge overlay */
+            .roblox-badge {
+                position: absolute;
+                top: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--roblox-red);
+                color: var(--white);
+                font-family: "Source Sans Pro", sans-serif;
+                font-weight: 900;
+                font-size: clamp(1.2rem, 4vw, 1.8rem);
+                padding: 0.75rem 2.5rem;
+                border-radius: 100px;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                box-shadow: 0 10px 30px rgba(227, 36, 43, 0.4);
+                width: 75%;
+                text-align: center;
+            }
+
+            /* Details card section */
+            .details-section {
+                width: 100%;
+                max-width: 600px;
+                animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s
+                    forwards;
+                opacity: 0;
+                /*margin-top: -100px;*/
+            }
+
+            @keyframes fadeInScale {
+                0% {
+                    opacity: 0;
+                    transform: scale(0.95);
+                }
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            @keyframes fadeInUp {
+                0% {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .card {
+                background: var(--white);
+                border-radius: 20px;
+                padding: 1.5rem;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+                position: relative;
+            }
+
+            .card::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 8px;
+                background: linear-gradient(
+                    90deg,
+                    var(--roblox-red),
+                    var(--accent-blue)
+                );
+                border-radius: 20px 20px 0 0;
+            }
+
+            .card-title {
+                font-family: "Source Sans Pro", sans-serif;
+                font-size: clamp(1.8rem, 5vw, 2.5rem);
+                font-weight: 900;
+                color: var(--roblox-dark);
+                text-align: center;
+                margin-bottom: 1rem;
+                letter-spacing: -0.02em;
+                text-transform: uppercase;
+            }
+
+            .detail-grid {
+                display: grid;
+                gap: 1.5rem;
+            }
+
+            .detail-item {
+                background: var(--light-gray);
+                border-radius: 12px;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 1.25rem;
+                transition: all 0.3s ease;
+                border-left: 5px solid var(--roblox-red);
+            }
+
+            .detail-item:hover {
+                transform: translateX(8px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            }
+
+            .detail-icon-box {
+                width: 60px;
+                height: 60px;
+                background: var(--white);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: clamp(1.8rem, 5vw, 2.2rem);
+                flex-shrink: 0;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            }
+
+            .detail-text {
+                flex: 1;
+            }
+
+            .detail-label {
+                font-family: "Source Sans Pro", sans-serif;
+                font-weight: 700;
+                font-size: clamp(0.85rem, 3vw, 0.95rem);
+                color: var(--roblox-gray);
+                text-transform: uppercase;
+                letter-spacing: 0.15em;
+                margin-bottom: 0.4rem;
+            }
+
+            .detail-value {
+                font-family: "Source Sans Pro", sans-serif;
+                font-weight: 700;
+                font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+                color: var(--roblox-dark);
+                line-height: 1.3;
+            }
+
+            .closing-section {
+                text-align: center;
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+            }
+
+            .closing-message {
+                font-family: "Source Sans Pro", sans-serif;
+                font-size: clamp(1.2rem, 4vw, 1.6rem);
+                font-weight: 600;
+                color: var(--roblox-dark);
+                margin-bottom: 2rem;
+                line-height: 1.5;
+            }
+
+            .back-button {
+                font-family: "Source Sans Pro", sans-serif;
+                font-size: clamp(1rem, 3.5vw, 1.2rem);
+                font-weight: 800;
+                background: var(--white);
+                color: var(--roblox-red);
+                border: 3px solid var(--roblox-red);
+                padding: 1rem 2.5rem;
+                border-radius: 8px;
+                cursor: pointer;
+                display: inline-block;
+                transition: all 0.3s ease;
+                min-height: 56px;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+            }
+
+            .back-button:hover {
+                background: var(--roblox-red);
+                color: var(--white);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(227, 36, 43, 0.3);
+            }
+
+            .back-button:active {
+                transform: translateY(0);
+            }
+
+            /* Desktop adjustments */
+            @media (min-width: 768px) {
+                .card {
+                    padding: 3rem 2.5rem;
+                }
+
+                .details-screen {
+                    padding: 5rem 2rem;
+                }
+
+                .detail-icon-box {
+                    width: 70px;
+                    height: 70px;
+                }
+
+                .hero-image-frame {
+                    padding: 2rem;
+                }
+            }
+
+            /* Accessibility */
+            @media (prefers-reduced-motion: reduce) {
+                * {
+                    animation-duration: 0.01ms !important;
+                    animation-iteration-count: 1 !important;
+                    transition-duration: 0.01ms !important;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Screen 1: Welcome -->
+            <section class="screen welcome-screen" id="welcome">
+                <div class="squares-pattern">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                </div>
+
+                <div class="floating-elements">
+                    <div class="float-item circle"></div>
+                    <div class="float-item square"></div>
+                    <div class="float-item triangle"></div>
+                    <div class="float-item diamond"></div>
+                    <div class="float-item pentagon"></div>
+                    <div class="float-item hexagon"></div>
+                    <div class="float-item circle"></div>
+                    <div class="float-item square"></div>
+                </div>
+
+                <div class="roblox-logo">
+                    <img src="roblox-logo.svg" alt="Roblox" />
+                </div>
+                <h1 class="welcome-title">Birthday<br />Party</h1>
+                <div class="event-badge">Calvin Turns 7!</div>
+                <button class="cta-button" onclick="scrollToDetails()">
+                    Join the Party →
+                </button>
+            </section>
+
+            <!-- Screen 2: Details -->
+            <section class="screen details-screen" id="details">
+                <div class="split-container">
+                    <!-- Hero Image Section -->
+                    <div class="hero-section">
+                        <div class="hero-image-frame">
+                            <div class="roblox-badge">Hello, Guest!</div>
+                            <img
+                                src="roblox-characters.svg"
+                                alt="Roblox Characters"
+                                class="hero-image"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Details Section -->
+                    <div class="details-section">
+                        <div class="card">
+                            <h2 class="card-title">Party Details</h2>
+
+                            <div class="detail-grid">
+                                <div class="detail-item">
+                                    <div class="detail-icon-box">🎂</div>
+                                    <div class="detail-text">
+                                        <div class="detail-label">
+                                            Celebrating
+                                        </div>
+                                        <div class="detail-value">
+                                            Calvin's 7th Birthday
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="detail-item">
+                                    <div class="detail-icon-box">📅</div>
+                                    <div class="detail-text">
+                                        <div class="detail-label">Date</div>
+                                        <div class="detail-value">
+                                            Saturday, May 9, 2026
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="detail-item">
+                                    <div class="detail-icon-box">⏰</div>
+                                    <div class="detail-text">
+                                        <div class="detail-label">Time</div>
+                                        <div class="detail-value">
+                                            Dinner at 6:00 PM
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="detail-item">
+                                    <div class="detail-icon-box">📍</div>
+                                    <div class="detail-text">
+                                        <div class="detail-label">Venue</div>
+                                        <div class="detail-value">
+                                            Coral Deira Hotel<br />Al Majlis
+                                            Hall
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="detail-item">
+                                    <div class="detail-icon-box">🎁</div>
+                                    <div class="detail-text">
+                                        <div class="detail-label">Gift</div>
+                                        <div class="detail-value">
+                                            Gifts are welcome, but please no
+                                            toys.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="closing-section">
+                            <p class="closing-message">
+                                We can't wait to celebrate with you!<br />See
+                                you there!
+                            </p>
+                            <button
+                                class="back-button"
+                                onclick="scrollToWelcome()"
+                            >
+                                ← Back
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script>
+            function scrollToDetails() {
+                const welcome = document.getElementById("welcome");
+                const details = document.getElementById("details");
+
+                welcome.classList.add("hidden");
+                details.classList.add("active");
+            }
+
+            function scrollToWelcome() {
+                const welcome = document.getElementById("welcome");
+                const details = document.getElementById("details");
+
+                details.classList.remove("active");
+                welcome.classList.remove("hidden");
+            }
+
+            // Ensure page always starts from welcome screen
+            document.addEventListener("DOMContentLoaded", function () {
+                const welcome = document.getElementById("welcome");
+                const details = document.getElementById("details");
+
+                // Reset to initial state
+                details.classList.remove("active");
+                welcome.classList.remove("hidden");
+            });
+        </script>
+    </body>
+</html>
