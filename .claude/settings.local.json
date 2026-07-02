@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git config *)",
+      "Bash(ssh *)",
+      "Bash(ssh-add -l)",
+      "Read(//Users/nielong/.ssh/**)"
+    ]
+  }
+}
