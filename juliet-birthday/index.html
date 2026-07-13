@@ -1,0 +1,983 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Juliet's Birthday · You're Invited</title>
+        <meta
+            name="description"
+            content="Birthday badminton at MSA Deira International School (4–6 PM), then dinner at The Catch Seafood Grill (7 PM) — July 18."
+        />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:title"
+            content="Juliet's Birthday · You're Invited 🎉"
+        />
+        <meta
+            property="og:description"
+            content="Birthday badminton at MSA Deira International School (4–6 PM), then dinner at The Catch Seafood Grill (7 PM) — July 18."
+        />
+        <meta
+            property="og:url"
+            content="https://oongniel.github.io/juliet-birthday/"
+        />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary" />
+        <meta
+            name="twitter:title"
+            content="Juliet's Birthday · You're Invited 🎉"
+        />
+        <meta
+            name="twitter:description"
+            content="Birthday badminton at MSA Deira International School (4–6 PM), then dinner at The Catch Seafood Grill (7 PM) — July 18."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,600&family=Quicksand:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --bg1: #fff3f7;
+                --bg2: #ffd9e8;
+                --rose: #e84d8a;
+                --plum: #6e2450;
+                --gold: #e5a93d;
+                --lav: #b78be0;
+                --card: #ffffff;
+                --court: #f9c6dc;
+            }
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                font-family: "Quicksand", system-ui, sans-serif;
+                background: radial-gradient(
+                    130% 100% at 50% 0%,
+                    var(--bg1) 0%,
+                    var(--bg2) 85%
+                );
+                color: var(--plum);
+                min-height: 100vh;
+                overflow-x: hidden;
+            }
+
+            /* ---- soft double frame ---- */
+            .frame {
+                position: fixed;
+                inset: 14px;
+                pointer-events: none;
+                z-index: 5;
+                border: 2px solid
+                    color-mix(in srgb, var(--rose) 45%, transparent);
+                border-radius: 22px;
+            }
+            .frame::before {
+                content: "";
+                position: absolute;
+                inset: 6px;
+                border: 1px dashed
+                    color-mix(in srgb, var(--rose) 40%, transparent);
+                border-radius: 16px;
+            }
+
+            /* ---- drifting hearts ---- */
+            .heart {
+                position: fixed;
+                z-index: 1;
+                font-size: 22px;
+                opacity: 0;
+                animation: drift 11s linear infinite;
+                pointer-events: none;
+            }
+            .heart:nth-child(1) {
+                left: 8%;
+                animation-delay: 0s;
+                font-size: 18px;
+            }
+            .heart:nth-child(2) {
+                left: 22%;
+                animation-delay: 3.5s;
+                font-size: 26px;
+            }
+            .heart:nth-child(3) {
+                left: 55%;
+                animation-delay: 6s;
+                font-size: 16px;
+            }
+            .heart:nth-child(4) {
+                left: 78%;
+                animation-delay: 1.5s;
+                font-size: 22px;
+            }
+            .heart:nth-child(5) {
+                left: 90%;
+                animation-delay: 8s;
+                font-size: 19px;
+            }
+            @keyframes drift {
+                0% {
+                    transform: translateY(105vh) rotate(-8deg);
+                    opacity: 0;
+                }
+                8% {
+                    opacity: 0.5;
+                }
+                85% {
+                    opacity: 0.35;
+                }
+                100% {
+                    transform: translateY(-8vh) rotate(10deg);
+                    opacity: 0;
+                }
+            }
+
+            main {
+                position: relative;
+                z-index: 10;
+                max-width: 760px;
+                margin: 0 auto;
+                padding: 52px 28px 90px;
+            }
+
+            /* ---- hero ---- */
+            header {
+                padding-top: 4vh;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .eyebrow {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 13px;
+                letter-spacing: 0.28em;
+                text-transform: uppercase;
+                font-weight: 700;
+                color: var(--rose);
+                margin-bottom: 16px;
+                animation: drop-in 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+            }
+            .eyebrow::before,
+            .eyebrow::after {
+                content: "";
+                width: 34px;
+                height: 2px;
+                background: var(--gold);
+                opacity: 0.9;
+            }
+            h1 {
+                font-family: "Fraunces", serif;
+                font-size: clamp(46px, 10vw, 104px);
+                line-height: 1.2;
+                color: var(--plum);
+            }
+            h1 .whose {
+                display: block;
+                font-style: italic;
+                font-weight: 600;
+                font-size: 0.42em;
+                color: var(--rose);
+                margin-bottom: 6px;
+                animation: drop-in 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+            }
+            h1 .bash {
+                display: block;
+                font-weight: 800;
+                background: linear-gradient(
+                    100deg,
+                    var(--rose) 20%,
+                    var(--lav) 55%,
+                    var(--gold) 90%
+                );
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                animation: drop-in 0.7s 0.12s cubic-bezier(0.2, 0.9, 0.3, 1.2)
+                    both;
+            }
+            .sub {
+                margin-top: 18px;
+                font-size: clamp(16px, 2.4vw, 19px);
+                max-width: 38ch;
+                font-weight: 500;
+                color: color-mix(in srgb, var(--plum) 78%, transparent);
+                animation: drop-in 0.7s 0.26s cubic-bezier(0.2, 0.9, 0.3, 1.2)
+                    both;
+            }
+
+            /* ==== the vertical rally on a real court ==== */
+            .rally {
+                position: relative;
+                width: 360px;
+                height: 600px;
+                margin: 38px auto 8px;
+            }
+
+            /* court (portrait, top-down) */
+            .court {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 260px;
+                height: 480px;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+            }
+            .court svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                filter: drop-shadow(0 14px 30px rgba(110, 36, 80, 0.18));
+            }
+
+            /* net across the middle */
+            .net {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                z-index: 3;
+                width: 300px;
+                height: 46px;
+                transform: translate(-50%, -50%);
+                background:
+                    repeating-linear-gradient(
+                        90deg,
+                        rgba(110, 36, 80, 0.38) 0 1.5px,
+                        transparent 1.5px 9px
+                    ),
+                    repeating-linear-gradient(
+                        0deg,
+                        rgba(110, 36, 80, 0.38) 0 1.5px,
+                        transparent 1.5px 9px
+                    );
+                border-top: 5px solid #fff;
+                border-bottom: 2px solid rgba(110, 36, 80, 0.35);
+                border-radius: 2px;
+            }
+            .net::before,
+            .net::after {
+                content: "";
+                position: absolute;
+                top: -14px;
+                width: 8px;
+                height: 72px;
+                background: linear-gradient(180deg, var(--plum), #93336b);
+                border-radius: 4px;
+            }
+            .net::before {
+                left: -4px;
+            }
+            .net::after {
+                right: -4px;
+            }
+
+            /* rackets — fully inside the stage, no clipping */
+            .racket {
+                position: absolute;
+                z-index: 6;
+                width: 64px;
+            }
+            .racket svg {
+                display: block;
+                overflow: visible;
+            }
+            .racket.bottom {
+                bottom: 18px;
+                left: 50%;
+                margin-left: -96px;
+                transform-origin: 32px 112px;
+                animation: swing-b 3.2s infinite;
+            }
+            .racket.top {
+                top: 26px;
+                left: 50%;
+                margin-left: 20px;
+                transform-origin: 32px 12px; /* pivot at the grip, which is now at the top */
+                animation: swing-t 3.2s infinite;
+            }
+            @keyframes swing-b {
+                0% {
+                    transform: rotate(-42deg);
+                }
+                4% {
+                    transform: rotate(26deg);
+                }
+                12% {
+                    transform: rotate(-42deg);
+                }
+                100% {
+                    transform: rotate(-42deg);
+                }
+            }
+            @keyframes swing-t {
+                0%,
+                46% {
+                    transform: rotate(-42deg);
+                }
+                52% {
+                    transform: rotate(26deg);
+                }
+                62% {
+                    transform: rotate(-42deg);
+                }
+                100% {
+                    transform: rotate(-42deg);
+                }
+            }
+
+            /* shuttle flies over the net */
+            .shuttle-v {
+                position: absolute;
+                left: 50%;
+                bottom: 96px;
+                margin-left: -27px;
+                z-index: 4;
+                animation: rally-v 1.6s cubic-bezier(0.45, 0.05, 0.55, 0.95)
+                    infinite alternate;
+                will-change: transform;
+            }
+            .shuttle-w {
+                animation: wobble 3.2s ease-in-out infinite;
+            }
+            .shuttle-r {
+                animation: flip 3.2s linear infinite;
+                transform-origin: 50% 50%;
+            }
+            .shuttle-r svg {
+                display: block;
+                filter: drop-shadow(0 6px 12px rgba(110, 36, 80, 0.3));
+            }
+
+            @keyframes rally-v {
+                from {
+                    transform: translateY(0);
+                }
+                to {
+                    transform: translateY(-348px);
+                }
+            }
+            @keyframes wobble {
+                0%,
+                100% {
+                    transform: translateX(0);
+                }
+                25% {
+                    transform: translateX(-16px);
+                }
+                75% {
+                    transform: translateX(16px);
+                }
+            }
+            @keyframes flip {
+                0% {
+                    transform: rotate(180deg);
+                }
+                46% {
+                    transform: rotate(180deg);
+                }
+                54% {
+                    transform: rotate(360deg);
+                }
+                96% {
+                    transform: rotate(360deg);
+                }
+                100% {
+                    transform: rotate(540deg);
+                }
+            }
+
+            /* hit effects */
+            .pow {
+                position: absolute;
+                left: 50%;
+                opacity: 0;
+                pointer-events: none;
+                z-index: 7;
+                font-family: "Fraunces", serif;
+                font-weight: 800;
+                font-style: italic;
+                font-size: 27px;
+                letter-spacing: 0.04em;
+                color: var(--rose);
+                text-shadow:
+                    0 2px 0 #fff,
+                    0 0 16px rgba(232, 77, 138, 0.55);
+            }
+            .pow .spark {
+                color: var(--gold);
+                text-shadow: 0 0 12px rgba(229, 169, 61, 0.8);
+                font-style: normal;
+            }
+            .pow.b {
+                bottom: 118px;
+                margin-left: 44px;
+                animation: pop 3.2s infinite;
+            }
+            .pow.t {
+                top: 104px;
+                margin-left: -138px;
+                animation: pop 3.2s 1.6s infinite;
+            }
+            @keyframes pop {
+                0%,
+                1% {
+                    opacity: 0;
+                    transform: scale(0.4) rotate(-14deg);
+                }
+                5% {
+                    opacity: 1;
+                    transform: scale(1.3) rotate(6deg);
+                }
+                10% {
+                    transform: scale(1.1) rotate(-2deg);
+                }
+                20% {
+                    opacity: 0;
+                    transform: scale(0.95) translateY(-18px);
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+
+            /* ---- itinerary ---- */
+            .details {
+                display: grid;
+                gap: 16px;
+                margin-top: 60px;
+            }
+            .tile {
+                background: var(--card);
+                border: 2px solid
+                    color-mix(in srgb, var(--rose) 28%, transparent);
+                border-radius: 18px;
+                padding: 26px 24px;
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 8px 24px rgba(232, 77, 138, 0.1);
+                opacity: 0;
+                transform: translateY(28px);
+                transition:
+                    opacity 0.6s ease,
+                    transform 0.6s cubic-bezier(0.2, 0.8, 0.3, 1.1),
+                    border-color 0.25s ease,
+                    box-shadow 0.25s ease;
+            }
+            .tile.show {
+                opacity: 1;
+                transform: none;
+            }
+            .tile:hover {
+                border-color: var(--rose);
+                box-shadow: 0 12px 32px rgba(232, 77, 138, 0.22);
+            }
+            .tile:hover .icon {
+                transform: rotate(-12deg) scale(1.12);
+            }
+            .tile .label {
+                font-size: 12px;
+                letter-spacing: 0.26em;
+                text-transform: uppercase;
+                font-weight: 700;
+                color: var(--rose);
+                margin-bottom: 10px;
+            }
+            .tile .value {
+                font-family: "Fraunces", serif;
+                font-weight: 800;
+                font-size: clamp(24px, 4vw, 34px);
+                line-height: 1.08;
+                color: var(--plum);
+            }
+            .tile .hint {
+                margin-top: 8px;
+                font-size: 15px;
+                font-weight: 500;
+                color: color-mix(in srgb, var(--plum) 62%, transparent);
+            }
+            .tile .icon {
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                width: 32px;
+                height: 32px;
+                transition: transform 0.3s cubic-bezier(0.3, 1.4, 0.5, 1);
+            }
+            .map-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                margin-top: 14px;
+                padding: 10px 18px;
+                border-radius: 999px;
+                background: linear-gradient(100deg, var(--rose), var(--lav));
+                color: #fff;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 14px;
+                box-shadow: 0 6px 16px rgba(232, 77, 138, 0.35);
+                transition:
+                    transform 0.2s cubic-bezier(0.3, 1.4, 0.5, 1),
+                    box-shadow 0.2s ease;
+            }
+            .map-btn:hover {
+                transform: translateY(-2px) scale(1.03);
+                box-shadow: 0 10px 22px rgba(232, 77, 138, 0.45);
+            }
+            .map-btn:focus-visible {
+                outline: 3px solid var(--gold);
+                outline-offset: 2px;
+            }
+
+            .tile.banner {
+                background: linear-gradient(
+                    120deg,
+                    var(--rose),
+                    var(--lav) 70%
+                );
+                border-color: transparent;
+                text-align: center;
+            }
+            .tile.banner .label {
+                color: rgba(255, 255, 255, 0.8);
+            }
+            .tile.banner .value {
+                color: #fff;
+            }
+            .tile.banner .hint {
+                color: rgba(255, 255, 255, 0.85);
+            }
+
+            footer {
+                margin-top: 70px;
+                text-align: center;
+                font-size: 13px;
+                letter-spacing: 0.22em;
+                text-transform: uppercase;
+                font-weight: 700;
+                color: color-mix(in srgb, var(--plum) 50%, transparent);
+            }
+            footer .see-you {
+                font-family: "Fraunces", serif;
+                font-style: italic;
+                font-weight: 600;
+                font-size: clamp(26px, 5vw, 40px);
+                letter-spacing: 0.01em;
+                text-transform: none;
+                color: var(--rose);
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            @keyframes drop-in {
+                from {
+                    opacity: 0;
+                    transform: translateY(-26px);
+                }
+                to {
+                    opacity: 1;
+                    transform: none;
+                }
+            }
+
+            @media (max-width: 620px) {
+                .rally {
+                    transform: scale(0.82);
+                    transform-origin: top center;
+                    margin-bottom: -100px;
+                }
+                .frame {
+                    inset: 8px;
+                }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                *,
+                *::before,
+                *::after {
+                    animation: none !important;
+                    transition: none !important;
+                }
+                .tile {
+                    opacity: 1;
+                    transform: none;
+                }
+                .heart {
+                    display: none;
+                }
+                .shuttle-v {
+                    bottom: 200px;
+                }
+                h1 span,
+                .eyebrow,
+                .sub {
+                    opacity: 1;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="frame" aria-hidden="true"></div>
+
+        <div aria-hidden="true">
+            <span class="heart">💗</span>
+            <span class="heart">🎈</span>
+            <span class="heart">💖</span>
+            <span class="heart">✨</span>
+            <span class="heart">🎀</span>
+        </div>
+
+        <main>
+            <header>
+                <p class="eyebrow">Saturday · 18 July</p>
+                <h1>
+                    <span class="whose">It's Juliet's</span>
+                    <span class="bash">Birthday!</span>
+                </h1>
+                <p class="sub">
+                    First we rally, then we feast. Smashes at 4, seafood at 7.
+                    Come for one, or stay for both 🏸🦞
+                </p>
+            </header>
+
+            <!-- signature: the vertical rally, now on court -->
+            <div class="rally" aria-hidden="true">
+                <!-- court layout (portrait) -->
+                <div class="court">
+                    <svg
+                        viewBox="0 0 260 480"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <!-- court surface -->
+                        <rect
+                            x="0"
+                            y="0"
+                            width="260"
+                            height="480"
+                            rx="12"
+                            fill="#F9C6DC"
+                        />
+                        <rect
+                            x="0"
+                            y="0"
+                            width="260"
+                            height="480"
+                            rx="12"
+                            fill="url(#sheen)"
+                        />
+                        <defs>
+                            <linearGradient
+                                id="sheen"
+                                x1="0"
+                                y1="0"
+                                x2="0"
+                                y2="1"
+                            >
+                                <stop
+                                    offset="0"
+                                    stop-color="#FFFFFF"
+                                    stop-opacity=".18"
+                                />
+                                <stop
+                                    offset=".5"
+                                    stop-color="#FFFFFF"
+                                    stop-opacity="0"
+                                />
+                                <stop
+                                    offset="1"
+                                    stop-color="#B84A7E"
+                                    stop-opacity=".10"
+                                />
+                            </linearGradient>
+                        </defs>
+                        <g
+                            stroke="#FFFFFF"
+                            stroke-width="3"
+                            fill="none"
+                            opacity=".95"
+                        >
+                            <!-- outer boundary -->
+                            <rect x="6" y="6" width="248" height="468" rx="6" />
+                            <!-- singles sidelines -->
+                            <line x1="30" y1="6" x2="30" y2="474" />
+                            <line x1="230" y1="6" x2="230" y2="474" />
+                            <!-- doubles long service lines -->
+                            <line x1="6" y1="36" x2="254" y2="36" />
+                            <line x1="6" y1="444" x2="254" y2="444" />
+                            <!-- short service lines -->
+                            <line x1="6" y1="172" x2="254" y2="172" />
+                            <line x1="6" y1="308" x2="254" y2="308" />
+                            <!-- centre lines (stop at the service boxes) -->
+                            <line x1="130" y1="6" x2="130" y2="172" />
+                            <line x1="130" y1="308" x2="130" y2="474" />
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- net between the two halves -->
+                <div class="net"></div>
+
+                <div class="racket top">
+                    <svg
+                        width="64"
+                        height="124"
+                        viewBox="0 0 64 124"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <!-- grip (top) -->
+                        <rect
+                            x="26.5"
+                            y="0"
+                            width="11"
+                            height="18"
+                            rx="5"
+                            fill="#6E2450"
+                        />
+                        <!-- shaft + throat (pointing down) -->
+                        <path
+                            d="M29 70 L35 70 L35.5 16 L28.5 16 Z"
+                            fill="#8A5BB8"
+                        />
+                        <path
+                            d="M24 74 Q32 62 40 74 L35 68 L29 68 Z"
+                            fill="#8A5BB8"
+                        />
+                        <!-- head (bottom) -->
+                        <ellipse
+                            cx="32"
+                            cy="94"
+                            rx="25"
+                            ry="29"
+                            fill="#EFE4FA"
+                        />
+                        <g stroke="#B99AD9" stroke-width="1.4">
+                            <path d="M24 70 v48 M32 66 v55 M40 70 v48" />
+                            <path
+                                d="M9 102 h46 M8 94 h48 M9 86 h46 M13 78 h38 M13 110 h38"
+                            />
+                        </g>
+                        <ellipse
+                            cx="32"
+                            cy="94"
+                            rx="25"
+                            ry="29"
+                            fill="none"
+                            stroke="#B78BE0"
+                            stroke-width="6"
+                        />
+                    </svg>
+                </div>
+                <div class="racket bottom">
+                    <svg
+                        width="64"
+                        height="124"
+                        viewBox="0 0 64 124"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M29 54 L35 54 L35.5 108 L28.5 108 Z"
+                            fill="#C23A72"
+                        />
+                        <path
+                            d="M24 50 Q32 62 40 50 L35 56 L29 56 Z"
+                            fill="#C23A72"
+                        />
+                        <ellipse
+                            cx="32"
+                            cy="30"
+                            rx="25"
+                            ry="29"
+                            fill="#FDE3EE"
+                        />
+                        <g stroke="#EBA9C6" stroke-width="1.4">
+                            <path d="M24 6 v48 M32 3 v55 M40 6 v48" />
+                            <path
+                                d="M9 22 h46 M8 30 h48 M9 38 h46 M13 46 h38 M13 14 h38"
+                            />
+                        </g>
+                        <ellipse
+                            cx="32"
+                            cy="30"
+                            rx="25"
+                            ry="29"
+                            fill="none"
+                            stroke="#E84D8A"
+                            stroke-width="6"
+                        />
+                        <rect
+                            x="26.5"
+                            y="106"
+                            width="11"
+                            height="18"
+                            rx="5"
+                            fill="#6E2450"
+                        />
+                    </svg>
+                </div>
+
+                <span class="pow b">POK! <span class="spark">✦</span></span>
+                <span class="pow t"><span class="spark">✦</span> PLOK!</span>
+
+                <div class="shuttle-v">
+                    <div class="shuttle-w">
+                        <div class="shuttle-r">
+                            <svg
+                                width="54"
+                                height="62"
+                                viewBox="0 0 54 62"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M27 26 L8 4  L15 2  L27 24 Z"
+                                    fill="#FFFFFF"
+                                />
+                                <path
+                                    d="M27 26 L18 1  L25 0  L28 24 Z"
+                                    fill="#FFE0EC"
+                                />
+                                <path
+                                    d="M27 26 L36 1  L29 0  L26 24 Z"
+                                    fill="#FFFFFF"
+                                />
+                                <path
+                                    d="M27 26 L46 4  L39 2  L27 24 Z"
+                                    fill="#FFE0EC"
+                                />
+                                <rect
+                                    x="18"
+                                    y="24"
+                                    width="18"
+                                    height="6"
+                                    rx="3"
+                                    fill="#E84D8A"
+                                    stroke="#FFF"
+                                    stroke-width="1.2"
+                                />
+                                <path
+                                    d="M18 29 h18 v10 a9 9 0 0 1 -18 0 Z"
+                                    fill="#E5A93D"
+                                />
+                                <ellipse
+                                    cx="27"
+                                    cy="48"
+                                    rx="9"
+                                    ry="8"
+                                    fill="#F2C066"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="details" aria-label="Party plan">
+                <div class="tile">
+                    <p class="label">Round one · 4:00 – 6:00 PM</p>
+                    <p class="value">Birthday Badminton</p>
+                    <p class="hint">
+                        MSA Deira International School. Two hours of rallies.
+                    </p>
+                    <a
+                        class="map-btn"
+                        href="https://maps.app.goo.gl/jTyJ5kBn2JuUG7fTA"
+                        target="_blank"
+                        rel="noopener"
+                        >Open in Maps ↗</a
+                    >
+                    <svg
+                        class="icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#E84D8A"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <circle cx="12" cy="8" r="5.5" />
+                        <path d="M12 13.5V21M9.5 21h5" />
+                    </svg>
+                </div>
+
+                <div class="tile">
+                    <p class="label">Round two · 7:00 PM</p>
+                    <p class="value">Dinner by the Grill</p>
+                    <p class="hint">
+                        The Catch Seafood Grill. Straight from the court to the
+                        table. Come hungry.
+                    </p>
+                    <a
+                        class="map-btn"
+                        href="https://maps.app.goo.gl/mwoyJmXwEZhvKduQ8"
+                        target="_blank"
+                        rel="noopener"
+                        >Open in Maps ↗</a
+                    >
+                    <svg
+                        class="icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#E84D8A"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path
+                            d="M5 3v7a3 3 0 0 0 6 0V3M8 3v18M17 3c-1.5 1.5-2 4-2 6.5 0 2 .8 3 2 3s2-1 2-3C19 7 18.5 4.5 17 3ZM17 12.5V21"
+                        />
+                    </svg>
+                </div>
+
+                <div class="tile banner">
+                    <p class="label">House rule № 1</p>
+                    <p class="value">The birthday girl gets match point 👑</p>
+                    <p class="hint">
+                        All ties, disputes, and rally replays go to Juliet. No
+                        appeals.
+                    </p>
+                </div>
+            </section>
+
+            <footer>
+                <span class="see-you"
+                    >See you on court — then at the table.</span
+                >
+                Saturday · 18 July · Dubai
+            </footer>
+        </main>
+
+        <script>
+            const tiles = document.querySelectorAll(".tile");
+            if ("IntersectionObserver" in window) {
+                const io = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((e) => {
+                            if (e.isIntersecting) {
+                                e.target.style.transitionDelay =
+                                    Array.from(tiles).indexOf(e.target) * 90 +
+                                    "ms";
+                                e.target.classList.add("show");
+                                io.unobserve(e.target);
+                            }
+                        });
+                    },
+                    { threshold: 0.2 },
+                );
+                tiles.forEach((t) => io.observe(t));
+            } else {
+                tiles.forEach((t) => t.classList.add("show"));
+            }
+        </script>
+    </body>
+</html>
